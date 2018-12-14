@@ -3,14 +3,21 @@ SRCS=feedlish.less feedlish-night.less
 
 LESSC_INCLUDE=--include-path=$(abspath ..)
 
+DEPS=$(SRCS:.less=.dep)
+
 all: $(SRCS:.less=.css)
 
 clean:
 	rm -f $(SRCS:.less=.css)
 	rm -f $(SRCS:.less=.css.map)
+	rm -f $(DEPS)
 
-%.css: %.less Makefile
-	lessc --source-map $(LESSC_INCLUDE) "$<" "$@"
-	lessc $(LESSC_INCLUDE) -M "$<" "$@" > "$@.dep"
+.PHONY: all clean
 
--include $(SRCS:.less=.css.dep)
+%.dep: Makefile
+	lessc "$*.less" "$*.css" $(LESSC_INCLUDE) -M > "$*.dep"
+
+%.css: %.less %.dep Makefile
+	lessc "$<" "$@" $(LESSC_INCLUDE) --source-map
+
+-include $(DEPS)
