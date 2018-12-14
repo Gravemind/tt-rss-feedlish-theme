@@ -2,7 +2,7 @@
 
 .. Work In Progress, In Development ...
 
-"Close enough" clone of https://github.com/levito/tt-rss-feedly-theme working on
+"Close enough" clone of [levito's tt-rss-feedly-theme](https://github.com/levito/tt-rss-feedly-theme) working on
 [Tiny Tiny RSS](https://tt-rss.org/) 18.12+ ().
 
 It wont be an exact clone: the current goal is to start from the default theme,
