@@ -128,11 +128,11 @@ body.ttrss_main hr {
   border-bottom-width: 1px;
 }
 body.ttrss_main a {
-  color: #fffad4;
+  color: #5b4;
   text-decoration: none;
 }
 body.ttrss_main a:hover {
-  color: #ffee6e;
+  color: #337029;
   text-decoration: underline;
 }
 body.ttrss_main #notify.visible {
@@ -701,7 +701,7 @@ body.ttrss_main #headlines-frame {
   -webkit-backface-visibility: hidden;
 }
 body.ttrss_main #headlines-frame div.feed-title {
-  border: 0px solid #fffad4;
+  border: 0px solid #5b4;
   border-bottom-width: 1px;
   padding: 5px 8px;
 }
@@ -713,7 +713,7 @@ body.ttrss_main #headlines-frame div.feed-title a {
   color: #555;
 }
 body.ttrss_main #headlines-frame div.feed-title a:hover {
-  color: #fffad4;
+  color: #5b4;
 }
 body.ttrss_main #toolbar-frame_splitter {
   display: none;
@@ -1176,7 +1176,7 @@ div.cdm.expanded.active {
   background: white;
 }
 div.cdm.expanded.active div.header a.title {
-  color: #fffad4;
+  color: #5b4;
 }
 div.cdm.expanded.Unread div.header a.title {
   color: black;
@@ -1194,7 +1194,7 @@ div.cdm.vgrlf .feed {
   display: none;
 }
 .cdm div.feed-title {
-  border: 0px solid #fffad4;
+  border: 0px solid #5b4;
   border-bottom-width: 1px;
   padding: 5px 3px 5px 5px;
 }
@@ -1206,7 +1206,7 @@ div.cdm.vgrlf .feed {
   color: #555;
 }
 .cdm div.feed-title a:hover {
-  color: #fffad4;
+  color: #5b4;
 }
 .cdm div.header span.feed {
   float: right;
@@ -1343,7 +1343,7 @@ div#floatingTitle .feed-title a.catchup {
   white-space: nowrap;
 }
 div#floatingTitle .feed-title a.catchup:hover {
-  color: #fffad4;
+  color: #5b4;
 }
 div#floatingTitle.Unread a.title {
   color: black;
@@ -1404,7 +1404,7 @@ div.cdm.expandable.active .excerpt {
   display: none;
 }
 div.cdm.expandable.active div.header a.title {
-  color: #fffad4;
+  color: #5b4;
   font-size: 16px;
   font-weight: 600;
   text-rendering: optimizelegibility;
@@ -1461,7 +1461,7 @@ body.ttrss_prefs .dijitDialog #pref-profiles-list .dijitInlineEditBoxDisplayMode
 body.ttrss_prefs tr.title td {
   border: 0px solid #ecf4ff;
   border-bottom-width: 1px;
-  color: #fffad4;
+  color: #5b4;
 }
 body.ttrss_prefs .prefPrefsList td {
   padding-bottom: 4px;
@@ -1558,12 +1558,12 @@ body.ttrss_utility .floatingLogo {
   display: none;
 }
 body.ttrss_utility a {
-  color: #fffad4;
+  color: #5b4;
   text-decoration: none;
 }
 body.ttrss_utility a:hover,
 body.ttrss_utility a:focus {
-  color: #ffee6e;
+  color: #337029;
   text-decoration: underline;
 }
 body.ttrss_utility .alert {
