@@ -1,0 +1,36 @@
+@import "feedlish.less";
+
+// Dark everyhting
+body {
+	filter: hue-rotate(180deg) invert(100%) contrast(70%) brightness(80%);
+	-webkit-font-smoothing: antialiased;
+}
+html {
+	background: white;
+}
+// FIXME: filter should have been on html, but it bugs !?
+
+// Revert dark for images, icons, etc...
+iframe,
+picture,
+video,
+img[src*='feed-icons'],
+.tags img[src*='plugins'],
+.cdm .footer img[src*='plugins'],
+.cdm .content-inner img,
+.cdm .intermediate img,
+.content img {
+	filter: invert(100%) hue-rotate(180deg);
+}
+iframe:-moz-full-screen,
+video:-moz-full-screen {
+	filter: none;
+}
+iframe:-webkit-full-screen,
+video:-webkit-full-screen {
+	filter: none;
+}
+// FIXME: separator not affected by dark filter ?
+.dijitSplitterV, .dijitSplitter {
+	background: #fff ! important;
+}
