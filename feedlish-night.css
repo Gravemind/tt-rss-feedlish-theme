@@ -2062,8 +2062,13 @@ body.ttrss_main #headlines-frame .hl div.title a,
 body.ttrss_main #headlines-frame .header div.title a,
 body.ttrss_main #headlines-frame .hl span.titleWrap a,
 body.ttrss_main #headlines-frame .header span.titleWrap a {
-  font-size: 15px;
-  font-weight: normal;
+  opacity: 0.8;
+}
+body.ttrss_main #headlines-frame .hl div.title a,
+body.ttrss_main #headlines-frame .header div.title a,
+body.ttrss_main #headlines-frame .hl span.titleWrap a,
+body.ttrss_main #headlines-frame .header span.titleWrap a {
+  font-size: 14px ! important;
 }
 body.ttrss_main #headlines-frame .hl div.title .author,
 body.ttrss_main #headlines-frame .header div.title .author,
@@ -2162,6 +2167,9 @@ body.ttrss_main #content-insert .post > div,
 body.ttrss_main #feedTree > .dijitTreeContainer > div {
   padding-left: 20px;
   padding-right: 20px;
+}
+body.ttrss_main .cdm.expandable div.content {
+  padding: 20px;
 }
 body {
   filter: hue-rotate(180deg) invert(100%) contrast(70%) brightness(80%);
