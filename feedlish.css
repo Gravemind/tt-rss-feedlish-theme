@@ -1999,34 +1999,34 @@ body.ttrss_zoom div.post div.content pre {
   max-width: 98%;
   overflow: auto;
 }
-body.ttrss_main #headlines-frame div[id^="RROW"] > :nth-child(5),
+body.ttrss_main #headlines-frame div[id^="RROW"].hl > :nth-child(5),
 body.ttrss_main #headlines-frame div[id^="RROW"] .header > :nth-child(5) {
   order: 1;
 }
-body.ttrss_main #headlines-frame div[id^="RROW"] > :nth-child(3),
+body.ttrss_main #headlines-frame div[id^="RROW"].hl > :nth-child(3),
 body.ttrss_main #headlines-frame div[id^="RROW"] .header > :nth-child(3) {
   order: 2;
 }
-body.ttrss_main #headlines-frame div[id^="RROW"] > :nth-child(2),
+body.ttrss_main #headlines-frame div[id^="RROW"].hl > :nth-child(2),
 body.ttrss_main #headlines-frame div[id^="RROW"] .header > :nth-child(2) {
   order: 3;
 }
-body.ttrss_main #headlines-frame div[id^="RROW"] > :nth-child(4),
+body.ttrss_main #headlines-frame div[id^="RROW"].hl > :nth-child(4),
 body.ttrss_main #headlines-frame div[id^="RROW"] .header > :nth-child(4) {
   order: 4;
 }
-body.ttrss_main #headlines-frame div[id^="RROW"] > :nth-child(1),
+body.ttrss_main #headlines-frame div[id^="RROW"].hl > :nth-child(1),
 body.ttrss_main #headlines-frame div[id^="RROW"] .header > :nth-child(1) {
   order: 5;
 }
-body.ttrss_main #headlines-frame div[id^="RROW"] > :nth-child(1),
+body.ttrss_main #headlines-frame div[id^="RROW"].hl > :nth-child(1),
 body.ttrss_main #headlines-frame div[id^="RROW"] .header > :nth-child(1) {
   display: none;
 }
-body.ttrss_main #headlines-frame div[id^="RROW"]:hover > :nth-child(1),
-body.ttrss_main #headlines-frame div[id^="RROW"].marked > :nth-child(1),
-body.ttrss_main #headlines-frame div[id^="RROW"].published > :nth-child(1),
-body.ttrss_main #headlines-frame div[id^="RROW"].Selected > :nth-child(1),
+body.ttrss_main #headlines-frame div[id^="RROW"]:hover.hl > :nth-child(1),
+body.ttrss_main #headlines-frame div[id^="RROW"].marked.hl > :nth-child(1),
+body.ttrss_main #headlines-frame div[id^="RROW"].published.hl > :nth-child(1),
+body.ttrss_main #headlines-frame div[id^="RROW"].Selected.hl > :nth-child(1),
 body.ttrss_main #headlines-frame div[id^="RROW"]:hover .header > :nth-child(1),
 body.ttrss_main #headlines-frame div[id^="RROW"].marked .header > :nth-child(1),
 body.ttrss_main #headlines-frame div[id^="RROW"].published .header > :nth-child(1),
@@ -2068,7 +2068,7 @@ body.ttrss_main #headlines-frame div[id^="RROW"] div.title *,
 body.ttrss_main #headlines-frame div[id^="RROW"] span.titleWrap * {
   white-space: nowrap;
 }
-body.ttrss_main #headlines-frame div[id^="RROW"] > *,
+body.ttrss_main #headlines-frame div[id^="RROW"].hl > *,
 body.ttrss_main #headlines-frame div[id^="RROW"] .header > * {
   padding: 0 10px 0 0;
 }
@@ -2090,11 +2090,11 @@ body.ttrss_main #headlines-frame div[id^="RROW"] .feed a {
   overflow: hidden;
   text-overflow: ellipsis;
 }
-body.ttrss_main #headlines-frame div[id^="RROW"]:not(.Selected):hover,
+body.ttrss_main #headlines-frame div[id^="RROW"]:not(.Selected):hover.hl,
 body.ttrss_main #headlines-frame div[id^="RROW"]:not(.Selected):hover .header {
   background: #f2f2f2;
 }
-body.ttrss_main #headlines-frame div[id^="RROW"]:not(.Selected),
+body.ttrss_main #headlines-frame div[id^="RROW"]:not(.Selected).hl,
 body.ttrss_main #headlines-frame div[id^="RROW"]:not(.Selected) .header {
   background: white;
 }
