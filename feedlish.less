@@ -83,7 +83,10 @@ body.ttrss_main #headlines-frame div[id^="RROW"] {
 	&.hl, & .header {
 		> * { padding: 0 10px 0 0; }
 	}
-	a.title { line-height: 30px; }
+	a.title {
+		line-height: 30px;	// sets the height (not clickable)
+		padding: 0 6px;		// grows the clickable zone
+	}
 
 	// Feed name look
 	.feed a {
