@@ -11,6 +11,9 @@ it just enough to get close enough to the feedly theme.
 
 Some changes might diverge from the feedly theme.
 
+Not all tt-rss configurations (day/night/wide/combined/...) are currently
+tested, Issues/PRs are welcome.
+
 ### Installation
 
 ```
