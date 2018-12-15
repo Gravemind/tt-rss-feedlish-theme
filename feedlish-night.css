@@ -2025,6 +2025,7 @@ body.ttrss_main #headlines-spacer a:hover {
 body.ttrss_main #headlines-frame .hl,
 body.ttrss_main #headlines-frame .header {
   transition: none;
+  background: white;
 }
 body.ttrss_main #headlines-frame .hl > :nth-child(5),
 body.ttrss_main #headlines-frame .header > :nth-child(5) {
@@ -2123,7 +2124,7 @@ body.ttrss_main #headlines-frame .header a.title {
 }
 body.ttrss_main #headlines-frame .hl:hover,
 body.ttrss_main #headlines-frame .header:hover {
-  background: #eee;
+  background: #f2f2f2;
 }
 body.ttrss_main div#headlines-frame.wide .hl .feed {
   display: inline-flex;

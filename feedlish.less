@@ -125,9 +125,10 @@ body.ttrss_main #headlines-frame .header {
 	& { transition: none; }
 
 	// Highlight on hover
-	&:hover {
-		background: #eee;
-	}
+	&:hover { background: darken(@default-bg, 5%); }
+
+	// Remove background color from Read headlines
+	& { background: @default-bg; }
 
 }
 
