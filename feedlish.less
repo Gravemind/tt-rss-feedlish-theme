@@ -103,6 +103,10 @@ body.ttrss_main #headlines-frame div[id^="RROW"] {
 		overflow: hidden;
 		text-overflow: ellipsis;
 	}
+	// FIXME: remove .feed when a is empty
+	.feed a:empty {
+		display: none;
+	}
 
 	// Highlight on hover
 	&:not(.Selected):hover {
