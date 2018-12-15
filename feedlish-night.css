@@ -2019,6 +2019,9 @@ body.ttrss_main .title a {
 body.ttrss_main #headlines-spacer a:hover {
   color: #555;
 }
+::selection {
+  color: black;
+}
 body.ttrss_main #headlines-frame div[id^="RROW"] {
   transition: none;
 }
