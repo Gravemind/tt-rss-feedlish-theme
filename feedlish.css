@@ -2016,6 +2016,9 @@ body.ttrss_main .hl.Selected span {
 body.ttrss_main .title a {
   color: #555;
 }
+body.ttrss_main #headlines-spacer a:hover {
+  color: #555;
+}
 body.ttrss_main #headlines-frame div[id^="RROW"] {
   transition: none;
 }
