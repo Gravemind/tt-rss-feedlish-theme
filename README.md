@@ -3,14 +3,13 @@
 .. Work In Progress, In Development ...
 
 "Close enough" clone of [levito's tt-rss-feedly-theme](https://github.com/levito/tt-rss-feedly-theme) working on
-[Tiny Tiny RSS](https://tt-rss.org/) 18.12+ ().
+[Tiny Tiny RSS](https://tt-rss.org/) 18.12+.
 
-It wont be an exact clone: the current goal is to start from the default theme,
-and modify it as little as possible to get close enough.
+The current philosophy is to have as little code as possible to stay
+maintainable/hackable. So, we start from the default theme and modify/override
+it just enough to get close enough to the feedly theme.
 
-If TinyTinyRSS's css files changes, you might need to recompile the .css
-.css.map: you'll need to install `lessc` (with nodejs `source-map`), then run
-`make` here.
+Some changes might diverge from the feedly theme.
 
 ### Installation
 
@@ -24,3 +23,13 @@ ln -s tt-rss-feedlish-theme/feedlish.css.map
 ln -s tt-rss-feedlish-theme/feedlish-night.css
 ln -s tt-rss-feedlish-theme/feedlish-night.css.map
 ```
+
+### Rebuild
+
+`.css` and `.css.map` files are generated from the `.less` files, and contains a
+copy a tt-rss's default theme.
+
+If tt-rss's default theme changes, the `.css` and `.css.map` needs to be
+regenerated:
+- install `lessc` (`pacman -S nodejs-less`, `dnf install nodejs-less nodejs-source-map`, ...)
+- run `make` here
