@@ -2033,15 +2033,10 @@ body.ttrss_main #headlines-frame div[id^="RROW"].published .header > :nth-child(
 body.ttrss_main #headlines-frame div[id^="RROW"].Selected .header > :nth-child(1) {
   display: flex;
 }
-body.ttrss_main #headlines-frame div[id^="RROW"] div.title,
-body.ttrss_main #headlines-frame div[id^="RROW"] span.titleWrap {
-  overflow: hidden;
-  white-space: nowrap;
-}
 body.ttrss_main #headlines-frame div[id^="RROW"] div.title .label,
 body.ttrss_main #headlines-frame div[id^="RROW"] span.titleWrap .label {
   font-size: 11px;
-  padding: 1px 6px 0;
+  padding: 1px 6px;
   border-radius: 99px;
 }
 body.ttrss_main #headlines-frame div[id^="RROW"] div.title .label > i,
@@ -2064,8 +2059,17 @@ body.ttrss_main #headlines-frame div[id^="RROW"] div.title a:hover,
 body.ttrss_main #headlines-frame div[id^="RROW"] span.titleWrap a:hover {
   text-decoration: none;
 }
-body.ttrss_main #headlines-frame div[id^="RROW"] div.title *,
-body.ttrss_main #headlines-frame div[id^="RROW"] span.titleWrap * {
+body.ttrss_main #headlines-frame div[id^="RROW"].hl div.title,
+body.ttrss_main #headlines-frame div[id^="RROW"]:not(.active) .header div.title,
+body.ttrss_main #headlines-frame div[id^="RROW"].hl span.titleWrap,
+body.ttrss_main #headlines-frame div[id^="RROW"]:not(.active) .header span.titleWrap {
+  overflow: hidden;
+  white-space: nowrap;
+}
+body.ttrss_main #headlines-frame div[id^="RROW"].hl div.title *,
+body.ttrss_main #headlines-frame div[id^="RROW"]:not(.active) .header div.title *,
+body.ttrss_main #headlines-frame div[id^="RROW"].hl span.titleWrap *,
+body.ttrss_main #headlines-frame div[id^="RROW"]:not(.active) .header span.titleWrap * {
   white-space: nowrap;
 }
 body.ttrss_main #headlines-frame div[id^="RROW"].hl > *,
@@ -2077,7 +2081,7 @@ body.ttrss_main #headlines-frame div[id^="RROW"] a.title {
 }
 body.ttrss_main #headlines-frame div[id^="RROW"] .feed a {
   font-size: 11px;
-  padding: 1px 6px 0;
+  padding: 1px 6px;
   border-radius: 99px;
   font-style: normal;
 }
@@ -2125,6 +2129,9 @@ body.ttrss_main #feeds-holder #feedTree .counterNode {
   background: none;
   font-weight: normal;
   color: #444;
+  min-width: unset;
+  margin-top: unset;
+  line-height: unset;
 }
 body.ttrss_main #feeds-holder #feedTree .counterNode.aux {
   border: none;
@@ -2144,11 +2151,9 @@ body.ttrss_main #feedTree > .dijitTreeContainer > div {
 body.ttrss_main #toolbar-frame,
 body.ttrss_main #headlines-frame,
 body.ttrss_main #content-insert .post > div,
+body.ttrss_main .cdm.expandable div.content,
 body.ttrss_main #feedTree > .dijitTreeContainer > div {
   padding-left: 20px;
   padding-right: 20px;
-}
-body.ttrss_main .cdm.expandable div.content {
-  padding: 20px;
 }
 /*# sourceMappingURL=feedlish.css.map */
