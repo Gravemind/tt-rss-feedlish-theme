@@ -14,10 +14,13 @@ clean:
 
 .PHONY: all clean
 
-%.dep: Makefile
-	lessc "$*.less" "$*.css" $(LESSC_INCLUDE) -M > "$*.dep"
+%.dep: %.less Makefile
+	lessc $*.less $*.css $(LESSC_INCLUDE) -M > $*.dep.tmp
+	@sed 's,\($*\.css\)[ :]*,\1 $*.dep : ,g' < $*.dep.tmp > $*.dep
+	@rm $*.dep.tmp
 
 %.css: %.less %.dep Makefile
-	lessc "$<" "$@" $(LESSC_INCLUDE) --source-map
+	lessc $*.less $*.css $(LESSC_INCLUDE) --source-map
 
+# FIXME: make clean triggers %.dep because of include !?
 -include $(DEPS)
