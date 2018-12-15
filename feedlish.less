@@ -65,7 +65,19 @@ body.ttrss_main #headlines-frame .header {
 		// Remove hover underline
 		a:hover { text-decoration: none; }
 
+		// Do not wrap title
+		& {
+			overflow: hidden;
+			white-space: nowrap;
+			* { white-space: nowrap; }
+		}
+
 	}
+
+	// Make the full headline title height clickable (remove non-clickable space
+	// in-between titles)
+	> * { padding: 0 10px 0 0; }
+	a.title { line-height: 30px; }
 
 	// Feed name look
 	.feed a {
@@ -84,15 +96,6 @@ body.ttrss_main #headlines-frame .header {
 		white-space: nowrap;
 		overflow: hidden;
 		text-overflow: ellipsis;
-	}
-
-	// Make the full headline title height clickable (remove non-clickable space
-	// in-between titles)
-	> * { padding: 0 10px 0 0; }
-	a.title {
-		display: inline-block;
-		padding-top: 6px;
-		padding-bottom: 6px;
 	}
 
 	// Highlight on hover
