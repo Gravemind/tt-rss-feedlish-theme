@@ -45,7 +45,7 @@ body.ttrss_main #headlines-frame div[id^="RROW"] {
 		// }
 
 		// Tweak label look
-		.label{
+		.label {
 			font-size: 11px;
 			padding: 1px 6px;
 			border-radius: 99px;
@@ -72,10 +72,9 @@ body.ttrss_main #headlines-frame div[id^="RROW"] {
 
 	// Do not wrap title
 	&.hl, &:not(.active) .header {
-		div.title, span.titleWrap {
+		.title, .titleWrap {
 			overflow: hidden;
 			white-space: nowrap;
-			* { white-space: nowrap; }
 		}
 	}
 
