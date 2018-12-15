@@ -7,6 +7,9 @@
 @color-panel-bg: #eeeeee;
 @border-default : @color-panel-bg;
 
+// Inner padding of panels/frames
+@panels-padding: 20px;
+
 // Change some text colors
 // css/tt-rss.less:336
 body.ttrss_main {
@@ -170,9 +173,12 @@ body.ttrss_main #feeds-holder #feedTree .counterNode.aux {
 // Remove border from feed tree rows
 .dijitTreeRow { border: none ! important; }
 
-// Increase top toolbar height
+// Increase top paddings
 body.ttrss_main #toolbar-frame #toolbar {
-	height: 80px;
+	padding: @panels-padding 0;
+}
+body.ttrss_main #feedTree > .dijitTreeContainer > div {
+	padding-top: @panels-padding;
 }
 
 // Increase left/right paddings
@@ -180,8 +186,8 @@ body.ttrss_main #toolbar-frame,
 body.ttrss_main #headlines-frame,
 body.ttrss_main #content-insert .post > div,
 body.ttrss_main #feedTree > .dijitTreeContainer > div {
-	padding-left: 20px;
-	padding-right: 20px;
+	padding-left: @panels-padding;
+	padding-right: @panels-padding;
 }
 
 // Fix menus colors
