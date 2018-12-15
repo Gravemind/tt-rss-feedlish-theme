@@ -101,10 +101,10 @@ body.ttrss_main #headlines-frame .header {
 	}
 
 	// Highlight on hover
-	&:hover { background: darken(@default-bg, 5%); }
+	&:not(.Selected):hover { background: darken(@default-bg, 5%); }
 
 	// Remove background color from Read headlines
-	& { background: @default-bg; }
+	&:not(.Selected) { background: @default-bg; }
 
 }
 
