@@ -13,7 +13,7 @@
 body.ttrss_main #headlines-frame div[id^="RROW"] {
 
 	// Change headline elements order:
-	&, .header {
+	&.hl, & .header {
 		// - Score and feed icon
 		> :nth-child(5) { order: 1; }
 		// - Feed Name
@@ -27,9 +27,9 @@ body.ttrss_main #headlines-frame div[id^="RROW"] {
 	}
 
 	// Show buttons only on hover or marked
-	&, .header { > :nth-child(1) { display: none; } }
-	&:hover, &.marked/*stared*/, &.published, &.Selected {
-		&, .header { > :nth-child(1) { display: flex; } }
+	&.hl, & .header { > :nth-child(1) { display: none; } }
+	&:hover, &.marked, &.published, &.Selected {
+		&.hl, & .header { > :nth-child(1) { display: flex; } }
 	}
 
 	// Title tweaks:
@@ -79,7 +79,7 @@ body.ttrss_main #headlines-frame div[id^="RROW"] {
 
 	// Make the full headline title height clickable (remove non-clickable space
 	// in-between titles)
-	&, .header {
+	&.hl, & .header {
 		> * { padding: 0 10px 0 0; }
 	}
 	a.title { line-height: 30px; }
@@ -105,12 +105,12 @@ body.ttrss_main #headlines-frame div[id^="RROW"] {
 
 	// Highlight on hover
 	&:not(.Selected):hover {
-		&, .header { background: darken(@default-bg, 5%); }
+		&.hl, & .header { background: darken(@default-bg, 5%); }
 	}
 
 	// Remove background color from Read headlines
 	&:not(.Selected) {
-		&, .header { background: @default-bg; }
+		&.hl, & .header { background: @default-bg; }
 	}
 
 }
