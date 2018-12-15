@@ -2154,6 +2154,9 @@ body.ttrss_main #feeds-holder #feedTree .counterNode.aux {
   font-weight: normal;
   color: #bbb;
 }
+.dijitTreeRow {
+  border: none ! important;
+}
 body.ttrss_main #toolbar-frame #toolbar {
   height: 80px;
 }
