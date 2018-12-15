@@ -10,25 +10,26 @@
 @panels-padding: 20px;
 
 // Tweak headlines:
-body.ttrss_main #headlines-frame .hl,
-body.ttrss_main #headlines-frame .header {
+body.ttrss_main #headlines-frame div[id^="RROW"] {
 
 	// Change headline elements order:
-	// - Score and feed icon
-	> :nth-child(5) { order: 1; }
-	// - Feed Name
-	> :nth-child(3) { order: 2; }
-	// - Title
-	> :nth-child(2) { order: 3; }
-	// - Date
-	> :nth-child(4) { order: 4; }
-	// - Buttons select/share/star
-	> :nth-child(1) { order: 5; }
+	&, .header {
+		// - Score and feed icon
+		> :nth-child(5) { order: 1; }
+		// - Feed Name
+		> :nth-child(3) { order: 2; }
+		// - Title
+		> :nth-child(2) { order: 3; }
+		// - Date
+		> :nth-child(4) { order: 4; }
+		// - Buttons select/share/star
+		> :nth-child(1) { order: 5; }
+	}
 
 	// Show buttons only on hover or marked
-	> :nth-child(1) { display: none; }
+	&, .header { > :nth-child(1) { display: none; } }
 	&:hover, &.marked/*stared*/, &.published, &.Selected {
-		> :nth-child(1) { display: flex; }
+		&, .header { > :nth-child(1) { display: flex; } }
 	}
 
 	// Title tweaks:
@@ -78,7 +79,9 @@ body.ttrss_main #headlines-frame .header {
 
 	// Make the full headline title height clickable (remove non-clickable space
 	// in-between titles)
-	> * { padding: 0 10px 0 0; }
+	&, .header {
+		> * { padding: 0 10px 0 0; }
+	}
 	a.title { line-height: 30px; }
 
 	// Feed name look
@@ -101,10 +104,14 @@ body.ttrss_main #headlines-frame .header {
 	}
 
 	// Highlight on hover
-	&:not(.Selected):hover { background: darken(@default-bg, 5%); }
+	&:not(.Selected):hover {
+		&, .header { background: darken(@default-bg, 5%); }
+	}
 
 	// Remove background color from Read headlines
-	&:not(.Selected) { background: @default-bg; }
+	&:not(.Selected) {
+		&, .header { background: @default-bg; }
+	}
 
 }
 
@@ -119,7 +126,7 @@ body.ttrss_main #toolbar-frame #toolbar,
 body.ttrss_main .hl {
 	border: none;
 }
-// Except Combined mode
+// ... in combined mode:
 body.ttrss_main div#headlines-frame div.cdm.expandable {
 	& { border: 1px solid @default-bg; }
 	&.active { border: 1px solid darken(@default-bg, 20%); }
