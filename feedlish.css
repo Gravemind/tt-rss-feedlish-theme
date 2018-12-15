@@ -2059,17 +2059,11 @@ body.ttrss_main #headlines-frame div[id^="RROW"] div.title a:hover,
 body.ttrss_main #headlines-frame div[id^="RROW"] span.titleWrap a:hover {
   text-decoration: none;
 }
-body.ttrss_main #headlines-frame div[id^="RROW"].hl div.title,
-body.ttrss_main #headlines-frame div[id^="RROW"]:not(.active) .header div.title,
-body.ttrss_main #headlines-frame div[id^="RROW"].hl span.titleWrap,
-body.ttrss_main #headlines-frame div[id^="RROW"]:not(.active) .header span.titleWrap {
+body.ttrss_main #headlines-frame div[id^="RROW"].hl .title,
+body.ttrss_main #headlines-frame div[id^="RROW"]:not(.active) .header .title,
+body.ttrss_main #headlines-frame div[id^="RROW"].hl .titleWrap,
+body.ttrss_main #headlines-frame div[id^="RROW"]:not(.active) .header .titleWrap {
   overflow: hidden;
-  white-space: nowrap;
-}
-body.ttrss_main #headlines-frame div[id^="RROW"].hl div.title *,
-body.ttrss_main #headlines-frame div[id^="RROW"]:not(.active) .header div.title *,
-body.ttrss_main #headlines-frame div[id^="RROW"].hl span.titleWrap *,
-body.ttrss_main #headlines-frame div[id^="RROW"]:not(.active) .header span.titleWrap * {
   white-space: nowrap;
 }
 body.ttrss_main #headlines-frame div[id^="RROW"].hl > *,
