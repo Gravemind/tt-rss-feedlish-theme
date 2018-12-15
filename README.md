@@ -36,3 +36,9 @@ If tt-rss's default theme changes, the `.css` and `.css.map` needs to be
 regenerated:
 - install `lessc` (`pacman -S nodejs-less`, `dnf install nodejs-less nodejs-source-map`, ...)
 - run `make` here
+
+### Screenshots
+
+![feedlish](./screenshots/feedlish.png)
+
+![feedlish-night](./screenshots/feedlish-night.png)
