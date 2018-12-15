@@ -174,13 +174,13 @@ body.ttrss_main {
 	// Main panel sides
 	#toolbar-frame,
 	#headlines-frame,
-	// Article panel sides
+	// Post panel sides
 	#content-insert .post > div,
+	// Expanded post in combined mode
+	.cdm.expandable div.content,
 	// Feed tree panel sides
 	#feedTree > .dijitTreeContainer > div {
 		padding-left: @panels-padding;
 		padding-right: @panels-padding;
 	}
-	// Combined expandable content
-	.cdm.expandable div.content { padding: @panels-padding; }
 }
