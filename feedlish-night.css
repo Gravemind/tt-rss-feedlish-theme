@@ -128,11 +128,11 @@ body.ttrss_main hr {
   border-bottom-width: 1px;
 }
 body.ttrss_main a {
-  color: #5b4;
+  color: #257aa7;
   text-decoration: none;
 }
 body.ttrss_main a:hover {
-  color: #337029;
+  color: #133d54;
   text-decoration: underline;
 }
 body.ttrss_main #notify.visible {
@@ -173,11 +173,11 @@ body.ttrss_main .notify.notify_progress {
   background-color: #fff7d5;
 }
 body.ttrss_main .notify.notify_info {
-  border-color: #fffad4;
-  background-color: #ffffff;
+  border-color: #257aa7;
+  background-color: #d5ebf6;
 }
 body.ttrss_main .notify.notify_info i.icon-notify {
-  color: #fffad4;
+  color: #257aa7;
 }
 body.ttrss_main .notify.notify_error {
   background-color: #c00;
@@ -246,7 +246,7 @@ body.ttrss_main .hl span.feed a {
   color: #555;
 }
 body.ttrss_main .hl span.feed a:hover {
-  color: #fffad4;
+  color: #257aa7;
 }
 body.ttrss_main .hl span.updated {
   color: #555;
@@ -284,16 +284,16 @@ body.ttrss_main .hl.Unread div.title a {
   color: black;
 }
 body.ttrss_main .hl.active div.title a {
-  color: #fffad4;
+  color: #257aa7;
   /* text-shadow : 1px 1px 2px #fff; */
 }
 body.ttrss_main .hl.active {
-  background: #fffad4 ! important;
+  background: #257aa7 ! important;
 }
 body.ttrss_main .hl.active,
 body.ttrss_main .hl.Selected {
   color: white;
-  background: #faf6d9;
+  background: #3f728e;
 }
 body.ttrss_main .hl.active a,
 body.ttrss_main .hl.Selected a,
@@ -568,7 +568,7 @@ body.ttrss_main div#cmdline {
   color: #555;
   font-weight: bold;
   background-color: white;
-  border: 1px solid #fffad4;
+  border: 1px solid #257aa7;
   padding: 3px 5px 3px 5px;
   z-index: 5;
 }
@@ -623,9 +623,9 @@ body.ttrss_main #feeds-holder #feedTree .counterNode {
   display: inline-block;
   font-size: 9px;
   text-align: center;
-  border: 1px solid #fffdee;
+  border: 1px solid #2a89bc;
   color: white;
-  background: #fffdee;
+  background: #2a89bc;
   border-radius: 4px;
   vertical-align: middle;
   float: right;
@@ -685,7 +685,7 @@ body.ttrss_main #feeds-holder #feedTree i.icon.icon-whatshot {
 body.ttrss_main #feeds-holder #feedTree i.icon.icon-restore {
   font-weight: bold;
   left: -3px;
-  color: #fffad4;
+  color: #257aa7;
 }
 body.ttrss_main #headlines-wrap-inner {
   padding: 0px;
@@ -701,7 +701,7 @@ body.ttrss_main #headlines-frame {
   -webkit-backface-visibility: hidden;
 }
 body.ttrss_main #headlines-frame div.feed-title {
-  border: 0px solid #5b4;
+  border: 0px solid #257aa7;
   border-bottom-width: 1px;
   padding: 5px 8px;
 }
@@ -713,7 +713,7 @@ body.ttrss_main #headlines-frame div.feed-title a {
   color: #555;
 }
 body.ttrss_main #headlines-frame div.feed-title a:hover {
-  color: #5b4;
+  color: #257aa7;
 }
 body.ttrss_main #toolbar-frame_splitter {
   display: none;
@@ -782,7 +782,7 @@ body.ttrss_main #toolbar-frame #toolbar #selected_prompt {
   font-style: italic;
   text-align: right;
   margin-right: 4px;
-  color: #fffad4;
+  color: #257aa7;
 }
 @media (max-width: 992px) {
   body.ttrss_main #toolbar-frame #toolbar #selected_prompt {
@@ -853,7 +853,7 @@ body.ttrss_main #headlines-spacer span {
   display: block;
 }
 body.ttrss_main #headlines-spacer a:hover {
-  color: #fffad4;
+  color: #257aa7;
 }
 body.ttrss_main ul#filterDlg_Matches,
 body.ttrss_main ul#filterDlg_Actions {
@@ -883,7 +883,7 @@ body.ttrss_main ul.hotkeys-help li.desc {
   flex-grow: 2;
 }
 body.ttrss_main ul.hotkeys-help .hk {
-  color: #fffad4;
+  color: #257aa7;
   width: 100px;
 }
 body.ttrss_main ul.hotkeys-help h3 {
@@ -936,7 +936,7 @@ body.ttrss_login label {
   color: gray;
 }
 body.ttrss_login div.header {
-  border: 0px solid #fffad4;
+  border: 0px solid #257aa7;
   border-bottom-width: 1px;
   margin-bottom: 1em;
   padding-bottom: 5px;
@@ -944,7 +944,7 @@ body.ttrss_login div.header {
 body.ttrss_login div.footer {
   margin-top: 1em;
   padding-top: 5px;
-  border: 0px solid #fffad4;
+  border: 0px solid #257aa7;
   border-top-width: 1px;
   text-align: center;
   color: gray;
@@ -956,19 +956,19 @@ body.ttrss_login a.forgotpass {
   display: inline-block;
 }
 body.ttrss_login a {
-  color: #fffad4;
+  color: #257aa7;
   text-decoration: none;
 }
 body.ttrss_login a:hover,
 body.ttrss_login a:focus {
-  color: #fffad4;
+  color: #257aa7;
   text-decoration: underline;
 }
 body.ttrss_login div.footer a {
   color: gray;
 }
 body.ttrss_login div.footer a:hover {
-  color: #fffad4;
+  color: #257aa7;
 }
 body.ttrss_login div.row {
   padding: 0px 0px 5px 0px;
@@ -1049,17 +1049,17 @@ body.ttrss_main #prefFilterTestResultList .title {
   font-weight: bold;
 }
 body.ttrss_main #prefFilterTestResultList .feed {
-  color: #fffad4;
+  color: #257aa7;
 }
 ::selection {
-  background: #fffad4;
+  background: #257aa7;
   color: white;
 }
 ::-webkit-scrollbar {
   width: 4px;
 }
 ::-webkit-scrollbar-thumb {
-  background-color: #fffad4;
+  background-color: #257aa7;
 }
 ::-webkit-scrollbar-track {
   background-color: #eee;
@@ -1176,7 +1176,7 @@ div.cdm.expanded.active {
   background: white;
 }
 div.cdm.expanded.active div.header a.title {
-  color: #5b4;
+  color: #257aa7;
 }
 div.cdm.expanded.Unread div.header a.title {
   color: black;
@@ -1194,7 +1194,7 @@ div.cdm.vgrlf .feed {
   display: none;
 }
 .cdm div.feed-title {
-  border: 0px solid #5b4;
+  border: 0px solid #257aa7;
   border-bottom-width: 1px;
   padding: 5px 3px 5px 5px;
 }
@@ -1206,7 +1206,7 @@ div.cdm.vgrlf .feed {
   color: #555;
 }
 .cdm div.feed-title a:hover {
-  color: #5b4;
+  color: #257aa7;
 }
 .cdm div.header span.feed {
   float: right;
@@ -1343,7 +1343,7 @@ div#floatingTitle .feed-title a.catchup {
   white-space: nowrap;
 }
 div#floatingTitle .feed-title a.catchup:hover {
-  color: #5b4;
+  color: #257aa7;
 }
 div#floatingTitle.Unread a.title {
   color: black;
@@ -1372,7 +1372,7 @@ div#floatingTitle.Unread a.title {
   background: white;
 }
 .cdm.expandable.Selected:not(.active) {
-  background: #faf6d9;
+  background: #3f728e;
 }
 .cdm.expandable.Selected:not(.active) a,
 .cdm.expandable.Selected:not(.active) .header a.title,
@@ -1397,14 +1397,14 @@ div.cdm.expandable.Unread div.header a.title {
   color: black;
 }
 div.cdm.expandable.active .collapse i {
-  color: #fffad4;
+  color: #257aa7;
   cursor: pointer;
 }
 div.cdm.expandable.active .excerpt {
   display: none;
 }
 div.cdm.expandable.active div.header a.title {
-  color: #5b4;
+  color: #257aa7;
   font-size: 16px;
   font-weight: 600;
   text-rendering: optimizelegibility;
@@ -1461,7 +1461,7 @@ body.ttrss_prefs .dijitDialog #pref-profiles-list .dijitInlineEditBoxDisplayMode
 body.ttrss_prefs tr.title td {
   border: 0px solid #ecf4ff;
   border-bottom-width: 1px;
-  color: #5b4;
+  color: #257aa7;
 }
 body.ttrss_prefs .prefPrefsList td {
   padding-bottom: 4px;
@@ -1558,12 +1558,12 @@ body.ttrss_utility .floatingLogo {
   display: none;
 }
 body.ttrss_utility a {
-  color: #5b4;
+  color: #257aa7;
   text-decoration: none;
 }
 body.ttrss_utility a:hover,
 body.ttrss_utility a:focus {
-  color: #337029;
+  color: #133d54;
   text-decoration: underline;
 }
 body.ttrss_utility .alert {
@@ -1617,13 +1617,13 @@ body.ttrss_utility .alert-info h4 {
   color: #3a87ad;
 }
 body.ttrss_utility h1 {
-  color: #fffad4;
+  color: #257aa7;
   font-size: 32px;
   margin: 20px 0px 5px 0px;
   text-shadow: 0 0 6px #fff;
 }
 body.ttrss_utility h2 {
-  color: #fffad4;
+  color: #257aa7;
   font-size: 14pt;
   border-width: 0px 0px 1px 0px;
   border-color: #f0f0f0;
@@ -1743,7 +1743,7 @@ body#sharepopup {
 body#sharepopup h1 {
   font-size: 14px;
   margin: 0px;
-  color: #fffad4;
+  color: #257aa7;
 }
 body#sharepopup form {
   height: 100%;
@@ -1781,7 +1781,7 @@ body#sharepopup input {
   font-size: 13px;
 }
 .flat .dijitMenu .dijitMenuItem.dijitDisabled:not(.dijitMenuItemSelected) .dijitMenuItemLabel {
-  color: #ffffff;
+  color: #2e99d1;
 }
 .flat .dijitMenu .dijitMenuItem td {
   padding: 0px;
@@ -1796,7 +1796,7 @@ body#sharepopup input {
 }
 .flat .dijitTab i.material-icons,
 .flat .dijitAccordionInnerContainer:not(.dijitSelected) i.material-icons {
-  color: #fffad4;
+  color: #257aa7;
 }
 .flat .dijitTree .dijitFolderClosed,
 .flat .dijitTree .dijitFolderOpened {
@@ -1806,7 +1806,7 @@ body#sharepopup input {
   color: white;
 }
 .flat .dijitTree .dijitTreeRowSelected .dijitTreeExpando {
-  color: #fffad4;
+  color: #257aa7;
 }
 .flat .dijitTree .dijitTreeNode .dijitTreeRow.dijitTreeRowSelected {
   color: white;
@@ -1999,29 +1999,6 @@ body.ttrss_zoom div.post div.content pre {
   max-width: 98%;
   overflow: auto;
 }
-body.ttrss_main .hl.active,
-body.ttrss_main .hl.Selected {
-  color: #555;
-}
-body.ttrss_main .hl.active a,
-body.ttrss_main .hl.Selected a,
-body.ttrss_main .hl.active .feed a,
-body.ttrss_main .hl.Selected .feed a,
-body.ttrss_main .hl.active .hl-content a.title,
-body.ttrss_main .hl.Selected .hl-content a.title,
-body.ttrss_main .hl.active span,
-body.ttrss_main .hl.Selected span {
-  color: #555;
-}
-body.ttrss_main .title a {
-  color: #555;
-}
-body.ttrss_main #headlines-spacer a:hover {
-  color: #555;
-}
-::selection {
-  color: black;
-}
 body.ttrss_main #headlines-frame .hl,
 body.ttrss_main #headlines-frame .header {
   background: white;
@@ -2060,6 +2037,13 @@ body.ttrss_main #headlines-frame .hl.Selected > :nth-child(1),
 body.ttrss_main #headlines-frame .header.Selected > :nth-child(1) {
   display: flex;
 }
+body.ttrss_main #headlines-frame .hl div.title,
+body.ttrss_main #headlines-frame .header div.title,
+body.ttrss_main #headlines-frame .hl span.titleWrap,
+body.ttrss_main #headlines-frame .header span.titleWrap {
+  overflow: hidden;
+  white-space: nowrap;
+}
 body.ttrss_main #headlines-frame .hl div.title .label,
 body.ttrss_main #headlines-frame .header div.title .label,
 body.ttrss_main #headlines-frame .hl span.titleWrap .label,
@@ -2093,6 +2077,20 @@ body.ttrss_main #headlines-frame .hl span.titleWrap a:hover,
 body.ttrss_main #headlines-frame .header span.titleWrap a:hover {
   text-decoration: none;
 }
+body.ttrss_main #headlines-frame .hl div.title *,
+body.ttrss_main #headlines-frame .header div.title *,
+body.ttrss_main #headlines-frame .hl span.titleWrap *,
+body.ttrss_main #headlines-frame .header span.titleWrap * {
+  white-space: nowrap;
+}
+body.ttrss_main #headlines-frame .hl > *,
+body.ttrss_main #headlines-frame .header > * {
+  padding: 0 10px 0 0;
+}
+body.ttrss_main #headlines-frame .hl a.title,
+body.ttrss_main #headlines-frame .header a.title {
+  line-height: 30px;
+}
 body.ttrss_main #headlines-frame .hl .feed a,
 body.ttrss_main #headlines-frame .header .feed a {
   font-size: 11px;
@@ -2102,7 +2100,7 @@ body.ttrss_main #headlines-frame .header .feed a {
 }
 body.ttrss_main #headlines-frame .hl .feed,
 body.ttrss_main #headlines-frame .header .feed {
-  width: 120px;
+  min-width: 120px;
 }
 body.ttrss_main #headlines-frame .hl .feed a,
 body.ttrss_main #headlines-frame .header .feed a {
@@ -2110,16 +2108,6 @@ body.ttrss_main #headlines-frame .header .feed a {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-}
-body.ttrss_main #headlines-frame .hl > *,
-body.ttrss_main #headlines-frame .header > * {
-  padding: 0 10px 0 0;
-}
-body.ttrss_main #headlines-frame .hl a.title,
-body.ttrss_main #headlines-frame .header a.title {
-  display: inline-block;
-  padding-top: 6px;
-  padding-bottom: 6px;
 }
 body.ttrss_main #headlines-frame .hl:hover,
 body.ttrss_main #headlines-frame .header:hover {
@@ -2174,9 +2162,6 @@ body.ttrss_main #content-insert .post > div,
 body.ttrss_main #feedTree > .dijitTreeContainer > div {
   padding-left: 20px;
   padding-right: 20px;
-}
-.dijitMenuItem.dijitDisabled .dijitMenuItemLabel {
-  color: #888888 ! important;
 }
 body {
   filter: hue-rotate(180deg) invert(100%) contrast(70%) brightness(80%);
