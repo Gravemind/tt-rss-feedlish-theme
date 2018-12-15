@@ -1,40 +1,13 @@
 @import "../css/default.less";
 
-// Override base colors
-@color-accent: #fffad4;
-@color-accent-light: lighten(@color-accent, 50%);
-@color-link: #5b4;
+// FIXME: Feedly's light #fffad4 @color-accent doesn't play well with
+// default.less: it is used a lot with white/light colors.
+
 @color-panel-bg: #eeeeee;
 @border-default : @color-panel-bg;
 
 // Inner padding of panels/frames
 @panels-padding: 20px;
-
-// Change some text colors
-// css/tt-rss.less:336
-body.ttrss_main {
-	.hl.active,
-	.hl.Selected {
-		color : @default-text;
-		a,
-		.feed a,
-		.hl-content a.title,
-		span {
-			color : @default-text;
-		}
-	}
-	.title a {
-		color : @default-text;
-	}
-	#headlines-spacer {
-		a:hover {
-			color : @default-text;
-		}
-	}
-}
-::selection {
-	color: black;
-}
 
 // Tweak headlines:
 body.ttrss_main #headlines-frame .hl,
@@ -188,9 +161,4 @@ body.ttrss_main #content-insert .post > div,
 body.ttrss_main #feedTree > .dijitTreeContainer > div {
 	padding-left: @panels-padding;
 	padding-right: @panels-padding;
-}
-
-// Fix menus colors
-.dijitMenuItem.dijitDisabled .dijitMenuItemLabel {
-	color: lighten(@default-text, 20%) ! important;
 }
