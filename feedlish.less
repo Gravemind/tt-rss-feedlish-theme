@@ -9,129 +9,130 @@
 // Inner padding of panels/frames
 @panels-padding: 20px;
 
-// Tweak headlines:
-body.ttrss_main #headlines-frame div[id^="RROW"] {
-
-	// Change headline elements order:
-	&.hl, & .header {
-		// - Score and feed icon
-		> :nth-child(5) { order: 1; }
-		// - Feed Name
-		> :nth-child(3) { order: 2; }
-		// - Title
-		> :nth-child(2) { order: 3; }
-		// - Date
-		> :nth-child(4) { order: 4; }
-		// - Buttons select/share/star
-		> :nth-child(1) { order: 5; }
-	}
-
-	// Show buttons only on hover or marked
-	&.hl, & .header { > :nth-child(1) { display: none; } }
-	&:hover, &.marked, &.published, &.Selected {
-		&.hl, & .header { > :nth-child(1) { display: flex; } }
-	}
-
-	// Title tweaks:
-	div.title, span.titleWrap {
-
-		// // Move labels in front of title
-		// // FIXME: float left is not ideal: when title it wrapped, label is at the end.
-		// .label {
-		// 	margin-left: 0px;
-		// 	margin-right: 0px;
-		// 	float: left;
-		// 	margin-right: 4px;
-		// }
-
-		// Tweak label look
-		.label {
-			font-size: 11px;
-			padding: 1px 6px;
-			border-radius: 99px;
-		}
-		.label > i {
-			display: none;
-		}
-
-		// Tweak font
-		a {
-			opacity: 0.8; // easier than re-writing all the colors
-		}
-
-		// Keep the same font size when combined expanded or not
-		a { font-size: 14px ! important; }
-
-		// Hide author
-		.author { display: none; }
-
-		// Remove hover underline
-		a:hover { text-decoration: none; }
-
-	}
-
-	// Do not wrap title
-	&.hl, &:not(.active) .header {
-		.title, .titleWrap {
-			overflow: hidden;
-			white-space: nowrap;
-		}
-	}
-
-	// Make the full headline title height clickable (remove non-clickable space
-	// in-between titles)
-	&.hl, & .header {
-		> * { padding: 0 10px 0 0; }
-	}
-	a.title {
-		// line-height sets the height, but we need padding to get it clickable
-		line-height: 30px;
-		padding: 6px 0;
-	}
-
-	// Feed name look
-	.feed a {
-		font-size: 11px;
-		padding: 1px 6px;
-		border-radius: 99px;
-		font-style: normal;
-	}
-
-	// Feed name fixed width
-	.feed {
-		min-width: 120px;
-	}
-	.feed a {
-		max-width: 110px;
-		white-space: nowrap;
-		overflow: hidden;
-		text-overflow: ellipsis;
-	}
-	// FIXME: remove .feed when a is empty
-	.feed a:empty {
-		display: none;
-	}
-
-	// Highlight on hover
-	&:not(.Selected):hover {
-		&.hl, & .header { background: darken(@default-bg, 5%); }
-	}
-
-	// Remove background color from Read headlines
-	&:not(.Selected) {
-		&.hl, & .header { background: @default-bg; }
-	}
-
-}
-
 // Disable all animations/transitions
 * { transition: none ! important; }
 
-// Show feed name in headlines, even in wide screen mode
-body.ttrss_main div#headlines-frame.wide .hl .feed { display: inline-flex; }
-
-// Tweak headlines separator border
 body.ttrss_main {
+
+	// Tweak headlines:
+	#headlines-frame div[id^="RROW"] {
+
+		// Change headline elements order:
+		&.hl, & .header {
+			// - Score and feed icon
+			> :nth-child(5) { order: 1; }
+			// - Feed Name
+			> :nth-child(3) { order: 2; }
+			// - Title
+			> :nth-child(2) { order: 3; }
+			// - Date
+			> :nth-child(4) { order: 4; }
+			// - Buttons select/share/star
+			> :nth-child(1) { order: 5; }
+		}
+
+		// Show buttons only on hover or marked
+		&.hl, & .header { > :nth-child(1) { display: none; } }
+		&:hover, &.marked, &.published, &.Selected {
+			&.hl, & .header { > :nth-child(1) { display: flex; } }
+		}
+
+		// Tweak title:
+		div.title, span.titleWrap {
+
+			// // Move labels in front of title
+			// // FIXME: float left is not ideal: when title it wrapped, label is at the end.
+			// .label {
+			// 	margin-left: 0px;
+			// 	margin-right: 0px;
+			// 	float: left;
+			// 	margin-right: 4px;
+			// }
+
+			// Tweak label look
+			.label {
+				font-size: 11px;
+				padding: 1px 6px;
+				border-radius: 99px;
+			}
+			.label > i {
+				display: none;
+			}
+
+			// Tweak font
+			a {
+				opacity: 0.8; // easier than re-writing all the colors
+			}
+
+			// Keep the same font size when combined expanded or not
+			a { font-size: 14px ! important; }
+
+			// Hide author
+			.author { display: none; }
+
+			// Remove hover underline
+			a:hover { text-decoration: none; }
+
+		} // Tweak title
+
+		// Do not wrap title
+		&.hl, &:not(.active) .header {
+			.title, .titleWrap {
+				overflow: hidden;
+				white-space: nowrap;
+			}
+		}
+
+		// Make the full headline title height clickable (remove non-clickable space
+		// in-between titles)
+		&.hl, & .header {
+			> * { padding: 0 10px 0 0; }
+		}
+		a.title {
+			// line-height sets the height, but we need padding to get it clickable
+			line-height: 30px;
+			padding: 6px 0;
+		}
+
+		// Feed name look
+		.feed a {
+			font-size: 11px;
+			padding: 1px 6px;
+			border-radius: 99px;
+			font-style: normal;
+		}
+
+		// Feed name fixed width
+		.feed {
+			min-width: 120px;
+		}
+		.feed a {
+			max-width: 110px;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
+		// FIXME: remove .feed when a is empty
+		.feed a:empty {
+			display: none;
+		}
+
+		// Highlight on hover
+		&:not(.Selected):hover {
+			&.hl, & .header { background: darken(@default-bg, 5%); }
+		}
+
+		// Remove background color from Read headlines
+		&:not(.Selected) {
+			&.hl, & .header { background: @default-bg; }
+		}
+
+	} // Tweak headlines
+
+	// Show feed name in headlines, even in wide screen mode
+	div#headlines-frame.wide .hl .feed { display: inline-flex; }
+
+	// Tweak headlines separator border
 	// - Toolbar: no border
 	#toolbar-frame #toolbar { border: none; }
 	// - Headlines: invisible border, so everyone is the same height
@@ -142,72 +143,69 @@ body.ttrss_main {
 	div#headlines-frame div.cdm.expandable.active {
 		border: 1px solid darken(@default-bg, 20%);
 	}
-}
 
-// Remove bold italic from "Click to open next unread feed"
-body.ttrss_main #headlines-spacer { font-style: normal; }
-// Re-align loading icon
-body.ttrss_main .loading img { vertical-align: middle; }
+	// Remove bold italic from "Click to open next unread feed"
+	#headlines-spacer { font-style: normal; }
+	// Re-align loading icon
+	.loading img { vertical-align: middle; }
 
-// Remove italic from "N article selected"
-body.ttrss_main #toolbar-frame #toolbar #selected_prompt {
-	font-style: normal;
-}
+	// Remove italic from "N article selected"
+	#toolbar-frame #toolbar #selected_prompt {
+		font-style: normal;
+	}
 
-// Fix the default favicon size (to match other favicons)
-body.ttrss_main i.material-icons.icon-no-feed {
-	width: 16px ! important;
-	height: 16px ! important;
-	padding: 0 ! important;
-	margin: 0px 4px  ! important;
-}
+	// Fix the default favicon size (to match other favicons)
+	i.material-icons.icon-no-feed {
+		width: 16px ! important;
+		height: 16px ! important;
+		padding: 0 ! important;
+		margin: 0px 4px  ! important;
+	}
 
-// Simpler feed tree counters (unread)
-body.ttrss_main #feeds-holder #feedTree .counterNode {
-	border: none;
-	background: none;
-	font-weight: normal;
-	color: #444;
+	// Simpler feed tree counters (unread)
+	#feeds-holder #feedTree .counterNode {
+		border: none;
+		background: none;
+		font-weight: normal;
+		color: #444;
 
-	// Re-align counters
-	min-width: unset;
-	margin-top: unset;
-	line-height: unset;
-}
-// Simpler feed tree counters (read)
-body.ttrss_main #feeds-holder #feedTree .counterNode.aux {
-	border: none;
-	background: none;
-	font-weight: normal;
-	color: #bbb;
-}
+		// Re-align counters
+		min-width: unset;
+		margin-top: unset;
+		line-height: unset;
+	}
+	// Simpler feed tree counters (read)
+	#feeds-holder #feedTree .counterNode.aux {
+		border: none;
+		background: none;
+		font-weight: normal;
+		color: #bbb;
+	}
 
-// Remove border from feed tree rows
-.dijitTreeRow { border: none ! important; }
+	// Remove border from feed tree rows
+	.dijitTreeRow { border: none ! important; }
 
-// Increase panels inner paddings
-body.ttrss_main {
-	// Toolbar top
+	// Increase panels inner paddings
+	// - Toolbar top
 	#toolbar-frame #toolbar { padding: @panels-padding 0; }
-	// Feed tree panel top
+	// - Feed tree panel top
 	#feedTree > .dijitTreeContainer > div { padding-top: @panels-padding; }
-	// Main panel sides
+	// - Main panel sides
 	#toolbar-frame,
 	#headlines-frame,
-	// Post panel sides
+	// - Post panel sides
 	#content-insert .post > div,
-	// Expanded post in combined mode
+	// - Expanded post in combined mode
 	.cdm.expandable div.content,
-	// Feed tree panel sides
+	// - Feed tree panel sides
 	#feedTree > .dijitTreeContainer > div {
 		padding-left: @panels-padding;
 		padding-right: @panels-padding;
 	}
-}
 
-// Make splitters look like part of panels
-body.ttrss_main {
+	// Make splitters look like part of panels
 	.dijitSplitter, .dijitSplitterV { background: @color-panel-bg; }
 	// Remove the border left of feed tree panel
 	#feeds-holder { box-shadow: none; }
-}
+
+} // ttrss_main
