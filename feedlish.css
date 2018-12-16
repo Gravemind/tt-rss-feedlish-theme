@@ -1999,6 +1999,9 @@ body.ttrss_zoom div.post div.content pre {
   max-width: 98%;
   overflow: auto;
 }
+* {
+  transition: none ! important;
+}
 body.ttrss_main #headlines-frame div[id^="RROW"].hl > :nth-child(5),
 body.ttrss_main #headlines-frame div[id^="RROW"] .header > :nth-child(5) {
   order: 1;
@@ -2051,10 +2054,6 @@ body.ttrss_main #headlines-frame div[id^="RROW"] div.title a,
 body.ttrss_main #headlines-frame div[id^="RROW"] span.titleWrap a {
   font-size: 14px ! important;
 }
-body.ttrss_main #headlines-frame div[id^="RROW"] div.title .author,
-body.ttrss_main #headlines-frame div[id^="RROW"] span.titleWrap .author {
-  display: none;
-}
 body.ttrss_main #headlines-frame div[id^="RROW"] div.title a:hover,
 body.ttrss_main #headlines-frame div[id^="RROW"] span.titleWrap a:hover {
   text-decoration: none;
@@ -2072,7 +2071,7 @@ body.ttrss_main #headlines-frame div[id^="RROW"] .header > * {
 }
 body.ttrss_main #headlines-frame div[id^="RROW"] a.title {
   line-height: 30px;
-  padding: 0 6px;
+  padding: 6px 0;
 }
 body.ttrss_main #headlines-frame div[id^="RROW"] .feed a {
   font-size: 11px;
@@ -2100,21 +2099,30 @@ body.ttrss_main #headlines-frame div[id^="RROW"]:not(.Selected).hl,
 body.ttrss_main #headlines-frame div[id^="RROW"]:not(.Selected) .header {
   background: white;
 }
-* {
-  transition: none ! important;
-}
 body.ttrss_main div#headlines-frame.wide .hl .feed {
   display: inline-flex;
 }
-body.ttrss_main #toolbar-frame #toolbar,
-body.ttrss_main .hl {
+body.ttrss_main #toolbar-frame #toolbar {
   border: none;
 }
+body.ttrss_main .hl,
 body.ttrss_main div#headlines-frame div.cdm.expandable {
   border: 1px solid white;
 }
+body.ttrss_main div.whiteBox {
+  border: none;
+}
 body.ttrss_main div#headlines-frame div.cdm.expandable.active {
   border: 1px solid #cccccc;
+}
+body.ttrss_main #headlines-spacer {
+  font-style: normal;
+}
+body.ttrss_main .loading img {
+  vertical-align: middle;
+}
+body.ttrss_main #toolbar-frame #toolbar #selected_prompt {
+  font-style: normal;
 }
 body.ttrss_main i.material-icons.icon-no-feed {
   width: 16px ! important;
@@ -2137,7 +2145,7 @@ body.ttrss_main #feeds-holder #feedTree .counterNode.aux {
   font-weight: normal;
   color: #bbb;
 }
-.dijitTreeRow {
+body.ttrss_main .dijitTreeRow {
   border: none ! important;
 }
 body.ttrss_main #toolbar-frame #toolbar {
@@ -2153,5 +2161,12 @@ body.ttrss_main .cdm.expandable div.content,
 body.ttrss_main #feedTree > .dijitTreeContainer > div {
   padding-left: 20px;
   padding-right: 20px;
+}
+body.ttrss_main .dijitSplitter,
+body.ttrss_main .dijitSplitterV {
+  background: #eeeeee;
+}
+body.ttrss_main #feeds-holder {
+  box-shadow: none;
 }
 /*# sourceMappingURL=feedlish.css.map */
