@@ -1,3 +1,13 @@
+
+// Hide author in headlines
+@feedlish-hide-author-in-headlines: false;
+
+// Hide score in headlines
+@feedlish-hide-score-in-headlines: false;
+
+// Inner padding of panels/frames
+@feedlish-panels-padding: 20px;
+
 @import "../css/default.less";
 
 // FIXME: Feedly's light #fffad4 @color-accent doesn't play well with
@@ -5,13 +15,6 @@
 
 @color-panel-bg: #eeeeee;
 @border-default : @color-panel-bg;
-
-// Hide author in headlines
-@hide-author-in-headlines: false;
-// Hide score in headlines
-@hide-score-in-headlines: false;
-// Inner padding of panels/frames
-@panels-padding: 20px;
 
 // Disable all animations/transitions
 * { transition: none ! important; }
@@ -72,7 +75,7 @@ body.ttrss_main {
 			a { font-size: 14px ! important; }
 
 			// Hide author
-			.author when (@hide-author-in-headlines = true)  { display: none; }
+			.author when (@feedlish-hide-author-in-headlines = true)  { display: none; }
 
 			// Remove hover underline
 			a:hover { text-decoration: none; }
@@ -132,7 +135,7 @@ body.ttrss_main {
 		}
 
 		// Hide score icon
-		.icon-score when (@hide-score-in-headlines = true) {
+		.icon-score when (@feedlish-hide-score-in-headlines = true) {
 			display: none;
 		}
 
@@ -196,9 +199,9 @@ body.ttrss_main {
 
 	// Increase panels inner paddings
 	// - Toolbar top
-	#toolbar-frame #toolbar { padding: @panels-padding 0; }
+	#toolbar-frame #toolbar { padding: @feedlish-panels-padding 0; }
 	// - Feed tree panel top
-	#feedTree > .dijitTreeContainer > div { padding-top: @panels-padding; }
+	#feedTree > .dijitTreeContainer > div { padding-top: @feedlish-panels-padding; }
 	// - Main panel sides
 	#toolbar-frame,
 	#headlines-frame,
@@ -208,8 +211,8 @@ body.ttrss_main {
 	.cdm.expandable div.content,
 	// - Feed tree panel sides
 	#feedTree > .dijitTreeContainer > div {
-		padding-left: @panels-padding;
-		padding-right: @panels-padding;
+		padding-left: @feedlish-panels-padding;
+		padding-right: @feedlish-panels-padding;
 	}
 
 	// Make splitters look like part of panels
@@ -218,3 +221,6 @@ body.ttrss_main {
 	#feeds-holder { box-shadow: none; }
 
 } // ttrss_main
+
+// Local customization in a separate file
+@import (optional) "./local.less";
