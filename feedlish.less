@@ -204,3 +204,10 @@ body.ttrss_main {
 		padding-right: @panels-padding;
 	}
 }
+
+// Make splitters look like part of panels
+body.ttrss_main {
+	.dijitSplitter, .dijitSplitterV { background: @color-panel-bg; }
+	// Remove the border left of feed tree panel
+	#feeds-holder { box-shadow: none; }
+}
