@@ -136,6 +136,8 @@ body.ttrss_main {
 	#toolbar-frame #toolbar { border: none; }
 	// - Headlines: invisible border, so everyone is the same height
 	.hl, div#headlines-frame div.cdm.expandable { border: 1px solid @default-bg; }
+	// - "Loading, please wait" or "No articles found to display" in headlines panel
+	div.whiteBox { border: none; }
 	// But, border for combined mode expanded post:
 	div#headlines-frame div.cdm.expandable.active {
 		border: 1px solid darken(@default-bg, 20%);
