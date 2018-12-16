@@ -6,6 +6,10 @@
 @color-panel-bg: #eeeeee;
 @border-default : @color-panel-bg;
 
+// Hide author in headlines
+@hide-author-in-headlines: false;
+// Hide score in headlines
+@hide-score-in-headlines: false;
 // Inner padding of panels/frames
 @panels-padding: 20px;
 
@@ -68,7 +72,7 @@ body.ttrss_main {
 			a { font-size: 14px ! important; }
 
 			// Hide author
-			.author { display: none; }
+			.author when (@hide-author-in-headlines = true)  { display: none; }
 
 			// Remove hover underline
 			a:hover { text-decoration: none; }
@@ -125,6 +129,11 @@ body.ttrss_main {
 		// Remove background color from Read headlines
 		&:not(.Selected) {
 			&.hl, & .header { background: @default-bg; }
+		}
+
+		// Hide score icon
+		.icon-score when (@hide-score-in-headlines = true) {
+			display: none;
 		}
 
 	} // Tweak headlines
