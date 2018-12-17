@@ -1,7 +1,5 @@
 ## Tiny Tiny RSS Feedlish Theme
 
-.. Work In Progress, In Development ...
-
 "Close enough" clone of [levito's tt-rss-feedly-theme](https://github.com/levito/tt-rss-feedly-theme) working on
 [Tiny Tiny RSS](https://tt-rss.org/) 18.12+.
 
