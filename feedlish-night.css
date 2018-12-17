@@ -2041,27 +2041,65 @@ body.ttrss_main #feeds-holder #feedTree .counterNode {
   margin-top: unset;
   line-height: unset;
 }
-body.ttrss_main #feeds-holder #feedTree .icon.material-icons:not(.icon-label) {
-  color: #bbbbbb ! important;
+body.ttrss_main #feeds-holder #feedTree .dijitTreeIcon,
+body.ttrss_main #feeds-holder #feedTree .dijitTreeExpando,
+body.ttrss_main #feeds-holder #feedTree .dijitTreeLabel {
+  margin-left: 8px ! important;
 }
-body.ttrss_main #feeds-holder #feedTree .dijitTreeExpando::before {
-  color: #bbbbbb ! important;
+body.ttrss_main #feeds-holder #feedTree .dijitTreeExpandoClosed {
+  width: 16px;
+  height: 16px;
+  margin: 0;
 }
-body.ttrss_main #feeds-holder #feedTree .dijitTreeExpando.dijitTreeExpandoClosed::before {
+body.ttrss_main #feeds-holder #feedTree .dijitTreeExpandoClosed::before {
   font-family: 'Material Icons';
   font-size: 18px;
   line-height: 1;
   font-style: normal;
   font-weight: normal;
+  position: absolute;
+  top: -2px;
+  left: -2px;
   content: "\e315";
 }
-body.ttrss_main #feeds-holder #feedTree .dijitTreeExpando.dijitTreeExpandoOpened::before {
+body.ttrss_main #feeds-holder #feedTree .dijitTreeExpandoOpened {
+  width: 16px;
+  height: 16px;
+  margin: 0;
+}
+body.ttrss_main #feeds-holder #feedTree .dijitTreeExpandoOpened::before {
   font-family: 'Material Icons';
   font-size: 18px;
   line-height: 1;
   font-style: normal;
   font-weight: normal;
+  position: absolute;
+  top: -2px;
+  left: -2px;
   content: "\e313";
+}
+body.ttrss_main #feeds-holder #feedTree .icon.material-icons:not(.icon-label),
+body.ttrss_main #feeds-holder #feedTree .dijitTreeExpando {
+  color: #bbbbbb ! important;
+}
+body.ttrss_main #feeds-holder #feedTree .dijitTreeExpando {
+  top: 0;
+}
+body.ttrss_main #feeds-holder #feedTree .dijitTreeContent {
+  display: inline-block;
+}
+body.ttrss_main #feeds-holder #feedTree .dijitTreeExpandoLeaf {
+  float: right;
+  top: 2px;
+}
+body.ttrss_main #feeds-holder #feedTree .dijitTreeRow[style="padding-left: 19px;"] {
+  padding-left: 24px ! important;
+}
+body.ttrss_main #feeds-holder #feedTree > .dijitTreeContainer > .dijitTreeNode > .dijitTreeNodeContainer > .dijitTreeNode:first-child {
+  margin-bottom: 20px;
+}
+body.ttrss_main #feeds-holder #feedTree > .dijitTreeContainer > .dijitTreeNode > .dijitTreeNodeContainer > .dijitTreeNode:first-child > .dijitTreeNodeContainer .dijitTreeRow {
+  padding-left: 0px !important;
 }
 body.ttrss_main #feeds-holder #feedTree .loadingExpando,
 body.ttrss_main #feeds-holder #feedTree .loadingNode {
@@ -2100,10 +2138,12 @@ body.ttrss_main #headlines-frame div[id^="RROW"] .header > :nth-child(1) {
 body.ttrss_main #headlines-frame div[id^="RROW"]:hover.hl > :nth-child(1),
 body.ttrss_main #headlines-frame div[id^="RROW"].marked.hl > :nth-child(1),
 body.ttrss_main #headlines-frame div[id^="RROW"].published.hl > :nth-child(1),
+body.ttrss_main #headlines-frame div[id^="RROW"].active.hl > :nth-child(1),
 body.ttrss_main #headlines-frame div[id^="RROW"].Selected.hl > :nth-child(1),
 body.ttrss_main #headlines-frame div[id^="RROW"]:hover .header > :nth-child(1),
 body.ttrss_main #headlines-frame div[id^="RROW"].marked .header > :nth-child(1),
 body.ttrss_main #headlines-frame div[id^="RROW"].published .header > :nth-child(1),
+body.ttrss_main #headlines-frame div[id^="RROW"].active .header > :nth-child(1),
 body.ttrss_main #headlines-frame div[id^="RROW"].Selected .header > :nth-child(1) {
   display: flex;
 }
@@ -2196,7 +2236,7 @@ body.ttrss_main i.material-icons.icon-no-feed {
   margin: 0px 4px  ! important;
 }
 body {
-  filter: hue-rotate(180deg) invert(100%) contrast(70%) brightness(80%);
+  filter: hue-rotate(180deg) invert(100%) brightness(80%) contrast(75%);
   -webkit-font-smoothing: antialiased;
 }
 html {
