@@ -29,12 +29,108 @@
 	content: @codepoint;
 }
 
-// Disable all animations/transitions
+// Disable most of animations/transitions
+// FIXME: it doesn't remove the feed tree fold/unfold animation
 * { transition: none ! important; }
 
 body.ttrss_main {
 
-	// Tweak headlines:
+	//
+	// General
+	//
+
+	// Increase all panels inner paddings
+	// - Toolbar top
+	#toolbar-frame #toolbar { padding: @feedlish-panels-padding 0; }
+	// - Feed tree panel top
+	#feedTree > .dijitTreeContainer > div { padding-top: @feedlish-panels-padding; }
+	// - Main panel sides
+	#toolbar-frame,
+	#headlines-frame,
+	// - Post panel sides
+	#content-insert .post > div,
+	// - Expanded post in combined mode
+	.cdm.expandable div.content,
+	// - Feed tree panel sides
+	#feedTree > .dijitTreeContainer > div {
+		padding-left: @feedlish-panels-padding;
+		padding-right: @feedlish-panels-padding;
+	}
+
+	// Make splitters look like part of panels
+	.dijitSplitter, .dijitSplitterV { background: @color-panel-bg; }
+
+	//
+	// Feed Tree Frame
+	//
+
+	// Remove the border between the feed tree and headlines panel
+	#feeds-holder { box-shadow: none; }
+
+	// Tweak feed tree
+	#feeds-holder #feedTree {
+
+		// Remove border from rows
+		.dijitTreeRow { border: none ! important; }
+
+		// Simpler counter (unread)
+		.counterNode {
+			border: none;
+			background: none;
+			font-weight: normal;
+			color: #444;
+		}
+		// Simpler counter (read)
+		.counterNode.aux {
+			border: none;
+			background: none;
+			font-weight: normal;
+			color: #bbb;
+		}
+
+		// Re-align counters
+		.counterNode {
+			min-width: unset;
+			margin-top: unset;
+			line-height: unset;
+		}
+
+		// Tweak special icons
+		.icon.material-icons:not(.icon-label) {
+			color: @feedlish-feedtree-icons-color ! important;
+		}
+		// Tweak tree arrow icons
+		.dijitTreeExpando::before {
+			color: @feedlish-feedtree-icons-color ! important;
+		}
+		.dijitTreeExpando.dijitTreeExpandoClosed::before {
+			.feedlish-material-icon("\e315"); // keyboard_arrow_right
+		}
+		.dijitTreeExpando.dijitTreeExpandoOpened::before {
+			.feedlish-material-icon("\e313"); // keyboard_arrow_down
+		}
+
+		// Lighten loading wheel color
+		.loadingExpando { opacity: 0.4; }
+	}
+
+	//
+	// Toolbar Frame
+	//
+
+	// Remove italic from "N article selected" in toolbar
+	#toolbar-frame #toolbar #selected_prompt {
+		font-style: normal;
+	}
+
+	// Remove toolbar border
+	#toolbar-frame #toolbar { border: none; }
+
+	//
+	// Headlines Frame
+	//
+
+	// Tweak headline content
 	#headlines-frame div[id^="RROW"] {
 
 		// Change headline elements order:
@@ -60,15 +156,6 @@ body.ttrss_main {
 		// Tweak title:
 		div.title, span.titleWrap {
 
-			// // Move labels in front of title
-			// // FIXME: float left is not ideal: when title it wrapped, label is at the end.
-			// .label {
-			// 	margin-left: 0px;
-			// 	margin-right: 0px;
-			// 	float: left;
-			// 	margin-right: 4px;
-			// }
-
 			// Tweak label look
 			.label {
 				font-size: 11px;
@@ -88,14 +175,16 @@ body.ttrss_main {
 			a { font-size: 14px ! important; }
 
 			// Hide author
-			.author when (@feedlish-hide-author-in-headlines = true)  { display: none; }
+			.author when (@feedlish-hide-author-in-headlines = true) {
+				display: none;
+			}
 
 			// Remove hover underline
 			a:hover { text-decoration: none; }
 
 		} // Tweak title
 
-		// Do not wrap title
+		// Do not wrap title (except when active)
 		&.hl, &:not(.active) .header {
 			.title, .titleWrap {
 				overflow: hidden;
@@ -152,19 +241,17 @@ body.ttrss_main {
 			display: none;
 		}
 
-	} // Tweak headlines
+	} // Tweak headline content
 
 	// Show feed name in headlines, even in wide screen mode
 	div#headlines-frame.wide .hl .feed { display: inline-flex; }
 
-	// Tweak headlines separator border
-	// - Toolbar: no border
-	#toolbar-frame #toolbar { border: none; }
+	// Remove separator border for:
 	// - Headlines: invisible border, so everyone is the same height
 	.hl, div#headlines-frame div.cdm.expandable { border: 1px solid @default-bg; }
 	// - "Loading, please wait" or "No articles found to display" in headlines panel
 	div.whiteBox { border: none; }
-	// But, border for combined mode expanded post:
+	// But, keep border for combined mode expanded post:
 	div#headlines-frame div.cdm.expandable.active {
 		border: 1px solid darken(@default-bg, 20%);
 	}
@@ -174,11 +261,6 @@ body.ttrss_main {
 	// Re-align loading icon
 	.loading img { vertical-align: middle; }
 
-	// Remove italic from "N article selected"
-	#toolbar-frame #toolbar #selected_prompt {
-		font-style: normal;
-	}
-
 	// Fix the default favicon size (to match other favicons)
 	i.material-icons.icon-no-feed {
 		width: 16px ! important;
@@ -186,73 +268,6 @@ body.ttrss_main {
 		padding: 0 ! important;
 		margin: 0px 4px  ! important;
 	}
-
-	// Simpler feed tree counters (unread)
-	#feeds-holder #feedTree .counterNode {
-		border: none;
-		background: none;
-		font-weight: normal;
-		color: #444;
-
-		// Re-align counters
-		min-width: unset;
-		margin-top: unset;
-		line-height: unset;
-	}
-	// Simpler feed tree counters (read)
-	#feeds-holder #feedTree .counterNode.aux {
-		border: none;
-		background: none;
-		font-weight: normal;
-		color: #bbb;
-	}
-
-	// Remove border from feed tree rows
-	.dijitTreeRow { border: none ! important; }
-
-	// Increase panels inner paddings
-	// - Toolbar top
-	#toolbar-frame #toolbar { padding: @feedlish-panels-padding 0; }
-	// - Feed tree panel top
-	#feedTree > .dijitTreeContainer > div { padding-top: @feedlish-panels-padding; }
-	// - Main panel sides
-	#toolbar-frame,
-	#headlines-frame,
-	// - Post panel sides
-	#content-insert .post > div,
-	// - Expanded post in combined mode
-	.cdm.expandable div.content,
-	// - Feed tree panel sides
-	#feedTree > .dijitTreeContainer > div {
-		padding-left: @feedlish-panels-padding;
-		padding-right: @feedlish-panels-padding;
-	}
-
-	// Make splitters look like part of panels
-	.dijitSplitter, .dijitSplitterV { background: @color-panel-bg; }
-	// Remove the border left of feed tree panel
-	#feeds-holder { box-shadow: none; }
-
-	// Tweak feed tree icons
-	#feedTree {
-		// Tweak special icons
-		.icon.material-icons:not(.icon-label) {
-			color: @feedlish-feedtree-icons-color ! important;
-		}
-		// Tweak tree arrow icons
-		.dijitTreeExpando::before {
-			color: @feedlish-feedtree-icons-color ! important;
-		}
-		.dijitTreeExpando.dijitTreeExpandoClosed::before {
-			.feedlish-material-icon("\e315"); // keyboard_arrow_right
-		}
-		.dijitTreeExpando.dijitTreeExpandoOpened::before {
-			.feedlish-material-icon("\e313"); // keyboard_arrow_down
-		}
-		// Lighten loading wheel color
-		.loadingExpando { opacity: 0.4; }
-	}
-
 
 } // ttrss_main
 
