@@ -21,12 +21,20 @@
 
 // See codepoint at /tt-rss/lib/iconfont/codepoints
 .feedlish-material-icon(@codepoint) {
-	font-family: 'Material Icons';
-	font-size: 18px;
-	line-height: 1;
-	font-style: normal;
-	font-weight: normal;
-	content: @codepoint;
+	width: 16px; // same size as flat-icon size
+	height: 16px;
+	margin: 0;
+	&::before {
+		font-family: 'Material Icons';
+		font-size: 18px;
+		line-height: 1;
+		font-style: normal;
+		font-weight: normal;
+		position: absolute;
+		top: -2px;
+		left: -2px;
+		content: @codepoint;
+	}
 }
 
 // Disable most of animations/transitions
@@ -70,7 +78,7 @@ body.ttrss_main {
 	// Tweak feed tree
 	#feeds-holder #feedTree {
 
-		// Remove border from rows
+		// Remove border around rows
 		.dijitTreeRow { border: none ! important; }
 
 		// Simpler counter (unread)
@@ -93,22 +101,55 @@ body.ttrss_main {
 			line-height: unset;
 		}
 
-		// Tweak special icons
-		.icon.material-icons:not(.icon-label) {
-			color: @feedlish-feedtree-icons-color ! important;
+		// Increase space around feed icon and name
+		.dijitTreeIcon, .dijitTreeExpando,
+		.dijitTreeLabel {
+			margin-left: 8px ! important;
 		}
-		// Tweak tree arrow icons
-		.dijitTreeExpando::before {
-			color: @feedlish-feedtree-icons-color ! important;
-		}
-		.dijitTreeExpando.dijitTreeExpandoClosed::before {
+
+		// Change arrow icons
+		.dijitTreeExpandoClosed {
 			.feedlish-material-icon("\e315"); // keyboard_arrow_right
 		}
-		.dijitTreeExpando.dijitTreeExpandoOpened::before {
+		.dijitTreeExpandoOpened {
 			.feedlish-material-icon("\e313"); // keyboard_arrow_down
 		}
 
-		// Lighten loading gifs
+		// Make icons gray
+		.icon.material-icons:not(.icon-label),
+		.dijitTreeExpando {
+			color: @feedlish-feedtree-icons-color ! important;
+		}
+
+		// Fix tree icon vertical alignment
+		.dijitTreeExpando { top: 0; }
+
+		// Ignore a whitespace between icon and name in non-specials
+		.dijitTreeContent { display: inline-block; }
+
+		// Move loading wheel GIF to the right
+		.dijitTreeExpandoLeaf {
+			float: right;
+			top: 2px;
+		}
+		// And re-align row
+		.dijitTreeRow[style="padding-left: 19px;"] {
+			padding-left: 24px ! important;
+		}
+
+		// Specials groups
+		> .dijitTreeContainer > .dijitTreeNode > .dijitTreeNodeContainer > .dijitTreeNode:first-child {
+
+			// Add space after Specials group
+			& { margin-bottom: @feedlish-panels-padding; }
+
+			// Remove Specials indentation
+			> .dijitTreeNodeContainer .dijitTreeRow {
+				padding-left: 0px !important;
+			}
+		}
+
+		// Lighten loading GIFs
 		.loadingExpando, .loadingNode { opacity: 0.4; }
 	}
 
