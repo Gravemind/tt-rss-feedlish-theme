@@ -8,13 +8,26 @@
 // Inner padding of panels/frames
 @feedlish-panels-padding: 20px;
 
+// Color of feed tree icons
+@feedlish-feedtree-icons-color: lighten(@default-text, 40%);
+
 @import "../css/default.less";
 
 // FIXME: Feedly's light #fffad4 @color-accent doesn't play well with
 // default.less: it is used a lot with white/light colors.
 
 @color-panel-bg: #eeeeee;
-@border-default : @color-panel-bg;
+@border-default: @color-panel-bg;
+
+// See codepoint at /tt-rss/lib/iconfont/codepoints
+.feedlish-material-icon(@codepoint) {
+	font-family: 'Material Icons';
+	font-size: 18px;
+	line-height: 1;
+	font-style: normal;
+	font-weight: normal;
+	content: @codepoint;
+}
 
 // Disable all animations/transitions
 * { transition: none ! important; }
@@ -219,6 +232,27 @@ body.ttrss_main {
 	.dijitSplitter, .dijitSplitterV { background: @color-panel-bg; }
 	// Remove the border left of feed tree panel
 	#feeds-holder { box-shadow: none; }
+
+	// Tweak feed tree icons
+	#feedTree {
+		// Tweak special icons
+		.icon.material-icons:not(.icon-label) {
+			color: @feedlish-feedtree-icons-color ! important;
+		}
+		// Tweak tree arrow icons
+		.dijitTreeExpando::before {
+			color: @feedlish-feedtree-icons-color ! important;
+		}
+		.dijitTreeExpando.dijitTreeExpandoClosed::before {
+			.feedlish-material-icon("\e315"); // keyboard_arrow_right
+		}
+		.dijitTreeExpando.dijitTreeExpandoOpened::before {
+			.feedlish-material-icon("\e313"); // keyboard_arrow_down
+		}
+		// Lighten loading wheel color
+		.loadingExpando { opacity: 0.4; }
+	}
+
 
 } // ttrss_main
 
