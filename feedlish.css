@@ -2006,6 +2006,9 @@ body.ttrss_main,
 div.cdm.active div.content {
   color: #444;
 }
+html {
+  background: #fff;
+}
 .flat .dijitContentPane,
 body.ttrss_main #toolbar-frame #toolbar {
   background-color: #fff;
@@ -2177,6 +2180,7 @@ body.ttrss_main #headlines-frame div[id^="RROW"] span.titleWrap .label > i {
 body.ttrss_main #headlines-frame div[id^="RROW"] div.title a,
 body.ttrss_main #headlines-frame div[id^="RROW"] span.titleWrap a {
   font-size: 14px !important;
+  line-height: 2em;
 }
 body.ttrss_main #headlines-frame div[id^="RROW"] div.title a:hover,
 body.ttrss_main #headlines-frame div[id^="RROW"] span.titleWrap a:hover {
@@ -2234,20 +2238,47 @@ body.ttrss_main #headlines-frame div[id^="RROW"].active .header {
 body.ttrss_main #headlines-frame div[id^="RROW"].cdm {
   background: none !important;
 }
-body.ttrss_main #headlines-frame div[id^="RROW"].hl .title,
-body.ttrss_main #headlines-frame div[id^="RROW"]:not(.active) .header .title,
+body.ttrss_main #headlines-frame div[id^="RROW"].hl div.title,
+body.ttrss_main #headlines-frame div[id^="RROW"]:not(.active) .header div.title,
 body.ttrss_main #headlines-frame div[id^="RROW"].hl .titleWrap,
 body.ttrss_main #headlines-frame div[id^="RROW"]:not(.active) .header .titleWrap {
   overflow: hidden;
+}
+body.ttrss_main #headlines-frame div[id^="RROW"].hl div.title > span,
+body.ttrss_main #headlines-frame div[id^="RROW"]:not(.active) .header div.title > span,
+body.ttrss_main #headlines-frame div[id^="RROW"].hl .titleWrap > span,
+body.ttrss_main #headlines-frame div[id^="RROW"]:not(.active) .header .titleWrap > span {
+  overflow: hidden;
   white-space: nowrap;
+  text-overflow: ellipsis;
+}
+body.ttrss_main #headlines-frame div[id^="RROW"].hl a.title,
+body.ttrss_main #headlines-frame div[id^="RROW"]:not(.active) .header a.title {
+  white-space: nowrap;
+}
+body.ttrss_main #headlines-frame div[id^="RROW"].hl,
+body.ttrss_main #headlines-frame div[id^="RROW"] .header {
+  min-height: 32px;
+}
+body.ttrss_main #headlines-frame div[id^="RROW"].hl,
+body.ttrss_main #headlines-frame div[id^="RROW"] .header {
+  padding-left: 10px;
 }
 body.ttrss_main #headlines-frame div[id^="RROW"].hl > *,
 body.ttrss_main #headlines-frame div[id^="RROW"] .header > * {
   padding: 0 10px 0 0;
 }
-body.ttrss_main #headlines-frame div[id^="RROW"] a.title {
-  line-height: 30px;
-  padding: 6px 0;
+body.ttrss_main #headlines-frame div[id^="RROW"].cdm {
+  cursor: initial;
+}
+body.ttrss_main #headlines-frame div[id^="RROW"].cdm .titleWrap {
+  cursor: pointer;
+}
+body.ttrss_main #headlines-frame div[id^="RROW"] div.title,
+body.ttrss_main #headlines-frame div[id^="RROW"] .titleWrap {
+  align-self: stretch;
+  display: flex;
+  align-items: center;
 }
 body.ttrss_main #headlines-frame div[id^="RROW"] .feed a {
   font-size: 11px;
@@ -2257,6 +2288,36 @@ body.ttrss_main #headlines-frame div[id^="RROW"] .feed a {
 }
 body.ttrss_main #headlines-frame div[id^="RROW"] .feed a:empty {
   display: none;
+}
+body.ttrss_main #headlines-frame div[id^="RROW"] div.title,
+body.ttrss_main #headlines-frame div[id^="RROW"] span.titleWrap {
+  margin-left: -1000px;
+  padding-left: 1000px;
+  z-index: 0;
+}
+body.ttrss_main #headlines-frame div[id^="RROW"] .right,
+body.ttrss_main #headlines-frame div[id^="RROW"] a {
+  z-index: 20;
+}
+body.ttrss_main #headlines-frame div[id^="RROW"].cdm .collapse {
+  height: 32px;
+}
+body.ttrss_main #headlines-frame div[id^="RROW"].cdm .collapse i {
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 32px;
+  z-index: 10;
+}
+body.ttrss_main #headlines-frame div[id^="RROW"].cdm .right,
+body.ttrss_main #headlines-frame div[id^="RROW"].cdm .left,
+body.ttrss_main #headlines-frame div[id^="RROW"].cdm a {
+  position: relative;
+  z-index: 20;
+}
+body.ttrss_main #headlines-frame div[id^="RROW"].cdm.active a.title:hover {
+  text-decoration: underline;
 }
 body.ttrss_main .feed {
   min-width: 120px;
