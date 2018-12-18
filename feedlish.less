@@ -1,3 +1,36 @@
+@import "../css/default.less";
+
+//
+// Less CSS Variables
+//
+
+// Colors:
+
+// Change tt-rss default colors
+@default-bg: #fff;
+@default-fg: #444; // prefer @default-fg to @default-text
+@color-panel-bg: darken(@default-bg, 8%);
+//@color-accent: ; // default blue is fine
+
+// Color of feed tree icons
+@feedlish-feedtree-icons-color: mix(@default-fg, @color-panel-bg, 30%);
+
+// Headlines foreground and background colors.
+// Computed from @default-fg and @color-accent by default.
+// - Unread
+@feedlish-headline-fg: @default-fg;
+@feedlish-headline-bg: @default-bg;
+// - Read
+@feedlish-headline-read-fg: lighten(@default-fg, 30%);
+// - Selected
+@feedlish-headline-selected-bg: @feedlish-headline-active-bg;
+// - Active
+@feedlish-headline-active-bg: mix(@color-accent, @default-bg, 12%);
+@feedlish-headline-active-fg: @feedlish-headline-fg;
+// - Mouse hover
+@feedlish-headline-hover-bg: darken(@feedlish-headline-bg, 5%);
+
+// Adjustments:
 
 // Hide author in headlines
 @feedlish-hide-author-in-headlines: false;
@@ -8,18 +41,35 @@
 // Inner padding of panels/frames
 @feedlish-panels-padding: 20px;
 
-// Color of feed tree icons
-@feedlish-feedtree-icons-color: lighten(@default-text, 40%);
+//
+// Global
+//
 
-@import "../css/default.less";
+// Normalize text color: use @default-fg
+@default-text: @default-fg;
+body.ttrss_main, div.cdm.active div.content {
+	color: @default-fg;
+}
 
-// FIXME: Feedly's light #fffad4 @color-accent doesn't play well with
-// default.less: it is used a lot with white/light colors.
+// Normalize background color: use @default-bg
+.flat .dijitContentPane,
+body.ttrss_main #toolbar-frame #toolbar {
+	background-color: @default-bg;
+}
 
-@color-panel-bg: #eeeeee;
-@border-default: @color-panel-bg;
+// Fix the default favicon size (to match other favicons)
+i.material-icons.icon-no-feed {
+	width: 16px !important;
+	height: 16px !important;
+	padding: 0 !important;
+	margin: 0px 4px  !important;
+}
 
-// See codepoint at /tt-rss/lib/iconfont/codepoints
+// Disable most of animations/transitions
+// FIXME: it doesn't remove the feed tree fold/unfold animation
+* { transition: none !important; }
+
+// Icon helper. See codepoint at /tt-rss/lib/iconfont/codepoints
 .feedlish-material-icon(@codepoint) {
 	width: 16px; // same size as flat-icon size
 	height: 16px;
@@ -37,15 +87,10 @@
 	}
 }
 
-// Disable most of animations/transitions
-// FIXME: it doesn't remove the feed tree fold/unfold animation
-* { transition: none ! important; }
+// Hide some borders
+@border-default: @color-panel-bg;
 
 body.ttrss_main {
-
-	//
-	// General
-	//
 
 	// Increase all panels inner paddings
 	// - Toolbar top
@@ -66,7 +111,7 @@ body.ttrss_main {
 	}
 
 	// Make splitters look like part of panels
-	.dijitSplitter, .dijitSplitterV { background: @color-panel-bg; }
+	.dijitSplitter, .dijitSplitterV { background-color: @color-panel-bg; }
 
 	//
 	// Feed Tree Frame
@@ -79,19 +124,19 @@ body.ttrss_main {
 	#feeds-holder #feedTree {
 
 		// Remove border around rows
-		.dijitTreeRow { border: none ! important; }
+		.dijitTreeRow { border: none !important; }
 
 		// Simpler counter (unread)
 		.counterNode {
 			border: none;
 			background: none;
-			color: @default-text;
+			color: @default-fg;
 		}
 		// Simpler counter (read)
 		.counterNode.aux {
 			border: none;
 			background: none;
-			color: lighten(@default-text, 40%);
+			color: mix(@default-fg, @color-panel-bg, 30%);
 		}
 
 		// Re-align counters
@@ -104,21 +149,16 @@ body.ttrss_main {
 		// Increase space around feed icon and name
 		.dijitTreeIcon, .dijitTreeExpando,
 		.dijitTreeLabel {
-			margin-left: 8px ! important;
+			margin-left: 8px !important;
 		}
 
 		// Change arrow icons
-		.dijitTreeExpandoClosed {
-			.feedlish-material-icon("\e315"); // keyboard_arrow_right
-		}
-		.dijitTreeExpandoOpened {
-			.feedlish-material-icon("\e313"); // keyboard_arrow_down
-		}
+		.dijitTreeExpandoClosed { .feedlish-material-icon("\e315"); }
+		.dijitTreeExpandoOpened { .feedlish-material-icon("\e313"); }
 
-		// Make icons gray
-		.icon.material-icons:not(.icon-label),
-		.dijitTreeExpando {
-			color: @feedlish-feedtree-icons-color ! important;
+		// Change icons colors
+		.icon.material-icons:not(.icon-label), .dijitTreeExpando {
+			color: @feedlish-feedtree-icons-color !important;
 		}
 
 		// Fix tree icon vertical alignment
@@ -134,10 +174,10 @@ body.ttrss_main {
 		}
 		// And re-align row
 		.dijitTreeRow[style="padding-left: 19px;"] {
-			padding-left: 24px ! important;
+			padding-left: 24px !important;
 		}
 
-		// Specials groups
+		// "Specials" group
 		> .dijitTreeContainer > .dijitTreeNode > .dijitTreeNodeContainer > .dijitTreeNode:first-child {
 
 			// Add space after Specials group
@@ -201,17 +241,12 @@ body.ttrss_main {
 				padding: 1px 6px;
 				border-radius: 99px;
 			}
-			.label > i {
-				display: none;
-			}
 
-			// Tweak font
-			a {
-				opacity: 0.8; // easier than re-writing all the colors
-			}
+			// Hide label icon
+			.label > i { display: none; }
 
 			// Keep the same font size when combined expanded or not
-			a { font-size: 14px ! important; }
+			a { font-size: 14px !important; }
 
 			// Hide author
 			.author when (@feedlish-hide-author-in-headlines = true) {
@@ -222,6 +257,33 @@ body.ttrss_main {
 			a:hover { text-decoration: none; }
 
 		} // Tweak title
+
+		// Headline colors
+		.feedlish-set-headline-fg(@c) {
+			&.hl, & .header {
+				a.title { color: @c; }
+				// author and preview:
+				a.title span, a.title ~ span { color: lighten(@c, 10%); }
+			}
+		}
+		.feedlish-set-headline-bg(@c) {
+			&.hl, & .header { background-color: @c !important; }
+		}
+		// - Default (unread)
+		& { .feedlish-set-headline-bg(feedlish-headline-bg); }
+		&.hl, & .header { a, span { color: @feedlish-headline-fg; } }
+		// - Read
+		&:not(.Unread) { .feedlish-set-headline-fg(@feedlish-headline-read-fg); .feedlish-set-headline-bg(@feedlish-headline-bg); }
+		// - Unread
+		&.Unread { /* default */ }
+		// - Mouse hover
+		&:hover { .feedlish-set-headline-bg(@feedlish-headline-hover-bg); }
+		// - Selected
+		&.Selected { .feedlish-set-headline-bg(@feedlish-headline-selected-bg); }
+		// - Active
+		&.active { .feedlish-set-headline-fg(@feedlish-headline-active-fg); .feedlish-set-headline-bg(@feedlish-headline-active-bg); }
+		// (Remove interfering background)
+		&.cdm { background: none !important; }
 
 		// Do not wrap title (except when active)
 		&.hl, &:not(.active) .header {
@@ -265,16 +327,6 @@ body.ttrss_main {
 			display: none;
 		}
 
-		// Highlight on hover
-		&:not(.Selected):hover {
-			&.hl, & .header { background: darken(@default-bg, 5%); }
-		}
-
-		// Remove background color from Read headlines
-		&:not(.Selected) {
-			&.hl, & .header { background: @default-bg; }
-		}
-
 		// Hide score icon
 		.icon-score when (@feedlish-hide-score-in-headlines = true) {
 			display: none;
@@ -299,14 +351,6 @@ body.ttrss_main {
 	#headlines-spacer { font-style: normal; }
 	// Re-align loading icon
 	.loading img { vertical-align: middle; }
-
-	// Fix the default favicon size (to match other favicons)
-	i.material-icons.icon-no-feed {
-		width: 16px ! important;
-		height: 16px ! important;
-		padding: 0 ! important;
-		margin: 0px 4px  ! important;
-	}
 
 } // ttrss_main
 
