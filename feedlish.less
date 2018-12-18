@@ -32,6 +32,9 @@
 
 // Adjustments:
 
+// Headline row height
+@feedlish-headline-row-height: 32px;
+
 // Hide author in headlines
 @feedlish-hide-author-in-headlines: false;
 
@@ -216,7 +219,7 @@ body.ttrss_main {
 	// Headlines Frame
 	//
 
-	// Tweak headline content
+	// Headline row:
 	#headlines-frame div[id^="RROW"] {
 
 		// Change headline elements order:
@@ -253,7 +256,10 @@ body.ttrss_main {
 			.label > i { display: none; }
 
 			// Keep the same font size when combined expanded or not
-			a { font-size: 14px !important; }
+			a {
+				font-size: 14px !important;
+				line-height: 2em;
+			}
 
 			// Hide author
 			.author when (@feedlish-hide-author-in-headlines = true) {
@@ -292,23 +298,37 @@ body.ttrss_main {
 		// (Remove interfering background)
 		&.cdm { background: none !important; }
 
-		// Do not wrap title (except when active)
+		// Do not wrap title (except when expanded)
 		&.hl, &:not(.active) .header {
-			.title, .titleWrap {
+			div.title, .titleWrap {
 				overflow: hidden;
-				white-space: nowrap;
+				> span {
+					overflow: hidden;
+					white-space: nowrap;
+					text-overflow: ellipsis;
+				}
 			}
+			a.title { white-space: nowrap; }
 		}
 
-		// Make the full headline title height clickable (remove non-clickable space
-		// in-between titles)
+		// Set row height
+		&.hl, & .header { min-height: @feedlish-headline-row-height; }
+
+		// Tweak elements padding
 		&.hl, & .header {
+			padding-left: 10px;
 			> * { padding: 0 10px 0 0; }
 		}
-		a.title {
-			// line-height sets the height, but we need padding to get it clickable
-			line-height: 30px;
-			padding: 6px 0;
+
+		// Fix, cursor pointer was set on the wrong element (misleading)
+		&.cdm { cursor: initial; }
+		&.cdm .titleWrap { cursor: pointer; }
+
+		// Stretch the clickable title to row height
+		div.title, .titleWrap {
+			align-self: stretch;
+			display: flex;
+			align-items: center;
 		}
 
 		// Feed name look
@@ -329,8 +349,44 @@ body.ttrss_main {
 			display: none;
 		}
 
-	} // Tweak headline content
+		// Make left of the title clickable
+		// FIXME: ugly hack
+		div.title, span.titleWrap {
+			margin-left: -1000px;
+			padding-left: 1000px;
+			z-index: 0;
+		}
+		// ... but keep feed icon and name clickable
+		.right, a { z-index: 20; }
 
+		// Make the whole row clickable to collapse the article except directly
+		// on the title.
+		// FIXME: this is an ugly hack
+		&.cdm {
+			// Stretch the collapse button over the whole row
+			.collapse {
+				height: @feedlish-headline-row-height;
+			}
+			.collapse i {
+				opacity: 0; // invisible collapse button
+				position: absolute;
+				left: 0;
+				right: 0;
+				height: @feedlish-headline-row-height;
+				z-index: 10;
+			}
+			// But move links and buttons on top of it
+			.right, .left, a {
+				position: relative; // needed for z-index to work !?
+				z-index: 20;
+			}
+			// Underline to indicate it'll open the link and not collapse
+			&.active a.title:hover {
+				text-decoration: underline;
+			}
+		}
+
+	} // Headline row
 
 	// Feed name fixed width
 	.feed {
