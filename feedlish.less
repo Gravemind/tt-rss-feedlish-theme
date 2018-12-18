@@ -38,6 +38,11 @@
 // Hide score in headlines
 @feedlish-hide-score-in-headlines: false;
 
+// Headline feed name fixed width (0 to hide)
+@feedlish-headline-feed-name-width: 120px;
+// .. in wide mode (0 to hide)
+@feedlish-headline-feed-name-width-wide: 80px;
+
 // Inner padding of panels/frames
 @feedlish-panels-padding: 20px;
 
@@ -312,16 +317,6 @@ body.ttrss_main {
 			font-style: normal;
 		}
 
-		// Feed name fixed width
-		.feed {
-			min-width: 120px;
-		}
-		.feed a {
-			max-width: 110px;
-			white-space: nowrap;
-			overflow: hidden;
-			text-overflow: ellipsis;
-		}
 		// FIXME: remove .feed when a is empty
 		.feed a:empty {
 			display: none;
@@ -334,8 +329,24 @@ body.ttrss_main {
 
 	} // Tweak headline content
 
-	// Show feed name in headlines, even in wide screen mode
-	div#headlines-frame.wide .hl .feed { display: inline-flex; }
+
+	// Feed name fixed width
+	.feed {
+		min-width: @feedlish-headline-feed-name-width;
+		max-width: @feedlish-headline-feed-name-width;
+		display: if(@feedlish-headline-feed-name-width = 0, none, inline-flex);
+	}
+	.feed a {
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+	// .. in wide mode
+	div#headlines-frame.wide .hl .feed {
+		min-width: @feedlish-headline-feed-name-width-wide;
+		max-width: @feedlish-headline-feed-name-width-wide;
+		display: if(@feedlish-headline-feed-name-width-wide = 0, none, inline-flex);
+	}
 
 	// Remove separator border for:
 	// - Headlines: invisible border, so everyone is the same height
