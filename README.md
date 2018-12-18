@@ -12,7 +12,7 @@ Some changes might diverge from the feedly theme.
 Not all tt-rss configurations (day/night/wide/combined/...) are currently
 tested, Issues/PRs are welcome.
 
-### Installation
+### Install
 
 ```
 cd /path/to/tt-rss/themes.local/
@@ -25,13 +25,38 @@ ln -s tt-rss-feedlish-theme/feedlish-night.css
 ln -s tt-rss-feedlish-theme/feedlish-night.css.map
 ```
 
+### Customize
+
+There is a bunch of Less CSS variables to make customization easier, see [./feedly.less]().
+
+To customize them, or add more CSS rules, you can create a file `./local.less`;
+for example:
+
+```css
+// tt-rss-feedlish-theme/local.less
+
+@default-bg: #e8e8e8;		// darker background
+@default-fg: #606060;		// lighter foreground text
+@color-accent: #ec8200;     // orange highlights
+//@color-accent: #ffe100;   // feedly-yellow-ish highlights
+
+@feedlish-hide-author-in-headlines: true;   // hide author
+@feedlish-hide-score-in-headlines: true;    // hide score
+
+// See ./feedlish.less for more variables.
+
+```
+
+**But if you customize, you must [rebuild the CSS files](#Rebuild)!**
+
 ### Rebuild
 
-`.css` and `.css.map` files are generated from the `.less` files, and contains a
-copy a tt-rss's default theme.
+The default CSS files are rebuild and commit periodically to make default
+installation easier.
 
-If tt-rss's default theme changes, the `.css` and `.css.map` needs to be
-regenerated:
+But, if and any `.less` file is changed (`feedly*.less`, `local.less`, or any
+tt-rss default theme's `.less` files), the CSS files need to be rebuild:
+
 - install `lessc` (`pacman -S nodejs-less`, `dnf install nodejs-less nodejs-source-map`, ...)
 - run `make` here
 
