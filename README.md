@@ -32,11 +32,11 @@ There is a bunch of Less CSS variables to make customization easier, see [./feed
 To customize them, or add more CSS rules, you can create a file `./local.less`;
 for example:
 
-```css
+```less
 // tt-rss-feedlish-theme/local.less
 
-@default-bg: #e8e8e8;		// darker background
-@default-fg: #606060;		// lighter foreground text
+@default-bg: #e8e8e8;       // darker background
+@default-fg: #606060;       // lighter foreground text
 @color-accent: #ec8200;     // orange highlights
 //@color-accent: #ffe100;   // feedly-yellow-ish highlights
 
