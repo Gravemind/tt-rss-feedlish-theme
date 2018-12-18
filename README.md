@@ -28,7 +28,7 @@ ln -s tt-rss-feedlish-theme/feedlish-night.css.map
 ### Customize
 
 There is a bunch of Less CSS variables to make customization easier, see
-[feedly.less](feedly.less).
+[feedlish.less](feedlish.less).
 
 To customize them, or add more CSS rules, you can create a file `./local.less`;
 for example:
@@ -56,7 +56,7 @@ The default `.css` and `.css.map` files are rebuild and commit periodically to
 make default installations easier.
 
 But they need to be manually rebuild if any `.less` file changes
-(`feedly*.less`, `local.less`, tt-rss default theme `.less` files):
+(`feedlish*.less`, `local.less`, tt-rss default theme `.less` files):
 
 - install `lessc` (`pacman -S nodejs-less`, `dnf install nodejs-less nodejs-source-map`, ...)
 - run `make` here
