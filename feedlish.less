@@ -319,6 +319,9 @@ body.ttrss_main {
 			padding-left: 10px;
 			> * { padding: 0 10px 0 0; }
 		}
+		div.title .hl-content, .titleWrap {
+			> *:not(:empty) { margin-right: 5px; }
+		}
 
 		// Fix, cursor pointer was set on the wrong element (misleading)
 		&.cdm { cursor: initial; }
