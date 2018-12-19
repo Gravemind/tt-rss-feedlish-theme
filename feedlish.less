@@ -329,9 +329,12 @@ body.ttrss_main {
 
 		// Stretch the clickable title to row height
 		div.title, .titleWrap {
-			align-self: stretch;
-			display: flex;
-			align-items: center;
+			// Note: `display: flex;` might be more powerful if only I could get
+			// overflow ellipsis working
+			line-height: @feedlish-headline-row-height;
+			> * {
+				line-height: normal;
+			}
 		}
 
 		// Feed name look
