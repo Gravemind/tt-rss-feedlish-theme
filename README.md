@@ -25,6 +25,17 @@ ln -s tt-rss-feedlish-theme/feedlish-night.css
 ln -s tt-rss-feedlish-theme/feedlish-night.css.map
 ```
 
+### Update
+
+`git pull` should suffice. Feedlish should follow tt-rss updates with a week or
+two.
+
+If you need tt-rss latest CSS changes right away (or if you
+[customized](#customize) Feedlish), you must [rebuild Feedlish css
+files](#rebuild) to include tt-rss default theme latest changes in Feedlish; As
+long as the changes does not overlap with Feedlish overrides, it should be
+fine. Hint: a git hook could do the trick.
+
 ### Customize
 
 There is a bunch of Less CSS variables to make customization easier, see
@@ -52,7 +63,7 @@ for example:
 
 ### Rebuild
 
-The default `.css` and `.css.map` files are rebuild and commit periodically to
+The default `.css` and `.css.map` files are rebuilt and commit periodically to
 make default installations easier.
 
 But they need to be manually rebuild if any `.less` file changes
