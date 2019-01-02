@@ -225,21 +225,21 @@ body.ttrss_main {
 		// Change headline elements order:
 		&.hl, & .header {
 			// - Score and feed icon
-			> :nth-child(5) { order: 1; }
+			> .right { order: 1; }
 			// - Feed Name
-			> :nth-child(3) { order: 2; }
+			> .feed { order: 2; }
 			// - Title
-			> :nth-child(2) { order: 3; }
+			> .title, > .titleWrap { order: 3; }
 			// - Date
-			> :nth-child(4) { order: 4; }
+			> .feed + * { order: 4; }
 			// - Buttons select/share/star
-			> :nth-child(1) { order: 5; }
+			> .left { order: 5; }
 		}
 
 		// Show buttons only on hover or marked
-		&.hl, & .header { > :nth-child(1) { display: none; } }
+		&.hl, & .header { > .left { display: none; } }
 		&:hover, &.marked, &.published, &.active, &.Selected {
-			&.hl, & .header { > :nth-child(1) { display: flex; } }
+			&.hl, & .header { > .left { display: flex; } }
 		}
 
 		// Tweak title:
