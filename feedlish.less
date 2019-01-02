@@ -222,6 +222,9 @@ body.ttrss_main {
 	// Headline row:
 	#headlines-frame div[id^="RROW"] {
 
+		// (internal) Make sub rule relative to headlines (eg: .collapse i)
+		&.hl, & .header { position: relative; }
+
 		// Change headline elements order:
 		&.hl, & .header {
 			// - Score and feed icon
@@ -370,22 +373,21 @@ body.ttrss_main {
 		// on the title.
 		// FIXME: this is an ugly hack
 		&.cdm {
+			// Make parent 0 width
+			.collapse { margin: 0; width: 0; }
 			// Stretch the collapse button over the whole row
-			.collapse {
-				height: @feedlish-headline-row-height;
-			}
 			.collapse i {
 				opacity: 0; // invisible collapse button
 				position: absolute;
 				left: 0;
 				right: 0;
-				height: @feedlish-headline-row-height;
-				z-index: 10;
+				top: 0;
+				height: 100%;
+				z-index: 10; // keep links/button on top
 			}
-			// But move links and buttons on top of it
 			.right, .left, a {
-				position: relative; // needed for z-index to work !?
-				z-index: 20;
+				z-index: 20; // keep links/button on top
+				position: relative; // (needed this to work !?)
 			}
 			// Underline to indicate it'll open the link and not collapse
 			&.active a.title:hover {
