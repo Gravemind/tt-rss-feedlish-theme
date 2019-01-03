@@ -10,8 +10,8 @@
 @default-bg: #fff;
 @default-fg: #444; // prefer @default-fg to @default-text
 @color-panel-bg: darken(@default-bg, 8%);
-//@color-accent: ; // default blue is fine
-
+@color-accent: @default-fg; // no blue
+@color-link: @default-fg; // no blue
 // Color of feed tree icons
 @feedlish-feedtree-icons-color: mix(@default-fg, @color-panel-bg, 30%);
 
@@ -99,6 +99,11 @@ i.material-icons.icon-no-feed {
 
 // Hide some borders
 @border-default: @color-panel-bg;
+
+// scrollbars not blue
+::-webkit-scrollbar-thumb {
+	background-color: @default-fg;
+}
 
 body.ttrss_main {
 
@@ -395,6 +400,11 @@ body.ttrss_main {
 
 	} // Headline row
 
+	// line under feed title gray
+//	#headlines-frame div.feed-title {
+//		border: 0px solid @default-fg; //@color-link;//
+//	}
+
 	// Feed name fixed width
 	.feed {
 		min-width: @feedlish-headline-feed-name-width;
@@ -425,6 +435,25 @@ body.ttrss_main {
 
 	// Remove bold italic from "Click to open next unread feed"
 	#headlines-spacer { font-style: normal; }
+	// Make large "Click to open next unread feed" field
+	#headlines-spacer a {
+		display: block;
+		background: darken(@default-bg, 4%);
+		text-align:center;
+		width: 100%;
+		height: 100%;
+	}
+	// hover: no underline but bold
+	#headlines-spacer a:hover {
+		text-decoration: none;
+		font-weight:bold;
+	}
+	// Prevent that "Click to open next unread feed" scrolls out of view
+	#headlines-spacer a:before {
+		content: " \A \A ";
+		white-space: pre-wrap;
+	}
+
 	// Re-align loading icon
 	.loading img { vertical-align: middle; }
 
