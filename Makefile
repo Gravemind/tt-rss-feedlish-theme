@@ -5,7 +5,6 @@ THEMES_DIR=$(abspath ..)
 LESSC_INCLUDE=--include-path=$(THEMES_DIR)
 
 DSTS =$(SRCS:.less=.css)
-MAPS =$(SRCS:.less=.css.map)
 DEPS =$(SRCS:.less=.dep)
 
 SHELL:=/bin/bash
@@ -25,17 +24,11 @@ stats:
 				my=`stat -c %s $$f` ; \
 				echo $$f $$my/$$def x$$(( 100 * $$my / $$def ))% ; \
 			done ; \
-			def=`stat -c %s $(THEMES_DIR)/../css/default.css.map` ; \
-			for f in $(MAPS); do \
-				my=`stat -c %s $$f` ; \
-				echo $$f $$my/$$def x$$(( 100 * $$my / $$def ))% ; \
-			done ; \
 		} | column -t ; \
 		echo
 
 clean:
 	rm -f $(DSTS)
-	rm -f $(MAPS)
 	rm -f $(DEPS)
 
 .PHONY: all clean
@@ -46,7 +39,7 @@ clean:
 	@rm $*.dep.tmp
 
 %.css: %.less %.dep Makefile
-	lessc $*.less $*.css $(LESSC_INCLUDE) --source-map
+	lessc $*.less $*.css $(LESSC_INCLUDE)
 
 # FIXME: make clean triggers %.dep because of include !?
 -include $(DEPS)

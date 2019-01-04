@@ -20,9 +20,7 @@ cd /path/to/tt-rss/themes.local/
 git clone https://github.com/Gravemind/tt-rss-feedlish-theme
 
 ln -s tt-rss-feedlish-theme/feedlish.css
-ln -s tt-rss-feedlish-theme/feedlish.css.map
 ln -s tt-rss-feedlish-theme/feedlish-night.css
-ln -s tt-rss-feedlish-theme/feedlish-night.css.map
 ```
 
 ### Update
@@ -63,8 +61,8 @@ for example:
 
 ### Rebuild
 
-The default `.css` and `.css.map` files are rebuilt and commit periodically to
-make default installations easier.
+The default `.css` files are rebuilt and commit periodically to make default
+installations easier.
 
 But they need to be manually rebuild if any `.less` file changes
 (`feedlish*.less`, `local.less`, tt-rss default theme `.less` files):
