@@ -100,6 +100,11 @@ i.material-icons.icon-no-feed {
 // Hide some borders
 @border-default: @color-panel-bg;
 
+// Scrollbars not blue (Chrome)
+::-webkit-scrollbar-thumb {
+	background-color: @default-fg;
+}
+
 body.ttrss_main {
 
 	// Increase all panels inner paddings
