@@ -2017,6 +2017,9 @@ i.material-icons.icon-no-feed {
 * {
   transition: none !important;
 }
+::-webkit-scrollbar-thumb {
+  background-color: #444;
+}
 body.ttrss_main #toolbar-frame #toolbar {
   padding: 20px 0;
 }
@@ -2126,40 +2129,46 @@ body.ttrss_main #toolbar-frame #toolbar #selected_prompt {
 body.ttrss_main #toolbar-frame #toolbar {
   border: none;
 }
-body.ttrss_main #headlines-frame div[id^="RROW"].hl > :nth-child(5),
-body.ttrss_main #headlines-frame div[id^="RROW"] .header > :nth-child(5) {
+body.ttrss_main #headlines-frame div[id^="RROW"].hl,
+body.ttrss_main #headlines-frame div[id^="RROW"] .header {
+  position: relative;
+}
+body.ttrss_main #headlines-frame div[id^="RROW"].hl > .right,
+body.ttrss_main #headlines-frame div[id^="RROW"] .header > .right {
   order: 1;
 }
-body.ttrss_main #headlines-frame div[id^="RROW"].hl > :nth-child(3),
-body.ttrss_main #headlines-frame div[id^="RROW"] .header > :nth-child(3) {
+body.ttrss_main #headlines-frame div[id^="RROW"].hl > .feed,
+body.ttrss_main #headlines-frame div[id^="RROW"] .header > .feed {
   order: 2;
 }
-body.ttrss_main #headlines-frame div[id^="RROW"].hl > :nth-child(2),
-body.ttrss_main #headlines-frame div[id^="RROW"] .header > :nth-child(2) {
+body.ttrss_main #headlines-frame div[id^="RROW"].hl > .title,
+body.ttrss_main #headlines-frame div[id^="RROW"] .header > .title,
+body.ttrss_main #headlines-frame div[id^="RROW"].hl > .titleWrap,
+body.ttrss_main #headlines-frame div[id^="RROW"] .header > .titleWrap {
   order: 3;
 }
-body.ttrss_main #headlines-frame div[id^="RROW"].hl > :nth-child(4),
-body.ttrss_main #headlines-frame div[id^="RROW"] .header > :nth-child(4) {
+body.ttrss_main #headlines-frame div[id^="RROW"].hl > .feed + *,
+body.ttrss_main #headlines-frame div[id^="RROW"] .header > .feed + * {
   order: 4;
 }
-body.ttrss_main #headlines-frame div[id^="RROW"].hl > :nth-child(1),
-body.ttrss_main #headlines-frame div[id^="RROW"] .header > :nth-child(1) {
+body.ttrss_main #headlines-frame div[id^="RROW"].hl > .left,
+body.ttrss_main #headlines-frame div[id^="RROW"] .header > .left {
   order: 5;
 }
-body.ttrss_main #headlines-frame div[id^="RROW"].hl > :nth-child(1),
-body.ttrss_main #headlines-frame div[id^="RROW"] .header > :nth-child(1) {
+body.ttrss_main #headlines-frame div[id^="RROW"].hl > .left,
+body.ttrss_main #headlines-frame div[id^="RROW"] .header > .left {
   display: none;
 }
-body.ttrss_main #headlines-frame div[id^="RROW"]:hover.hl > :nth-child(1),
-body.ttrss_main #headlines-frame div[id^="RROW"].marked.hl > :nth-child(1),
-body.ttrss_main #headlines-frame div[id^="RROW"].published.hl > :nth-child(1),
-body.ttrss_main #headlines-frame div[id^="RROW"].active.hl > :nth-child(1),
-body.ttrss_main #headlines-frame div[id^="RROW"].Selected.hl > :nth-child(1),
-body.ttrss_main #headlines-frame div[id^="RROW"]:hover .header > :nth-child(1),
-body.ttrss_main #headlines-frame div[id^="RROW"].marked .header > :nth-child(1),
-body.ttrss_main #headlines-frame div[id^="RROW"].published .header > :nth-child(1),
-body.ttrss_main #headlines-frame div[id^="RROW"].active .header > :nth-child(1),
-body.ttrss_main #headlines-frame div[id^="RROW"].Selected .header > :nth-child(1) {
+body.ttrss_main #headlines-frame div[id^="RROW"]:hover.hl > .left,
+body.ttrss_main #headlines-frame div[id^="RROW"].marked.hl > .left,
+body.ttrss_main #headlines-frame div[id^="RROW"].published.hl > .left,
+body.ttrss_main #headlines-frame div[id^="RROW"].active.hl > .left,
+body.ttrss_main #headlines-frame div[id^="RROW"].Selected.hl > .left,
+body.ttrss_main #headlines-frame div[id^="RROW"]:hover .header > .left,
+body.ttrss_main #headlines-frame div[id^="RROW"].marked .header > .left,
+body.ttrss_main #headlines-frame div[id^="RROW"].published .header > .left,
+body.ttrss_main #headlines-frame div[id^="RROW"].active .header > .left,
+body.ttrss_main #headlines-frame div[id^="RROW"].Selected .header > .left {
   display: flex;
 }
 body.ttrss_main #headlines-frame div[id^="RROW"] div.title .label,
@@ -2302,21 +2311,23 @@ body.ttrss_main #headlines-frame div[id^="RROW"] a {
   z-index: 20;
 }
 body.ttrss_main #headlines-frame div[id^="RROW"].cdm .collapse {
-  height: 32px;
+  margin: 0;
+  width: 0;
 }
 body.ttrss_main #headlines-frame div[id^="RROW"].cdm .collapse i {
   opacity: 0;
   position: absolute;
   left: 0;
   right: 0;
-  height: 32px;
+  top: 0;
+  height: 100%;
   z-index: 10;
 }
 body.ttrss_main #headlines-frame div[id^="RROW"].cdm .right,
 body.ttrss_main #headlines-frame div[id^="RROW"].cdm .left,
 body.ttrss_main #headlines-frame div[id^="RROW"].cdm a {
-  position: relative;
   z-index: 20;
+  position: relative;
 }
 body.ttrss_main #headlines-frame div[id^="RROW"].cdm.active a.title:hover {
   text-decoration: underline;
@@ -2346,10 +2357,12 @@ body.ttrss_main div.whiteBox {
 body.ttrss_main div#headlines-frame div.cdm.expandable.active {
   border: 1px solid #cccccc;
 }
-body.ttrss_main #headlines-spacer {
+body.ttrss_main #headlines-spacer a {
   font-style: normal;
+}
+body.ttrss_main #headlines-spacer a:hover {
+  background: #f2f2f2;
 }
 body.ttrss_main .loading img {
   vertical-align: middle;
 }
-/*# sourceMappingURL=feedlish.css.map */
