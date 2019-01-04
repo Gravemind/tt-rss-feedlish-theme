@@ -430,8 +430,14 @@ body.ttrss_main {
 		border: 1px solid darken(@default-bg, 20%);
 	}
 
-	// Remove bold italic from "Click to open next unread feed"
-	#headlines-spacer { font-style: normal; }
+	// "Click to open next unread feed"
+	#headlines-spacer a {
+		// Remove italic
+		font-style: normal;
+		// Hover highlight
+		&:hover { background: @feedlish-headline-hover-bg; }
+	}
+
 	// Re-align loading icon
 	.loading img { vertical-align: middle; }
 
