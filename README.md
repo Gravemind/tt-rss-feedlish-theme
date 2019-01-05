@@ -25,7 +25,7 @@ ln -s tt-rss-feedlish-theme/feedlish-night.css
 
 ### Update
 
-`git pull` should suffice. Feedlish should follow tt-rss updates with a week or
+`git pull` should suffice. Feedlish should follow tt-rss updates within a week or
 two.
 
 If you need tt-rss latest CSS changes right away (or if you
