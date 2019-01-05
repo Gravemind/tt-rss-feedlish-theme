@@ -431,11 +431,19 @@ body.ttrss_main {
 	}
 
 	// "Click to open next unread feed"
-	#headlines-spacer a {
+	& {
 		// Remove italic
-		font-style: normal;
-		// Hover highlight
-		&:hover { background: @feedlish-headline-hover-bg; }
+		#headlines-spacer { font-style: normal; }
+		// NOT "auto mark articles as read"
+		#headlines-frame:not(.auto_catchup) #headlines-spacer {
+			a { padding: 20px 0 20px 0; }
+			a:hover { background: @feedlish-headline-hover-bg; }
+		}
+		// "auto mark articles as read"
+		#headlines-frame.auto_catchup #headlines-spacer {
+			a { height: 100%; }
+			a::before { content: " "; display: block; height: 20px; } // spacing
+		}
 	}
 
 	// Re-align loading icon
