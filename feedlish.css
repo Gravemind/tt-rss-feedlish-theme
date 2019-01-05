@@ -2357,11 +2357,22 @@ body.ttrss_main div.whiteBox {
 body.ttrss_main div#headlines-frame div.cdm.expandable.active {
   border: 1px solid #cccccc;
 }
-body.ttrss_main #headlines-spacer a {
+body.ttrss_main #headlines-spacer {
   font-style: normal;
 }
-body.ttrss_main #headlines-spacer a:hover {
+body.ttrss_main #headlines-frame:not(.auto_catchup) #headlines-spacer a {
+  padding: 20px 0 20px 0;
+}
+body.ttrss_main #headlines-frame:not(.auto_catchup) #headlines-spacer a:hover {
   background: #f2f2f2;
+}
+body.ttrss_main #headlines-frame.auto_catchup #headlines-spacer a {
+  height: 100%;
+}
+body.ttrss_main #headlines-frame.auto_catchup #headlines-spacer a::before {
+  content: " ";
+  display: block;
+  height: 20px;
 }
 body.ttrss_main .loading img {
   vertical-align: middle;
