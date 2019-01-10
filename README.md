@@ -53,6 +53,8 @@ for example:
 @feedlish-hide-author-in-headlines: true;   // hide author
 @feedlish-hide-score-in-headlines: true;    // hide score
 
+@feedlish-cdm-fixed-height: 250px; // combined-mode article fixed height
+
 // See ./feedlish.less for more variables.
 
 ```
