@@ -114,6 +114,11 @@ i.material-icons.icon-no-feed {
 	background-color: mix(@default-fg, @default-bg, 40%);
 }
 
+// Fade visited links
+body.ttrss_main a:visited {
+	color: mix(desaturate(@color-link, 40%), @default-bg, 90%);
+}
+
 body.ttrss_main {
 
 	// Increase all panels inner paddings
