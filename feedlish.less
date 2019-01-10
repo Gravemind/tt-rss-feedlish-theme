@@ -49,6 +49,9 @@
 // Inner padding of panels/frames
 @feedlish-panels-padding: 20px;
 
+// In combined-Mode, align article text to title
+@feedlish-cdm-align-article-to-title: true;
+
 //
 // Global
 //
@@ -116,9 +119,7 @@ body.ttrss_main {
 	#toolbar-frame,
 	#headlines-frame,
 	// - Post panel sides
-	#content-insert .post > div,
-	// - Expanded post in combined mode
-	.cdm.expandable div.content {
+	#content-insert .post > div {
 		padding-left: @feedlish-panels-padding;
 		padding-right: @feedlish-panels-padding;
 	}
@@ -458,6 +459,14 @@ body.ttrss_main {
 	div.cdm.expandable {
 		// Reduce article content font size a bit
 		.content-inner { font-size: 15px; }
+
+		// Default article paddings
+		.content { padding: 0 20px 0 20px; }
+
+		// Left padding to align article to title
+		.content when (@feedlish-cdm-align-article-to-title = true) {
+			padding-left: @feedlish-headline-feed-name-width + 45px;
+		}
 
 	} // Combined-mode
 
