@@ -52,8 +52,11 @@
 // Inner padding of panels/frames
 @feedlish-panels-padding: 20px;
 
-// In combined-Mode, align article text to title
+// In combined-mode, align article text to title
 @feedlish-cdm-align-article-to-title: true;
+
+// In combined-mode, set article fixed height (-1 to disable)
+@feedlish-cdm-fixed-height: -1;
 
 //
 // Global
@@ -469,6 +472,12 @@ body.ttrss_main {
 		// Left padding to align article to title
 		.content when (@feedlish-cdm-align-article-to-title = true) {
 			padding-left: @feedlish-headline-feed-name-width + 45px;
+		}
+
+		// Article fixed height
+		.content when (@feedlish-cdm-fixed-height >= 0) {
+			height: @feedlish-cdm-fixed-height;
+			overflow-y: auto;
 		}
 
 	} // Combined-mode
