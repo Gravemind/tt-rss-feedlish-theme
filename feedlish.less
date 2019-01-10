@@ -46,6 +46,9 @@
 // .. in wide mode (0 to hide)
 @feedlish-headline-feed-name-width-wide: 80px;
 
+// Article content width
+@feedlish-article-width: 60em;
+
 // Inner padding of panels/frames
 @feedlish-panels-padding: 20px;
 
@@ -453,7 +456,7 @@ body.ttrss_main {
 	//
 
 	// Article width (max column)
-	.content { max-width: 45em; }
+	.content { max-width: @feedlish-article-width; }
 
 	// In combined-mode
 	div.cdm.expandable {
