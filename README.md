@@ -39,27 +39,28 @@ fine. Hint: a git hook could do the trick.
 There is a bunch of Less CSS variables to make customization easier, see
 [feedlish.less](feedlish.less).
 
-To customize them, or add more CSS rules, you can create a file `./local.less`;
-for example:
+To customize variables, add more CSS rules, etc...:
 
-```less
-// tt-rss-feedlish-theme/local.less
+* Create a file `./local.less`, for example:
 
-@default-bg: #e8e8e8;       // darker background
-@default-fg: #606060;       // lighter foreground text
-@color-accent: #ec8200;     // orange highlights
-//@color-accent: #ffe100;   // feedly-yellow-ish highlights
+  ```less
+  // tt-rss-feedlish-theme/local.less
 
-@feedlish-hide-author-in-headlines: true;   // hide author
-@feedlish-hide-score-in-headlines: true;    // hide score
+  @default-bg: #e8e8e8;       // darker background
+  @default-fg: #606060;       // lighter foreground text
+  @color-accent: #ec8200;     // orange highlights
+  //@color-accent: #ffe100;   // feedly-yellow-ish highlights
 
-@feedlish-cdm-fixed-height: 250px; // combined-mode article fixed height
+  @feedlish-hide-author-in-headlines: true;   // hide author
+  @feedlish-hide-score-in-headlines: true;    // hide score
 
-// See ./feedlish.less for more variables.
+  @feedlish-cdm-fixed-height: 250px; // combined-mode article fixed height
 
-```
+  // See ./feedlish.less for more variables.
 
-**But if you customize, you must [rebuild the CSS files](#Rebuild)!**
+  ```
+
+* Run `$> make` to [rebuild the CSS files](#Rebuild)!
 
 ### Rebuild
 
