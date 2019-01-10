@@ -1,16 +1,21 @@
 ## Tiny Tiny RSS Feedlish Theme
 
-"Close enough" clone of [levito's tt-rss-feedly-theme](https://github.com/levito/tt-rss-feedly-theme) working on
-[Tiny Tiny RSS](https://tt-rss.org/) 18.12+.
+Approximate clone of [@levito's tt-rss-feedly-theme][Feedly].
+
+[Feedlish][] started as a rewrite from scratch of [Feedly][] for [Tiny Tiny
+RSS](https://tt-rss.org/) 18.12+ compatibility. Since then, [Feedly][] has also
+been rewritten for 18.12+, but [Feedlish][] will continue to be maintained as
+long as the few diverging details are worth it.
 
 The current philosophy is to have as little code as possible to stay
 maintainable/hackable. So, we start from the default theme and modify/override
 it just enough to get close enough to the feedly theme.
 
-Some changes might diverge from the feedly theme.
-
 Not all tt-rss configurations (day/night/wide/combined/...) are currently
 tested, Issues/PRs are welcome.
+
+[Feedly]: https://github.com/levito/tt-rss-feedly-theme
+[Feedlish]: https://github.com/Gravemind/tt-rss-feedlish-theme
 
 ### Install
 
