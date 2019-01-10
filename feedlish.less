@@ -290,24 +290,26 @@ body.ttrss_main {
 
 		} // Tweak title
 
+		// Fix white text colors in headlines (non-cdm)
+		&.hl .feed a, &.hl .updated {
+			color: @default-fg;
+		}
+
 		// Headline colors
 		.feedlish-set-headline-fg(@c) {
-			&.hl, & .header {
-				a.title { color: @c; }
-				// author and preview:
-				a.title span, a.title ~ span { color: lighten(@c, 10%); }
+			a.title { color: @c; }
+			a.title span,		// non-cdm preview
+			a.title ~ span {	// cdm preview and author
+				 color: lighten(@c, 10%);
 			}
 		}
 		.feedlish-set-headline-bg(@c) {
 			&.hl, & .header { background-color: @c !important; }
 		}
-		// - Default (unread)
-		& { .feedlish-set-headline-bg(feedlish-headline-bg); }
-		&.hl, & .header { a, span { color: @feedlish-headline-fg; } }
+		// - Default (Unread)
+		&/*.Unread*/ { .feedlish-set-headline-bg(@feedlish-headline-bg); .feedlish-set-headline-fg(@feedlish-headline-fg); }
 		// - Read
 		&:not(.Unread) { .feedlish-set-headline-fg(@feedlish-headline-read-fg); .feedlish-set-headline-bg(@feedlish-headline-bg); }
-		// - Unread
-		&.Unread { /* default */ }
 		// - Mouse hover
 		&:hover { .feedlish-set-headline-bg(@feedlish-headline-hover-bg); }
 		// - Selected
