@@ -110,17 +110,15 @@ body.ttrss_main {
 	// Increase all panels inner paddings
 	// - Toolbar top
 	#toolbar-frame #toolbar { padding: @feedlish-panels-padding 0; }
-	// - Feed tree panel top
-	#feedTree > .dijitTreeContainer > div { padding-top: @feedlish-panels-padding; }
+	// - Feed tree panel paddings
+	#feedTree > .dijitTreeContainer > div { padding: @feedlish-panels-padding; }
 	// - Main panel sides
 	#toolbar-frame,
 	#headlines-frame,
 	// - Post panel sides
 	#content-insert .post > div,
 	// - Expanded post in combined mode
-	.cdm.expandable div.content,
-	// - Feed tree panel sides
-	#feedTree > .dijitTreeContainer > div {
+	.cdm.expandable div.content {
 		padding-left: @feedlish-panels-padding;
 		padding-right: @feedlish-panels-padding;
 	}
