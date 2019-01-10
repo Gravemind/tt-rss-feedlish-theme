@@ -471,7 +471,12 @@ body.ttrss_main {
 
 		// Left padding to align article to title
 		.content when (@feedlish-cdm-align-article-to-title = true) {
-			padding-left: @feedlish-headline-feed-name-width + 45px;
+			& when (@feedlish-hide-score-in-headlines = true) {
+				padding-left: @feedlish-headline-feed-name-width + 45px;
+			}
+			& when (@feedlish-hide-score-in-headlines = false) {
+				padding-left: @feedlish-headline-feed-name-width + 45px + 26px;
+			}
 		}
 
 		// Article fixed height
