@@ -2018,19 +2018,20 @@ i.material-icons.icon-no-feed {
   transition: none !important;
 }
 ::-webkit-scrollbar-thumb {
-  background-color: #444;
+  background-color: #b4b4b4;
+}
+body.ttrss_main a:visited {
+  color: #607c8b;
 }
 body.ttrss_main #toolbar-frame #toolbar {
   padding: 20px 0;
 }
 body.ttrss_main #feedTree > .dijitTreeContainer > div {
-  padding-top: 20px;
+  padding: 20px;
 }
 body.ttrss_main #toolbar-frame,
 body.ttrss_main #headlines-frame,
-body.ttrss_main #content-insert .post > div,
-body.ttrss_main .cdm.expandable div.content,
-body.ttrss_main #feedTree > .dijitTreeContainer > div {
+body.ttrss_main #content-insert .post > div {
   padding-left: 20px;
   padding-right: 20px;
 }
@@ -2191,32 +2192,31 @@ body.ttrss_main #headlines-frame div[id^="RROW"] div.title a:hover,
 body.ttrss_main #headlines-frame div[id^="RROW"] span.titleWrap a:hover {
   text-decoration: none;
 }
-body.ttrss_main #headlines-frame div[id^="RROW"].hl,
-body.ttrss_main #headlines-frame div[id^="RROW"] .header {
-  background-color: feedlish-headline-bg !important;
-}
-body.ttrss_main #headlines-frame div[id^="RROW"].hl a,
-body.ttrss_main #headlines-frame div[id^="RROW"] .header a,
-body.ttrss_main #headlines-frame div[id^="RROW"].hl span,
-body.ttrss_main #headlines-frame div[id^="RROW"] .header span {
+body.ttrss_main #headlines-frame div[id^="RROW"].hl .feed a,
+body.ttrss_main #headlines-frame div[id^="RROW"].hl .updated {
   color: #444;
 }
-body.ttrss_main #headlines-frame div[id^="RROW"]:not(.Unread).hl a.title,
-body.ttrss_main #headlines-frame div[id^="RROW"]:not(.Unread) .header a.title {
+body.ttrss_main #headlines-frame div[id^="RROW"].hl,
+body.ttrss_main #headlines-frame div[id^="RROW"] .header {
+  background-color: #fff !important;
+}
+body.ttrss_main #headlines-frame div[id^="RROW"] a.title {
+  color: #444;
+}
+body.ttrss_main #headlines-frame div[id^="RROW"] a.title span,
+body.ttrss_main #headlines-frame div[id^="RROW"] a.title ~ span {
+  color: #5e5e5e;
+}
+body.ttrss_main #headlines-frame div[id^="RROW"]:not(.Unread) a.title {
   color: #919191;
 }
-body.ttrss_main #headlines-frame div[id^="RROW"]:not(.Unread).hl a.title span,
-body.ttrss_main #headlines-frame div[id^="RROW"]:not(.Unread) .header a.title span,
-body.ttrss_main #headlines-frame div[id^="RROW"]:not(.Unread).hl a.title ~ span,
-body.ttrss_main #headlines-frame div[id^="RROW"]:not(.Unread) .header a.title ~ span {
+body.ttrss_main #headlines-frame div[id^="RROW"]:not(.Unread) a.title span,
+body.ttrss_main #headlines-frame div[id^="RROW"]:not(.Unread) a.title ~ span {
   color: #aaaaaa;
 }
 body.ttrss_main #headlines-frame div[id^="RROW"]:not(.Unread).hl,
 body.ttrss_main #headlines-frame div[id^="RROW"]:not(.Unread) .header {
   background-color: #fff !important;
-}
-body.ttrss_main #headlines-frame div[id^="RROW"].Unread {
-  /* default */
 }
 body.ttrss_main #headlines-frame div[id^="RROW"]:hover.hl,
 body.ttrss_main #headlines-frame div[id^="RROW"]:hover .header {
@@ -2226,14 +2226,11 @@ body.ttrss_main #headlines-frame div[id^="RROW"].Selected.hl,
 body.ttrss_main #headlines-frame div[id^="RROW"].Selected .header {
   background-color: #e5eff4 !important;
 }
-body.ttrss_main #headlines-frame div[id^="RROW"].active.hl a.title,
-body.ttrss_main #headlines-frame div[id^="RROW"].active .header a.title {
+body.ttrss_main #headlines-frame div[id^="RROW"].active a.title {
   color: #444;
 }
-body.ttrss_main #headlines-frame div[id^="RROW"].active.hl a.title span,
-body.ttrss_main #headlines-frame div[id^="RROW"].active .header a.title span,
-body.ttrss_main #headlines-frame div[id^="RROW"].active.hl a.title ~ span,
-body.ttrss_main #headlines-frame div[id^="RROW"].active .header a.title ~ span {
+body.ttrss_main #headlines-frame div[id^="RROW"].active a.title span,
+body.ttrss_main #headlines-frame div[id^="RROW"].active a.title ~ span {
   color: #5e5e5e;
 }
 body.ttrss_main #headlines-frame div[id^="RROW"].active.hl,
@@ -2376,4 +2373,16 @@ body.ttrss_main #headlines-frame.auto_catchup #headlines-spacer a::before {
 }
 body.ttrss_main .loading img {
   vertical-align: middle;
+}
+body.ttrss_main .content {
+  max-width: 60em;
+}
+body.ttrss_main div.cdm.expandable .content-inner {
+  font-size: 15px;
+}
+body.ttrss_main div.cdm.expandable .content {
+  padding: 0 20px 0 20px;
+}
+body.ttrss_main div.cdm.expandable .content {
+  padding-left: 191px;
 }
