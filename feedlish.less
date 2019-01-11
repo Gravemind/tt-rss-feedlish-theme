@@ -146,6 +146,10 @@ body.ttrss_main {
 	// Tweak feed tree
 	#feeds-holder #feedTree {
 
+		// Scroll bar on the left
+		direction: rtl;
+		> * { direction: ltr; }
+
 		// Paddings
 		padding-top: @feedlish-panels-padding;
 		padding-bottom: @feedlish-panels-padding;
