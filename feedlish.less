@@ -123,20 +123,18 @@ body.ttrss_main {
 
 	// Increase all panels inner paddings
 	// - Toolbar top
-	#toolbar-frame #toolbar { padding: @feedlish-panels-padding 0; }
-	// - Feed tree panel paddings
-	#feedTree > .dijitTreeContainer > div { padding: @feedlish-panels-padding; }
-	// - Main panel sides
-	#toolbar-frame,
-	#headlines-frame,
+	#toolbar-frame #toolbar { padding: @feedlish-panels-padding; }
 	// - Post panel sides
 	#content-insert .post > div {
 		padding-left: @feedlish-panels-padding;
 		padding-right: @feedlish-panels-padding;
 	}
 
-	// Make splitters look like part of panels
-	.dijitSplitter, .dijitSplitterV { background-color: @color-panel-bg; }
+	// Splitters color
+	.dijitSplitter, .dijitSplitterV { background-color: @default-bg; }
+	#content-insert_splitter {
+		background-color: darken(@color-panel-bg, 4%);
+	}
 
 	//
 	// Feed Tree Frame
@@ -147,6 +145,15 @@ body.ttrss_main {
 
 	// Tweak feed tree
 	#feeds-holder #feedTree {
+
+		// Paddings
+		padding-top: @feedlish-panels-padding;
+		padding-bottom: @feedlish-panels-padding;
+		.dijitTreeRow::before { // Hack because cannot use padding-left
+			content: " ";
+			margin: 0 0 0 @feedlish-panels-padding;
+		}
+		.dijitTreeRow { padding-right: @feedlish-panels-padding; }
 
 		// Remove border around rows
 		.dijitTreeRow { border: none !important; }
@@ -339,7 +346,8 @@ body.ttrss_main {
 
 		// Tweak elements padding
 		&.hl, & .header {
-			padding-left: 10px;
+			padding-left: @feedlish-panels-padding;
+			padding-right: @feedlish-panels-padding;
 			> * { padding: 0 10px 0 0; }
 		}
 		div.title .hl-content, .titleWrap {
