@@ -33,7 +33,7 @@
 // Adjustments:
 
 // Headline row height
-@feedlish-headline-row-height: 32px;
+@feedlish-headline-row-height: 34px;
 
 // Hide author in headlines
 @feedlish-hide-author-in-headlines: false;
@@ -316,8 +316,10 @@ body.ttrss_main {
 		&.Selected { .feedlish-set-headline-bg(@feedlish-headline-selected-bg); }
 		// - Active
 		&.active { .feedlish-set-headline-fg(@feedlish-headline-active-fg); .feedlish-set-headline-bg(@feedlish-headline-active-bg); }
-		// (Remove interfering background)
+		// Remove interfering background
 		&.cdm { background: none !important; }
+		// Combined-mode article bottom horizontal separator
+		&.cdm.active { border-bottom: 5px solid @feedlish-headline-active-bg; }
 
 		// Do not wrap title (except when expanded)
 		&.hl, &:not(.active) .header {
@@ -432,15 +434,10 @@ body.ttrss_main {
 		display: if(@feedlish-headline-feed-name-width-wide = 0, none, inline-flex);
 	}
 
-	// Remove separator border for:
-	// - Headlines: invisible border, so everyone is the same height
-	.hl, div#headlines-frame div.cdm.expandable { border: 1px solid @default-bg; }
-	// - "Loading, please wait" or "No articles found to display" in headlines panel
+	// Remove headlines separator borders
+	.hl, div#headlines-frame div.cdm.expandable { border: none; }
+	// Remove borders of "Loading, please wait" or "No articles found to display"
 	div.whiteBox { border: none; }
-	// But, keep border for combined mode expanded post:
-	div#headlines-frame div.cdm.expandable.active {
-		border: 1px solid darken(@default-bg, 20%);
-	}
 
 	// "Click to open next unread feed"
 	& {
