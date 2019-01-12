@@ -201,12 +201,15 @@ body.ttrss_main {
 		.dijitTreeExpando { top: 0; }
 
 		// Ignore a whitespace between icon and name in non-specials
-		.dijitTreeContent { display: inline-block; }
+		// !!! breaks ellipsis !!!
+		// .dijitTreeContent { display: inline-block; }
 
-		// Move loading wheel GIF to the right
+		// Move loading icon
 		.dijitTreeExpandoLeaf {
 			float: right;
 			top: 2px;
+			width: 0px; // don't take space for nothing
+			left: -16px;
 		}
 		// And re-align row
 		.dijitTreeRow[style="padding-left: 19px;"] {
@@ -223,6 +226,9 @@ body.ttrss_main {
 			> .dijitTreeNodeContainer .dijitTreeRow {
 				padding-left: 0px !important;
 			}
+
+			// Add space after icon to match feeds
+			.dijitTreeIcon { margin-right: 3px; }
 		}
 
 		// Lighten loading GIFs
