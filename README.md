@@ -80,6 +80,7 @@ But they need to be manually rebuild if any `.less` file changes
 
 ### Screenshots
 
-![feedlish](./screenshots/feedlish.png?1547295073)
+![feedlish](https://raw.githubusercontent.com/Gravemind/tt-rss-feedlish-theme/master/screenshots/feedlish.png?1547295073)
 
-![feedlish-night](./screenshots/feedlish-night.png?1547295073)
+![feedlish-night](https://raw.githubusercontent.com/Gravemind/tt-rss-feedlish-theme/master/screenshots/feedlish-night.png?1547295073)
+
