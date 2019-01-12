@@ -29,6 +29,8 @@
 @feedlish-headline-active-fg: @feedlish-headline-fg;
 // - Mouse hover
 @feedlish-headline-hover-bg: darken(@feedlish-headline-bg, 3%);
+// - Combined-mode expanded article background
+@feedlish-headline-cdm-article-bg: mix(@default-bg, @feedlish-headline-active-bg, 70%);
 
 // Adjustments:
 
@@ -344,8 +346,11 @@ body.ttrss_main {
 		&.active { .feedlish-set-headline-fg(@feedlish-headline-active-fg); .feedlish-set-headline-bg(@feedlish-headline-active-bg); }
 		// Remove interfering background
 		&.cdm { background: none !important; }
-		// Combined-mode article bottom horizontal separator
-		&.cdm.active { border-bottom: 5px solid @feedlish-headline-active-bg; }
+		// Combined-mode expanded article
+		&.cdm.active {
+			border-bottom: 5px solid @feedlish-headline-active-bg;
+			background: @feedlish-headline-cdm-article-bg !important;
+		}
 
 		// Do not wrap title (except when expanded)
 		&.hl, &:not(.active) .header {
