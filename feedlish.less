@@ -130,15 +130,24 @@ body.ttrss_main {
 		padding-right: @feedlish-panels-padding;
 	}
 
-	// Splitters color
-	.dijitSplitter, .dijitSplitterV { background-color: @default-bg; }
-	#content-insert_splitter {
+	// Default splitters color
+	.dijitSplitter, .dijitSplitterV {
 		background-color: darken(@color-panel-bg, 4%);
 	}
 
 	//
 	// Feed Tree Frame
 	//
+
+	// Feed tree splitter
+	#feeds-holder_splitter {
+		// Move it inside the feed tree panel (instead of in-between panels)
+		width: 5x;
+		margin-left: -5px;
+		// Make it Transparent
+		opacity: 0;
+		&:hover { opacity: 0.5; }
+	}
 
 	// Remove the border between the feed tree and headlines panel
 	#feeds-holder { box-shadow: none; }
