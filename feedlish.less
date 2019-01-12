@@ -52,7 +52,7 @@
 @feedlish-article-width: 60em;
 
 // Inner padding of panels/frames
-@feedlish-panels-padding: 10px;
+@feedlish-panels-padding: 16px;
 
 // In combined-mode, align article text to title
 @feedlish-cdm-align-article-to-title: true;
@@ -123,15 +123,6 @@ body.ttrss_main a:visited {
 
 body.ttrss_main {
 
-	// Increase all panels inner paddings
-	// - Toolbar top
-	#toolbar-frame #toolbar { padding: @feedlish-panels-padding; }
-	// - Post panel sides
-	#content-insert .post > div {
-		padding-left: @feedlish-panels-padding;
-		padding-right: @feedlish-panels-padding;
-	}
-
 	// Default splitters color
 	.dijitSplitter, .dijitSplitterV {
 		background-color: darken(@color-panel-bg, 4%);
@@ -170,6 +161,10 @@ body.ttrss_main {
 		}
 		.dijitTreeRow { padding-right: @feedlish-panels-padding; }
 
+		// Remove margin, so @feedlish-panels-padding is consistent
+		.dijitTreeExpando { margin-left: 0px; }
+		.counterNode { margin-right: 2px; }
+
 		// Remove border around rows
 		.dijitTreeRow { border: none !important; }
 
@@ -191,12 +186,6 @@ body.ttrss_main {
 			min-width: unset;
 			margin-top: unset;
 			line-height: unset;
-		}
-
-		// Increase space around feed icon and name
-		.dijitTreeIcon, .dijitTreeExpando,
-		.dijitTreeLabel {
-			margin-left: 8px !important;
 		}
 
 		// Change arrow icons
@@ -249,6 +238,11 @@ body.ttrss_main {
 	//
 	// Toolbar Frame
 	//
+
+	// Paddings
+	#toolbar-frame #toolbar { padding: @feedlish-panels-padding; }
+	// Icon
+	#toolbar-headlines .left i { margin: 0 8px 0 2px; }
 
 	// Remove italic from "N article selected" in toolbar
 	#toolbar-frame #toolbar #selected_prompt {
@@ -371,8 +365,8 @@ body.ttrss_main {
 		// Tweak elements padding
 		&.hl, & .header {
 			padding-left: @feedlish-panels-padding;
-			padding-right: @feedlish-panels-padding;
 			> * { padding: 0 10px 0 0; }
+			padding-right: @feedlish-panels-padding - 10px;
 		}
 		div.title .hl-content, .titleWrap {
 			> *:not(:empty) { margin-right: 5px; }
@@ -493,6 +487,12 @@ body.ttrss_main {
 	//
 	// Article content
 	//
+
+	// Post panel padding
+	#content-insert .post > div {
+		padding-left: @feedlish-panels-padding;
+		padding-right: @feedlish-panels-padding;
+	}
 
 	// Article width (max column)
 	.content { max-width: @feedlish-article-width; }
