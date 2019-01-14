@@ -152,13 +152,10 @@ body.ttrss_main {
 		direction: rtl;
 		> * { direction: ltr; }
 
-		// Paddings
-		padding-top: @feedlish-panels-padding;
-		padding-bottom: @feedlish-panels-padding;
-		.dijitTreeRow::before { // Hack because cannot use padding-left
-			content: " ";
-			margin: 0 0 0 @feedlish-panels-padding;
-		}
+		// Paddings (workaround "padding" don't do what we want...)
+		&::before { content: " "; display: block; height: @feedlish-panels-padding; clear: both; }
+		&::after { content: " "; display: block; height: @feedlish-panels-padding; clear: both; }
+		.dijitTreeRow::before { content: " "; margin-left: @feedlish-panels-padding; }
 		.dijitTreeRow { padding-right: @feedlish-panels-padding; }
 
 		// Remove margin, so @feedlish-panels-padding is consistent
