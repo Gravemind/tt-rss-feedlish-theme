@@ -2040,15 +2040,25 @@ body.ttrss_main #feeds-holder {
 }
 body.ttrss_main #feeds-holder #feedTree {
   direction: rtl;
-  padding-top: 16px;
-  padding-bottom: 16px;
 }
 body.ttrss_main #feeds-holder #feedTree > * {
   direction: ltr;
 }
+body.ttrss_main #feeds-holder #feedTree::before {
+  content: " ";
+  display: block;
+  height: 16px;
+  clear: both;
+}
+body.ttrss_main #feeds-holder #feedTree::after {
+  content: " ";
+  display: block;
+  height: 16px;
+  clear: both;
+}
 body.ttrss_main #feeds-holder #feedTree .dijitTreeRow::before {
   content: " ";
-  margin: 0 0 0 16px;
+  margin-left: 16px;
 }
 body.ttrss_main #feeds-holder #feedTree .dijitTreeRow {
   padding-right: 16px;
