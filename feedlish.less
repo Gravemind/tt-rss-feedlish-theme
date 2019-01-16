@@ -391,11 +391,6 @@ body.ttrss_main {
 			font-style: normal;
 		}
 
-		// FIXME: remove .feed when a is empty
-		.feed a:empty {
-			display: none;
-		}
-
 		// Hide score icon
 		.icon-score when (@feedlish-hide-score-in-headlines = true) {
 			display: none;
@@ -438,6 +433,12 @@ body.ttrss_main {
 		}
 
 	} // Headline row
+
+	// Headlines showing a "true" single feed (non-virtual)
+	#headlines-frame[is-vfeed="0"] {
+		// Hide feed title
+		.feed { display: none !important; }
+	}
 
 	// Feed name fixed width
 	.feed {
