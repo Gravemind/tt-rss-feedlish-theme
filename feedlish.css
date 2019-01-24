@@ -2186,8 +2186,19 @@ body.ttrss_main #headlines-frame div[id^="RROW"].hl > .left,
 body.ttrss_main #headlines-frame div[id^="RROW"] .header > .left {
   order: 5;
 }
+body.ttrss_main #headlines-frame div[id^="RROW"] .right .icon-score {
+  position: absolute;
+  right: 96px;
+}
 body.ttrss_main #headlines-frame div[id^="RROW"].hl > .left,
 body.ttrss_main #headlines-frame div[id^="RROW"] .header > .left {
+  margin-left: 28px;
+}
+body.ttrss_main #headlines-frame div[id^="RROW"].hl > .left,
+body.ttrss_main #headlines-frame div[id^="RROW"] .header > .left {
+  display: none;
+}
+body.ttrss_main #headlines-frame div[id^="RROW"] .icon-score {
   display: none;
 }
 body.ttrss_main #headlines-frame div[id^="RROW"]:hover.hl > .left,
@@ -2195,12 +2206,22 @@ body.ttrss_main #headlines-frame div[id^="RROW"].marked.hl > .left,
 body.ttrss_main #headlines-frame div[id^="RROW"].published.hl > .left,
 body.ttrss_main #headlines-frame div[id^="RROW"].active.hl > .left,
 body.ttrss_main #headlines-frame div[id^="RROW"].Selected.hl > .left,
+body.ttrss_main #headlines-frame div[id^="RROW"]:not(.score-neutral).hl > .left,
 body.ttrss_main #headlines-frame div[id^="RROW"]:hover .header > .left,
 body.ttrss_main #headlines-frame div[id^="RROW"].marked .header > .left,
 body.ttrss_main #headlines-frame div[id^="RROW"].published .header > .left,
 body.ttrss_main #headlines-frame div[id^="RROW"].active .header > .left,
-body.ttrss_main #headlines-frame div[id^="RROW"].Selected .header > .left {
+body.ttrss_main #headlines-frame div[id^="RROW"].Selected .header > .left,
+body.ttrss_main #headlines-frame div[id^="RROW"]:not(.score-neutral) .header > .left {
   display: flex;
+}
+body.ttrss_main #headlines-frame div[id^="RROW"]:hover .icon-score,
+body.ttrss_main #headlines-frame div[id^="RROW"].marked .icon-score,
+body.ttrss_main #headlines-frame div[id^="RROW"].published .icon-score,
+body.ttrss_main #headlines-frame div[id^="RROW"].active .icon-score,
+body.ttrss_main #headlines-frame div[id^="RROW"].Selected .icon-score,
+body.ttrss_main #headlines-frame div[id^="RROW"]:not(.score-neutral) .icon-score {
+  display: block;
 }
 body.ttrss_main #headlines-frame div[id^="RROW"] div.title .label,
 body.ttrss_main #headlines-frame div[id^="RROW"] span.titleWrap .label {
@@ -2356,7 +2377,6 @@ body.ttrss_main #headlines-frame div[id^="RROW"].cdm .right,
 body.ttrss_main #headlines-frame div[id^="RROW"].cdm .left,
 body.ttrss_main #headlines-frame div[id^="RROW"].cdm a {
   z-index: 20;
-  position: relative;
 }
 body.ttrss_main #headlines-frame div[id^="RROW"].cdm.active a.title:hover {
   text-decoration: underline;
@@ -2420,5 +2440,5 @@ body.ttrss_main div.cdm.expandable .content {
   padding: 0 20px 0 20px;
 }
 body.ttrss_main div.cdm.expandable .content {
-  padding-left: 198px;
+  padding-left: 171px;
 }
