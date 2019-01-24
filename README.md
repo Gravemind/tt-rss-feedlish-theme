@@ -57,7 +57,6 @@ To customize variables, add more CSS rules, etc...:
   //@color-accent: #ffe100;   // feedly-yellow-ish highlights
 
   @feedlish-hide-author-in-headlines: true;   // hide author
-  @feedlish-hide-score-in-headlines: true;    // hide score
 
   @feedlish-cdm-fixed-height: 250px; // combined-mode article fixed height
 

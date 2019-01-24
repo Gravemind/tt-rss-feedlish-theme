@@ -40,9 +40,6 @@
 // Hide author in headlines
 @feedlish-hide-author-in-headlines: false;
 
-// Hide score in headlines
-@feedlish-hide-score-in-headlines: false;
-
 // Headline feed name fixed width (0 to hide)
 @feedlish-headline-feed-name-width: 120px;
 // .. in wide mode (0 to hide)
@@ -273,10 +270,19 @@ body.ttrss_main {
 			> .left { order: 5; }
 		}
 
-		// Show buttons only on hover or marked
+		// Change order again, but move only the score icon to the right (not the feed icon)
+		.right .icon-score {
+			position: absolute;
+			right: 80px + @feedlish-panels-padding;
+		}
+		&.hl, & .header { > .left { margin-left: 28px; } } // space before buttons
+
+		// Show buttons (and score) only when hover or something's active
 		&.hl, & .header { > .left { display: none; } }
-		&:hover, &.marked, &.published, &.active, &.Selected {
+		.icon-score { display: none; }
+		&:hover, &.marked, &.published, &.active, &.Selected, &:not(.score-neutral) {
 			&.hl, & .header { > .left { display: flex; } }
+			.icon-score { display: block; }
 		}
 
 		// Tweak title:
@@ -391,11 +397,6 @@ body.ttrss_main {
 			font-style: normal;
 		}
 
-		// Hide score icon
-		.icon-score when (@feedlish-hide-score-in-headlines = true) {
-			display: none;
-		}
-
 		// Make left of the title clickable
 		// FIXME: ugly hack
 		div.title, span.titleWrap {
@@ -424,7 +425,6 @@ body.ttrss_main {
 			}
 			.right, .left, a {
 				z-index: 20; // keep links/button on top
-				position: relative; // (needed this to work !?)
 			}
 			// Underline to indicate it'll open the link and not collapse
 			&.active a.title:hover {
@@ -505,12 +505,7 @@ body.ttrss_main {
 
 		// Left padding to align article to title
 		.content when (@feedlish-cdm-align-article-to-title = true) {
-			& when (@feedlish-hide-score-in-headlines = true) {
-				padding-left: @feedlish-headline-feed-name-width + @feedlish-panels-padding + 35px;
-			}
-			& when (@feedlish-hide-score-in-headlines = false) {
-				padding-left: @feedlish-headline-feed-name-width + @feedlish-panels-padding + 35px + 27px;
-			}
+			padding-left: @feedlish-headline-feed-name-width + @feedlish-panels-padding + 35px;
 		}
 
 		// Article fixed height
