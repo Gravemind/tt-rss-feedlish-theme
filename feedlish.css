@@ -2373,10 +2373,11 @@ body.ttrss_main #headlines-frame div[id^="RROW"].cdm .collapse i {
   height: 100%;
   z-index: 10;
 }
-body.ttrss_main #headlines-frame div[id^="RROW"].cdm .right,
+body.ttrss_main #headlines-frame div[id^="RROW"].cdm .right > span,
 body.ttrss_main #headlines-frame div[id^="RROW"].cdm .left,
 body.ttrss_main #headlines-frame div[id^="RROW"].cdm a {
   z-index: 20;
+  position: relative;
 }
 body.ttrss_main #headlines-frame div[id^="RROW"].cdm.active a.title:hover {
   text-decoration: underline;
