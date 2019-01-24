@@ -423,8 +423,9 @@ body.ttrss_main {
 				height: 100%;
 				z-index: 10; // keep links/button on top
 			}
-			.right, .left, a {
+			.right > span, .left, a {
 				z-index: 20; // keep links/button on top
+				position: relative; // (needed this to work !?)
 			}
 			// Underline to indicate it'll open the link and not collapse
 			&.active a.title:hover {
