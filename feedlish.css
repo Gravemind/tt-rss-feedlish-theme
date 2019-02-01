@@ -402,21 +402,15 @@ body.ttrss_main span.preview {
   padding-left: 4px;
 }
 body.ttrss_main .label {
-  display: inline-flex;
+  display: inline-block;
   vertical-align: middle;
   background-color: #fff7d5;
   font-size: 9px;
   color: #444;
   font-weight: normal;
   margin-left: 2px;
-  padding: 1px 4px 1px 1px;
+  padding: 2px 4px;
   white-space: nowrap;
-}
-body.ttrss_main .label i {
-  margin-right: 2px;
-}
-body.ttrss_main .label > * {
-  align-self: center;
 }
 body.ttrss_main i.marked-pic,
 body.ttrss_main i.pub-pic {
@@ -691,6 +685,9 @@ body.ttrss_main #headlines-wrap-inner {
   padding: 0px;
   margin: 0px;
   border-width: 0px;
+}
+body.ttrss_main #headlines-frame[is-vfeed="0"] .header .feed {
+  display: none;
 }
 body.ttrss_main #headlines-frame {
   padding: 0px;
@@ -2230,10 +2227,6 @@ body.ttrss_main #headlines-frame div[id^="RROW"] span.titleWrap .label {
   border-radius: 99px;
   vertical-align: baseline;
 }
-body.ttrss_main #headlines-frame div[id^="RROW"] div.title .label > i,
-body.ttrss_main #headlines-frame div[id^="RROW"] span.titleWrap .label > i {
-  display: none;
-}
 body.ttrss_main #headlines-frame div[id^="RROW"] div.title a,
 body.ttrss_main #headlines-frame div[id^="RROW"] span.titleWrap a {
   font-size: 14px !important;
@@ -2381,9 +2374,6 @@ body.ttrss_main #headlines-frame div[id^="RROW"].cdm a {
 }
 body.ttrss_main #headlines-frame div[id^="RROW"].cdm.active a.title:hover {
   text-decoration: underline;
-}
-body.ttrss_main #headlines-frame[is-vfeed="0"] .feed {
-  display: none !important;
 }
 body.ttrss_main .feed {
   min-width: 120px;
