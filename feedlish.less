@@ -450,6 +450,11 @@ body.ttrss_main {
 		display: if(@feedlish-headline-feed-name-width-wide = 0, none, inline-flex);
 	}
 
+	// Fix buttons not showing in wide mode
+	div#headlines-frame.wide .title {
+		overflow: hidden;
+	}
+
 	// Remove headlines separator borders
 	.hl, div#headlines-frame div.cdm.expandable { border: none; }
 	// Remove borders of "Loading, please wait" or "No articles found to display"
