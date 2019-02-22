@@ -38,26 +38,23 @@ body.ttrss_main div.post div.header .row {
   display: flex;
   margin-bottom: 4px;
   flex-wrap: nowrap;
-}
-body.ttrss_main div.post div.header .row > * {
-  align-self: center;
+  align-items: center;
+  justify-content: space-between;
 }
 body.ttrss_main div.post div.header .comments {
   flex-grow: 2;
 }
 body.ttrss_main div.post div.header .date {
-  text-align: right;
   white-space: nowrap;
-  align-self: flex-start;
 }
 body.ttrss_main div.post div.header img,
-body.ttrss_main div.post div.header i {
+body.ttrss_main div.post div.header i.material-icons {
   margin: 0px 4px;
   vertical-align: middle;
+  color: #777;
 }
 body.ttrss_main div.post div.header .title {
   flex-grow: 2;
-  align-self: flex-start;
   font-size: 15px;
   font-weight: 600;
   text-rendering: optimizelegibility;
@@ -82,9 +79,7 @@ body.ttrss_main div.post div.content iframe {
 }
 body.ttrss_main .inline-player {
   display: flex;
-}
-body.ttrss_main .inline-player > * {
-  align-self: center;
+  align-items: center;
 }
 body.ttrss_main .inline-player audio {
   margin-right: 8px;
@@ -95,9 +90,9 @@ body.ttrss_main .article-note {
   border: 1px solid #e7d796;
   color: #9a8c59;
   display: flex;
+  align-items: center;
 }
 body.ttrss_main .article-note > * {
-  align-self: center;
   padding: 5px;
 }
 body.ttrss_main .article-note.editable {
@@ -123,10 +118,6 @@ body.ttrss_main h4 {
   font-weight: 600;
   text-rendering: optimizelegibility;
 }
-body.ttrss_main hr {
-  border: 0px solid #ccc;
-  border-bottom-width: 1px;
-}
 body.ttrss_main a {
   color: #257aa7;
   text-decoration: none;
@@ -149,10 +140,10 @@ body.ttrss_main #notify {
   font-size: 13px;
   z-index: 99;
   display: flex;
+  align-items: center;
   transition: all 0.5s ease-in-out;
 }
 body.ttrss_main #notify > * {
-  align-self: center;
   padding: 4px;
 }
 body.ttrss_main #notify img {
@@ -196,9 +187,9 @@ body.ttrss_main .hl {
   flex-direction: row;
   flex-wrap: nowrap;
   background: #ebebeb;
+  align-items: center;
 }
 body.ttrss_main .hl > * {
-  align-self: center;
   white-space: nowrap;
   padding: 4px;
 }
@@ -208,10 +199,7 @@ body.ttrss_main .hl img {
 body.ttrss_main .hl .left,
 body.ttrss_main .hl .right {
   display: flex;
-}
-body.ttrss_main .hl .left > *,
-body.ttrss_main .hl .right > * {
-  align-self: center;
+  align-items: center;
 }
 body.ttrss_main .hl .left i.material-icons,
 body.ttrss_main .hl .right i.material-icons {
@@ -220,6 +208,9 @@ body.ttrss_main .hl .right i.material-icons {
   transition: color 0.2s linear;
   user-select: none;
   font-size: 21px;
+}
+body.ttrss_main .hl .right i.material-icons {
+  color: #777;
 }
 body.ttrss_main .hl div.title {
   cursor: pointer;
@@ -337,63 +328,9 @@ body.ttrss_main .dijitContentPane pre {
   max-width: 98%;
   overflow: auto;
 }
-body.ttrss_main .alert {
-  padding: 8px 35px 8px 14px;
-  margin-bottom: 10px;
-  /* text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5); */
-  background-color: #fcf8e3;
-  border: 1px solid #fbeed5;
-  border-radius: 4px;
-}
-body.ttrss_main .alert .close {
-  position: relative;
-  top: -2px;
-  right: -21px;
-  line-height: 20px;
-  cursor: pointer;
-}
-body.ttrss_main .alert,
-body.ttrss_main .alert h4 {
-  color: #c09853;
-}
-body.ttrss_main .alert h4 {
-  margin: 0;
-}
-body.ttrss_main .alert-success {
-  color: #468847;
-  background-color: #dff0d8;
-  border-color: #d6e9c6;
-}
-body.ttrss_main .alert-success h4 {
-  color: #468847;
-}
-body.ttrss_main .alert-danger,
-body.ttrss_main .alert-error {
-  color: #b94a48;
-  background-color: #f2dede;
-  border-color: #eed3d7;
-}
-body.ttrss_main .alert-danger h4,
-body.ttrss_main .alert-error h4 {
-  color: #b94a48;
-}
-body.ttrss_main .alert-info {
-  color: #3a87ad;
-  background-color: #d9edf7;
-  border-color: #bce8f1;
-}
-body.ttrss_main .alert-info h4 {
-  color: #3a87ad;
-}
 body.ttrss_main div.prefHelp {
   color: #444;
   padding: 5px;
-}
-body.ttrss_main .insensitive {
-  color: #444;
-}
-body.ttrss_main .small {
-  font-size: 11px;
 }
 body.ttrss_main span.preview {
   color: #999;
@@ -436,9 +373,9 @@ body.ttrss_main ul.browseFeedList {
 }
 body.ttrss_main ul.browseFeedList li {
   display: flex;
+  align-items: center;
 }
 body.ttrss_main ul.browseFeedList li > * {
-  align-self: center;
   margin: 2px;
 }
 body.ttrss_main .browseFeedList span.subscribers {
@@ -482,30 +419,6 @@ body.ttrss_main div.whiteBox {
   border: 0px solid #ebebeb;
   border-bottom-width: 1px;
 }
-body.ttrss_main div.autocomplete {
-  position: absolute;
-  width: 250px;
-  background-color: #fff;
-  border: 1px solid #ebebeb;
-  margin: 0px;
-  padding: 0px;
-}
-body.ttrss_main div.autocomplete ul {
-  list-style-type: none;
-  margin: 0px;
-  padding: 0px;
-}
-body.ttrss_main div.autocomplete ul li.selected {
-  background-color: #e6e6e6;
-}
-body.ttrss_main div.autocomplete ul li {
-  list-style-type: none;
-  display: block;
-  margin: 0;
-  padding: 2px;
-  height: 32px;
-  cursor: pointer;
-}
 body.ttrss_main div#headlines-frame.wide .title {
   overflow: visible;
   white-space: normal;
@@ -513,43 +426,68 @@ body.ttrss_main div#headlines-frame.wide .title {
 body.ttrss_main div#headlines-frame.wide .hl .feed {
   display: none;
 }
-body.ttrss_main div.dlgSec {
-  font-size: 14px;
+body.ttrss_main .dijitDialog header,
+body.ttrss_main .dijitDialog .dlgSec,
+body.ttrss_main .dijitDialog .dlgSecHoriz {
+  font-size: 16px;
+  font-weight: 600;
+  color: #444;
+  font-family: "Segoe WP Semibold", "Segoe UI Semibold", "Segoe UI Web Semibold", "Segoe UI", Ubuntu, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+body.ttrss_main .dijitDialog section,
+body.ttrss_main .dijitDialog .dlgSecCont {
+  margin: 10px 20px;
+}
+body.ttrss_main .dijitDialog header.horizontal + section,
+body.ttrss_main .dijitDialog .dlgSecHoriz + .dlgSecCont {
+  margin: 10px 0;
+}
+body.ttrss_main .dijitDialog section.narrow {
+  margin: 0;
+}
+body.ttrss_main .dijitDialog section fieldset > label,
+body.ttrss_main .dijitDialog div.dlgSecCont fieldset > label,
+body.ttrss_main .dijitDialog div.dlgSecSimple fieldset > label {
   font-weight: bold;
-  clear: both;
-  margin: 8px;
-  position: relative;
-  top: 8px;
-}
-body.ttrss_main div.dlgSecHoriz {
-  font-size: 14px;
-  font-weight: bold;
-  clear: both;
-  margin-bottom: 8px;
-  margin-top: 8px;
-}
-body.ttrss_main div.dlgSecCont {
-  position: relative;
-  left: 150px;
-  top: -20px;
-  float: left;
-  font-weight: normal;
-}
-body.ttrss_main div.dlgSecCont > * {
-  position: relative;
-  top: -2px;
-}
-body.ttrss_main div.dlgSecCont hr,
-body.ttrss_main div.dlgSecSimple hr {
-  height: 0px;
-  line-height: 0px;
-  border: 0px solid transparent;
-  margin: 2px;
-}
-body.ttrss_main .dijitDialog .dlgButtons {
-  margin-top: 4px;
+  margin-right: 10px;
+  display: inline-block;
+  min-width: 140px;
   text-align: right;
-  clear: both;
+}
+body.ttrss_main .dijitDialog section fieldset > label.checkbox,
+body.ttrss_main .dijitDialog div.dlgSecCont fieldset > label.checkbox,
+body.ttrss_main .dijitDialog div.dlgSecSimple fieldset > label.checkbox {
+  font-weight: normal;
+  display: inline;
+}
+body.ttrss_main .dijitDialog section fieldset > label.inline,
+body.ttrss_main .dijitDialog div.dlgSecCont fieldset > label.inline,
+body.ttrss_main .dijitDialog div.dlgSecSimple fieldset > label.inline {
+  display: inline;
+}
+body.ttrss_main .dijitDialog section fieldset,
+body.ttrss_main .dijitDialog div.dlgSecCont fieldset,
+body.ttrss_main .dijitDialog div.dlgSecSimple fieldset {
+  border-width: 0px;
+  padding: 5px 0px;
+}
+body.ttrss_main .dijitDialog section fieldset.narrow,
+body.ttrss_main .dijitDialog div.dlgSecCont fieldset.narrow,
+body.ttrss_main .dijitDialog div.dlgSecSimple fieldset.narrow {
+  padding: 2px 0px;
+}
+body.ttrss_main .dijitDialog section fieldset.align-right,
+body.ttrss_main .dijitDialog div.dlgSecCont fieldset.align-right,
+body.ttrss_main .dijitDialog div.dlgSecSimple fieldset.align-right {
+  text-align: right;
+}
+body.ttrss_main .dijitDialog footer,
+body.ttrss_main .dijitDialog .dlgButtons {
+  margin-top: 5px;
+  text-align: right;
+}
+body.ttrss_main .dijitDialog footer.text-center {
+  text-align: center;
 }
 body.ttrss_main i.icon-label {
   color: #fff7d5;
@@ -733,9 +671,7 @@ body.ttrss_main #toolbar-frame #toolbar {
   flex-wrap: nowrap;
   color: #444;
   font-size: 12px;
-}
-body.ttrss_main #toolbar-frame #toolbar > * {
-  align-self: center;
+  align-items: center;
 }
 body.ttrss_main #toolbar-frame #toolbar .dijitSelect,
 body.ttrss_main #toolbar-frame #toolbar .dijitDropDownButton .dijitButtonNode,
@@ -757,19 +693,15 @@ body.ttrss_main #toolbar-frame #toolbar #toolbar-headlines {
 body.ttrss_main #toolbar-frame #toolbar #toolbar-headlines .left {
   flex-grow: 2;
   display: flex;
+  align-items: center;
 }
 body.ttrss_main #toolbar-frame #toolbar #toolbar-headlines .left img {
   vertical-align: middle;
   margin-right: 8px;
 }
-body.ttrss_main #toolbar-frame #toolbar #toolbar-headlines .left > * {
-  align-self: center;
-}
 body.ttrss_main #toolbar-frame #toolbar #toolbar-headlines .right {
   display: flex;
-}
-body.ttrss_main #toolbar-frame #toolbar #toolbar-headlines .right > * {
-  align-self: center;
+  align-items: center;
 }
 body.ttrss_main #toolbar-frame #toolbar #updates-available {
   color: #69C671;
@@ -914,67 +846,6 @@ body.ttrss_main #feedEditDlg img.feedIcon {
   height: auto;
   width: auto;
 }
-body.ttrss_login {
-  padding: 2em;
-  font-size: 14px;
-}
-body.ttrss_login fieldset {
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
-  width: 400px;
-  border-width: 0px;
-}
-body.ttrss_login label {
-  width: 120px;
-  margin-right: 20px;
-  display: inline-block;
-  text-align: right;
-  color: gray;
-}
-body.ttrss_login div.header {
-  border: 0px solid #257aa7;
-  border-bottom-width: 1px;
-  margin-bottom: 1em;
-  padding-bottom: 5px;
-}
-body.ttrss_login div.footer {
-  margin-top: 1em;
-  padding-top: 5px;
-  border: 0px solid #257aa7;
-  border-top-width: 1px;
-  text-align: center;
-  color: gray;
-  font-size: 12px;
-}
-body.ttrss_login a.forgotpass {
-  text-align: right;
-  font-size: 11px;
-  display: inline-block;
-}
-body.ttrss_login a {
-  color: #257aa7;
-  text-decoration: none;
-}
-body.ttrss_login a:hover,
-body.ttrss_login a:focus {
-  color: #257aa7;
-  text-decoration: underline;
-}
-body.ttrss_login div.footer a {
-  color: gray;
-}
-body.ttrss_login div.footer a:hover {
-  color: #257aa7;
-}
-body.ttrss_login div.row {
-  padding: 0px 0px 5px 0px;
-}
-body.ttrss_login div.row-error {
-  color: red;
-  text-align: center;
-  padding: 0px 0px 5px 0px;
-}
 body.ttrss_main .dijitDialog h1:first-of-type,
 body.ttrss_main .dijitDialog h2:first-of-type,
 body.ttrss_main .dijitDialog h3:first-of-type,
@@ -1048,6 +919,107 @@ body.ttrss_main #prefFilterTestResultList .title {
 body.ttrss_main #prefFilterTestResultList .feed {
   color: #257aa7;
 }
+body.ttrss_main .alert,
+body.ttrss_utility .alert {
+  padding: 8px 35px 8px 14px;
+  margin-bottom: 10px;
+  /* text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5); */
+  background-color: #fcf8e3;
+  border: 1px solid #fbeed5;
+  border-radius: 4px;
+}
+body.ttrss_main .alert .close,
+body.ttrss_utility .alert .close {
+  position: relative;
+  top: -2px;
+  right: -21px;
+  line-height: 20px;
+  cursor: pointer;
+}
+body.ttrss_main .alert,
+body.ttrss_utility .alert,
+body.ttrss_main .alert h4,
+body.ttrss_utility .alert h4 {
+  color: #c09853;
+}
+body.ttrss_main .alert h4,
+body.ttrss_utility .alert h4 {
+  margin: 0;
+}
+body.ttrss_main .alert-success,
+body.ttrss_utility .alert-success {
+  color: #468847;
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+}
+body.ttrss_main .alert-success h4,
+body.ttrss_utility .alert-success h4 {
+  color: #468847;
+}
+body.ttrss_main .alert-danger,
+body.ttrss_utility .alert-danger,
+body.ttrss_main .alert-error,
+body.ttrss_utility .alert-error {
+  color: #b94a48;
+  background-color: #f2dede;
+  border-color: #eed3d7;
+}
+body.ttrss_main .alert-danger h4,
+body.ttrss_utility .alert-danger h4,
+body.ttrss_main .alert-error h4,
+body.ttrss_utility .alert-error h4 {
+  color: #b94a48;
+}
+body.ttrss_main .alert-info,
+body.ttrss_utility .alert-info {
+  color: #3a87ad;
+  background-color: #d9edf7;
+  border-color: #bce8f1;
+}
+body.ttrss_main .alert-info h4,
+body.ttrss_utility .alert-info h4 {
+  color: #3a87ad;
+}
+body.ttrss_main hr,
+body.ttrss_utility hr {
+  border: 0px solid #ccc;
+  border-bottom-width: 1px;
+}
+body.ttrss_main .insensitive,
+body.ttrss_utility .insensitive {
+  color: #444;
+}
+body.ttrss_main .small,
+body.ttrss_utility .small {
+  font-size: 11px;
+}
+body.ttrss_main div.autocomplete,
+body.ttrss_utility div.autocomplete {
+  position: absolute;
+  width: 250px;
+  background-color: #fff;
+  border: 1px solid #ebebeb;
+  margin: 0px;
+  padding: 0px;
+}
+body.ttrss_main div.autocomplete ul,
+body.ttrss_utility div.autocomplete ul {
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+}
+body.ttrss_main div.autocomplete ul li.selected,
+body.ttrss_utility div.autocomplete ul li.selected {
+  background-color: #e6e6e6;
+}
+body.ttrss_main div.autocomplete ul li,
+body.ttrss_utility div.autocomplete ul li {
+  list-style-type: none;
+  display: block;
+  margin: 0;
+  padding: 2px;
+  cursor: pointer;
+}
 ::selection {
   background: #257aa7;
   color: #fff;
@@ -1064,6 +1036,9 @@ body.ttrss_main #prefFilterTestResultList .feed {
 video::-webkit-media-controls-overlay-play-button {
   display: none;
 }
+.cdm i.material-icons {
+  color: #777;
+}
 .cdm .header,
 .cdm .footer {
   display: flex;
@@ -1072,22 +1047,21 @@ video::-webkit-media-controls-overlay-play-button {
 }
 .cdm .header img,
 .cdm .footer img,
-.cdm .footer i {
+.cdm .footer i.material-icons {
   margin: 0px 4px;
   vertical-align: middle;
 }
+.cdm .header {
+  align-items: center;
+}
 .cdm .header > * {
-  align-self: center;
   padding: 4px;
   white-space: nowrap;
 }
 .cdm .header .left,
 .cdm .header .right {
   display: flex;
-}
-.cdm .header .left > *,
-.cdm .header .right > * {
-  align-self: center;
+  align-items: center;
 }
 .cdm .header .left i.material-icons,
 .cdm .header .right i.material-icons {
@@ -1115,9 +1089,7 @@ video::-webkit-media-controls-overlay-play-button {
   font-weight: normal;
   color: #444;
   clear: both;
-}
-.cdm .footer > * {
-  align-self: center;
+  align-items: center;
 }
 .cdm .footer .left {
   flex-grow: 2;
@@ -1256,19 +1228,16 @@ div#floatingTitle {
   flex-direction: row;
   flex-wrap: nowrap;
   box-shadow: 0px 1px 1px -1px rgba(0, 0, 0, 0.1);
+  align-items: center;
 }
 div#floatingTitle > * {
-  align-self: center;
   white-space: nowrap;
   padding: 4px;
 }
 div#floatingTitle .left,
 div#floatingTitle .right {
   display: flex;
-}
-div#floatingTitle .left > *,
-div#floatingTitle .right > * {
-  align-self: center;
+  align-items: center;
 }
 div#floatingTitle .left i.material-icons,
 div#floatingTitle .right i.material-icons {
@@ -1288,7 +1257,7 @@ div#floatingTitle .right i.icon-anchor {
 div#floatingTitle .excerpt {
   display: none;
 }
-div#floatingTitle .collapse i {
+div#floatingTitle .collapse i.material-icons {
   color: #257aa7;
   cursor: pointer;
 }
@@ -1399,7 +1368,7 @@ div.cdm.expandable div.header a.title {
 div.cdm.expandable.Unread div.header a.title {
   color: black;
 }
-div.cdm.expandable.active .collapse i {
+div.cdm.expandable.active .collapse i.material-icons {
   color: #257aa7;
   cursor: pointer;
 }
@@ -1424,6 +1393,19 @@ body.ttrss_prefs {
   background-color: #ebebeb;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
+}
+body.ttrss_prefs h1,
+body.ttrss_prefs h2,
+body.ttrss_prefs h3,
+body.ttrss_prefs h4 {
+  font-family: "Segoe WP Semibold", "Segoe UI Semibold", "Segoe UI Web Semibold", "Segoe UI", Ubuntu, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  color: #444;
+}
+body.ttrss_prefs .dijitContentPane h1:first-of-type,
+body.ttrss_prefs .dijitContentPane h2:first-of-type,
+body.ttrss_prefs .dijitContentPane h3:first-of-type {
+  margin-top: 0px;
 }
 body.ttrss_prefs #footer,
 body.ttrss_prefs #header {
@@ -1461,14 +1443,6 @@ body.ttrss_prefs .dijitAccordionTitleSelected i.material-icons {
 body.ttrss_prefs .dijitDialog #pref-profiles-list .dijitInlineEditBoxDisplayMode {
   padding: 0px;
 }
-body.ttrss_prefs tr.title td {
-  border: 0px solid #ecf4ff;
-  border-bottom-width: 1px;
-  color: #257aa7;
-}
-body.ttrss_prefs .prefPrefsList td {
-  padding-bottom: 4px;
-}
 body.ttrss_prefs div#feedlistLoading,
 body.ttrss_prefs div#filterlistLoading,
 body.ttrss_prefs div#labellistLoading {
@@ -1487,6 +1461,10 @@ body.ttrss_prefs #errorButton {
 body.ttrss_prefs .user-css-editor {
   height: 300px;
   width: 575px;
+}
+body.ttrss_prefs fieldset.prefs-set .help-text {
+  display: inline-block;
+  margin-left: 10px;
 }
 body.ttrss_prefs table.prefPluginsList td label,
 body.ttrss_prefs table.prefUserList td {
@@ -1518,47 +1496,75 @@ body.ttrss_prefs hr {
   border-color: #ecf4ff;
   max-width: 100%;
 }
+body.ttrss_prefs .phpinfo table {
+  border-collapse: collapse;
+}
+body.ttrss_prefs .phpinfo td.e,
+body.ttrss_prefs .phpinfo td.v {
+  border: 1px solid #ccc;
+}
+body.ttrss_prefs .phpinfo td.e {
+  font-weight: bold;
+}
+body.ttrss_prefs .phpinfo td.v {
+  font-family: monospace;
+}
+body.ttrss_prefs fieldset,
+body.ttrss_utility fieldset {
+  border-width: 0px;
+  padding: 5px 0px;
+}
+body.ttrss_prefs fieldset.narrow,
+body.ttrss_utility fieldset.narrow {
+  padding: 2px 0px;
+}
+body.ttrss_prefs fieldset.align-right,
+body.ttrss_utility fieldset.align-right {
+  text-align: right;
+}
+body.ttrss_prefs fieldset > label:first-of-type,
+body.ttrss_utility fieldset > label:first-of-type {
+  min-width: 140px;
+  margin-right: 20px;
+  display: inline-block;
+  text-align: right;
+  font-weight: bold;
+}
+body.ttrss_prefs fieldset > label.checkbox,
+body.ttrss_utility fieldset > label.checkbox {
+  display: inline;
+  font-weight: normal;
+}
 body.ttrss_utility.sanity_failed {
   background: #900;
 }
 body.ttrss_utility {
   background: #ebebeb;
   color: #444;
-  padding: 0px;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 800px;
+  margin: 4em;
 }
-body.ttrss_utility form {
-  margin: 10px 0px 0px 0px;
-  padding: 0px;
-}
-body.ttrss_utility div.content {
-  overflow: hidden;
+body.ttrss_utility .content {
   background: white;
   border: 1px solid #ddd;
-  padding: 10px;
-  border-radius: 6px;
+  padding: 20px;
   box-shadow: 0px 1px 1px -1px rgba(0, 0, 0, 0.1);
 }
-body.ttrss_utility p.warning {
-  color: red;
+body.ttrss_utility .content h2:first-of-type {
+  margin-top: 0;
 }
-body.ttrss_utility p.query,
-body.ttrss_utility code {
-  color: green;
+body.ttrss_utility .content h2,
+body.ttrss_utility .content h3,
+body.ttrss_utility .content h4 {
+  color: #257aa7;
+  font-family: "Segoe WP Semibold", "Segoe UI Semibold", "Segoe UI Web Semibold", "Segoe UI", Ubuntu, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
-body.ttrss_utility p.insensitive {
-  color: gray;
+body.ttrss_utility .content h2 {
+  font-size: 18px;
 }
-body.ttrss_utility div.insensitive-small {
-  color: gray;
-  font-size: 10px;
-}
-body.ttrss_utility .floatingLogo {
-  display: none;
+body.ttrss_utility .content h3 {
+  font-size: 16px;
 }
 body.ttrss_utility a {
   color: #257aa7;
@@ -1569,190 +1575,60 @@ body.ttrss_utility a:focus {
   color: #133d54;
   text-decoration: underline;
 }
-body.ttrss_utility .alert {
-  padding: 8px 35px 8px 14px;
-  margin-bottom: 20px;
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
-  background-color: #fcf8e3;
-  border: 1px solid #fbeed5;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
-}
-body.ttrss_utility .alert,
-body.ttrss_utility .alert h4 {
-  color: #c09853;
-}
-body.ttrss_utility .alert h4 {
-  margin: 0;
-}
-body.ttrss_utility .alert .close {
-  position: relative;
-  top: -2px;
-  right: -21px;
-  line-height: 20px;
-  cursor: pointer;
-}
-body.ttrss_utility .alert-success {
-  color: #468847;
-  background-color: #dff0d8;
-  border-color: #d6e9c6;
-}
-body.ttrss_utility .alert-success h4 {
-  color: #468847;
-}
-body.ttrss_utility .alert-danger,
-body.ttrss_utility .alert-error {
-  color: #b94a48;
-  background-color: #f2dede;
-  border-color: #eed3d7;
-}
-body.ttrss_utility .alert-danger h4,
-body.ttrss_utility .alert-error h4 {
-  color: #b94a48;
-}
-body.ttrss_utility .alert-info {
-  color: #3a87ad;
-  background-color: #d9edf7;
-  border-color: #bce8f1;
-}
-body.ttrss_utility .alert-info h4 {
-  color: #3a87ad;
-}
 body.ttrss_utility h1 {
+  color: gray;
+  font-family: "Segoe WP Semibold", "Segoe UI Semibold", "Segoe UI Web Semibold", "Segoe UI", Ubuntu, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  margin: 10px 0 0 0;
+}
+body.ttrss_utility .footer {
+  text-align: center;
+  padding-top: 10px;
+}
+body.ttrss_utility .footer a {
+  color: gray;
+}
+body.ttrss_utility .footer a:hover {
   color: #257aa7;
-  font-size: 32px;
-  margin: 20px 0px 5px 0px;
-  text-shadow: 0 0 6px #fff;
 }
-body.ttrss_utility h2 {
-  color: #257aa7;
-  font-size: 14pt;
-  border-width: 0px 0px 1px 0px;
-  border-color: #f0f0f0;
-  border-style: solid;
-}
-body.ttrss_utility div.content > h2 {
-  margin-top: 0px;
-}
-body.ttrss_utility div.rss h1 {
-  border-width: 0px 0px 1px 0px;
-  border-color: gray;
-  border-style: dotted;
-  color: gray;
-}
-body.ttrss_utility div.rss h2 {
-  font-size: 12pt;
-}
-body.ttrss_utility div.rss a.extlink {
-  color: gray;
-  border-width: 0px 0px 1px 0px;
-  border-color: #778899;
-  border-style: dotted;
-  font-size: 9pt;
-}
-body.ttrss_utility div.rss img {
-  max-width: 775px;
-}
-body.ttrss_utility div.rss p.description {
-  color: gray;
-  font-size: 9pt;
-}
-body.ttrss_utility div.rss div.content {
-  margin-top: 0.5em;
-}
-body.ttrss_utility div.rss img.feedicon {
-  float: right;
-}
-body.ttrss_utility div.rss hr {
-  border-width: 0px 0px 1px 0px;
-  border-style: dashed;
-  border-color: #e0e0e0;
-}
-body.ttrss_utility div.autocomplete {
-  position: absolute;
-  width: 250px;
-  background-color: white;
-  border: 1px solid #778899;
-  margin: 0px;
-  padding: 0px;
-  z-index: 4;
-}
-body.ttrss_utility div.autocomplete ul {
-  list-style-type: none;
-  margin: 0px;
-  padding: 0px;
-  font-size: 10px;
-}
-body.ttrss_utility div.autocomplete ul li.selected {
-  background-color: #fff7d5;
-}
-body.ttrss_utility div.autocomplete ul li {
-  list-style-type: none;
-  display: block;
+body.ttrss_utility form {
   margin: 0;
-  padding: 2px;
-  height: 32px;
-  cursor: pointer;
 }
-body.ttrss_utility fieldset {
-  border-width: 0px;
-  padding: 0px 0px 5px 0px;
-  margin: 0px;
+body.ttrss_utility.otp .content fieldset > label {
+  display: inline;
 }
-body.ttrss_utility fieldset input {
-  font-family: sans-serif;
-  font-size: medium;
-  border-spacing: 2px;
-  border: 1px solid #b5bcc7;
-  padding: 2px;
-}
-body.ttrss_utility fieldset label {
-  width: 120px;
-  margin-right: 20px;
-  display: inline-block;
-  text-align: right;
-  color: gray;
-}
-body.ttrss_utility body.otp {
-  margin: 1em;
-  padding: 0px;
-}
-body.ttrss_utility form.otpform {
-  margin: 0px;
-  padding: 0px;
-}
-body.ttrss_utility form.otpform label {
-  margin: 0px;
-  padding: 0px;
-}
-body.ttrss_utility body.otp div.content {
-  display: inline-block;
-  width: auto;
-}
-body.ttrss_utility span.hint {
-  font-size: 10px;
-  color: gray;
-}
-body.small_margins {
-  margin: 1em;
-  max-width: none;
-}
-body#sharepopup {
-  color: #444;
-  background: #fff;
-  margin: 10px;
-}
-body#sharepopup h1 {
-  font-size: 14px;
-  margin: 0px;
-  color: #257aa7;
-}
-body#sharepopup form {
-  height: 100%;
-}
-body#sharepopup input {
+body.ttrss_utility.ttrss_login {
+  margin: 0;
+  padding: 0;
   width: 100%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body.ttrss_utility.ttrss_login .container {
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+body.ttrss_utility.ttrss_login .container .content {
+  padding: 40px;
+}
+body.ttrss_utility.installer,
+body.ttrss_utility.feed_debugger,
+body.ttrss_utility.ttrss_zoom {
+  margin: 2em;
+}
+body.ttrss_utility.share_popup {
+  margin: 0;
+  padding: 0;
+  background: white;
+}
+body.ttrss_utility.share_popup .content {
+  padding: 15px;
+  border-width: 0;
+  box-shadow: none;
 }
 .flat li {
   padding: 2px;
@@ -1875,7 +1751,6 @@ body#sharepopup input {
   /* Preferred icon size */
   display: inline-block;
   line-height: 1;
-  color: #777;
   text-transform: none;
   letter-spacing: normal;
   word-wrap: normal;
@@ -1900,13 +1775,6 @@ body#sharepopup input {
 .flat .dijitCheckBox {
   background: #ccc;
 }
-body.ttrss_zoom {
-  margin-left: auto;
-  margin-right: auto;
-  padding: 20px;
-  max-width: 800px;
-  background: #ebebeb;
-}
 body.ttrss_zoom div.post {
   border: 1px solid #ddd;
   background: white;
@@ -1916,7 +1784,6 @@ body.ttrss_zoom div.post .attachments {
   display: none;
 }
 body.ttrss_zoom div.post div.header {
-  margin: 10px;
   padding-bottom: 10px;
   border: 0px solid #eee;
   border-bottom-width: 1px;
@@ -1928,48 +1795,19 @@ body.ttrss_zoom div.post div.header .row {
   display: flex;
   margin-bottom: 4px;
   flex-wrap: nowrap;
-}
-body.ttrss_zoom div.post div.header .row > * {
-  align-self: center;
-}
-body.ttrss_zoom div.post div.header .comments {
-  flex-grow: 2;
-}
-body.ttrss_zoom div.post div.header .date {
-  text-align: right;
-  white-space: nowrap;
-  align-self: flex-start;
-}
-body.ttrss_zoom div.post div.header img,
-body.ttrss_zoom div.post div.header i {
-  margin: 0px 4px;
-  vertical-align: middle;
-}
-body.ttrss_zoom div.post div.header .title {
-  flex-grow: 2;
-  align-self: flex-start;
-  font-size: 15px;
-  font-weight: 600;
-  text-rendering: optimizelegibility;
-  font-family: "Segoe WP Semibold", "Segoe UI Semibold", "Segoe UI Web Semibold", "Segoe UI", Ubuntu, "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-body.ttrss_zoom div.post div.header div.feed-title {
-  text-align: right;
+  align-items: center;
+  justify-content: space-between;
 }
 body.ttrss_zoom div.post p {
   -webkit-hyphens: auto;
   -moz-hyphens: auto;
   hyphens: auto;
 }
-body.ttrss_zoom div.post div.footer {
-  margin-top: 1em;
-  text-align: center;
-}
 body.ttrss_zoom div.post div.content {
   font-size: 15px;
   line-height: 1.5;
-  padding: 10px;
-  border-width: 0px;
+  border-width: 0;
+  padding: 0;
 }
 body.ttrss_zoom div.post div.content img,
 body.ttrss_zoom div.post div.content video {
@@ -2395,6 +2233,9 @@ body.ttrss_main div#headlines-frame.wide .hl .feed {
   min-width: 80px;
   max-width: 80px;
   display: inline-flex;
+}
+body.ttrss_main div#headlines-frame.wide .title {
+  overflow: hidden;
 }
 body.ttrss_main .hl,
 body.ttrss_main div#headlines-frame div.cdm.expandable {
