@@ -22,7 +22,7 @@ stats:
 			def=`stat -c %s $(THEMES_DIR)/../css/default.css`; \
 			for f in $(DSTS) ; do \
 				my=`stat -c %s $$f` ; \
-				echo $$f $$my/$$def x$$(( 100 * $$my / $$def ))% ; \
+				echo $$f $$my/$$def $$(( 100 * $$my / $$def ))% ; \
 			done ; \
 		} | column -t ; \
 		echo
@@ -31,7 +31,21 @@ clean:
 	rm -f $(DSTS)
 	rm -f $(DEPS)
 
-.PHONY: all clean
+commit: clean
+	@echo -e "\n---- Backup local.less ----"
+	[ ! -f local.less ] || mv -fu local.less local.less.bak
+	@echo -e "\n---- Rebuild ----"
+	$(MAKE) all
+	@echo -e "\n---- Restore local.less ----"
+	[ ! -f local.less.bak ] || mv -fu local.less.bak local.less
+	@echo -e "\n---- Commit ----"
+	git add $(DSTS)
+	git commit -m "(build css, ttrss at $$(cd $(THEMES_DIR); git describe --always --long --abbrev=12))"
+
+uncommit:
+	git reset --soft @~
+
+.PHONY: all clean commit uncommit
 
 %.dep: %.less Makefile
 	lessc $*.less $*.css $(LESSC_INCLUDE) -M > $*.dep.tmp
