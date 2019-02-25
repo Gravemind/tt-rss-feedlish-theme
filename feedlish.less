@@ -98,9 +98,6 @@ i.material-icons.icon-no-feed {
 		line-height: 1;
 		font-style: normal;
 		font-weight: normal;
-		position: absolute;
-		top: -2px;
-		left: -2px;
 		content: @codepoint;
 	}
 }
@@ -192,20 +189,20 @@ body.ttrss_main {
 		}
 
 		// Fix tree icon vertical alignment
-		.dijitTreeExpando { top: 0; }
+		.dijitTreeExpando { top: -1px; }
 
-		// Ignore a whitespace between icon and name in non-specials
-		// !!! breaks ellipsis !!!
-		// .dijitTreeContent { display: inline-block; }
+		// Normalize space between icon and title for folders and feeds
+		// .dijitTreeContent { display: inline-block; } // ignores the space after tree icon, but breaks ellipsis !!!
+		.dijitTreeIcon.feed-icon { margin-right: 4px; }
 
-		// Move loading icon
+		// Move loading icon to the right,
 		.dijitTreeExpandoLeaf {
 			float: right;
 			top: 2px;
 			width: 0px; // don't take space for nothing
 			left: -16px;
 		}
-		// And re-align row
+		// then re-align row.
 		.dijitTreeRow[style="padding-left: 19px;"] {
 			padding-left: 24px !important;
 		}
@@ -220,9 +217,6 @@ body.ttrss_main {
 			> .dijitTreeNodeContainer .dijitTreeRow {
 				padding-left: 0px !important;
 			}
-
-			// Add space after icon to match feeds
-			.dijitTreeIcon { margin-right: 3px; }
 		}
 
 		// Lighten loading GIFs
