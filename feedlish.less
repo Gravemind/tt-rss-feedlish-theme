@@ -1,4 +1,9 @@
-@import "../css/default.less";
+
+// Reference the default theme, but don't inline it:
+// - CON: changing variables here wont affect default.css/less (must be overwritten by adding rules)
+// - PRO: if default.css changes, we don't need to rebuild (as long as the changes are compatible)
+@import (reference) "../css/default.less";
+@import "../css/default.css";
 
 //
 // Less CSS Variables
@@ -6,9 +11,11 @@
 
 // Colors:
 
-// Change tt-rss default colors
+// Change colors. !! Affects only feedlish, not default.less/css since we
+// @import the .css !!
 @default-bg: #fff;
 @default-fg: #444; // prefer @default-fg to @default-text
+@default-text: @default-fg;
 @color-panel-bg: darken(@default-bg, 8%);
 //@color-accent: ; // default blue is fine
 
@@ -62,7 +69,6 @@
 //
 
 // Normalize text color: use @default-fg
-@default-text: @default-fg;
 body.ttrss_main, div.cdm.active div.content {
 	color: @default-fg;
 }
@@ -103,6 +109,7 @@ i.material-icons.icon-no-feed {
 }
 
 // Hide some borders
+// !! USELESS since we @import the .css !!
 @border-default: @color-panel-bg;
 
 // Scrollbars not blue (Chrome)
