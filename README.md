@@ -65,6 +65,6 @@ must add new rules to overwrite them.
 
 ## Screenshots
 
-![feedlish](https://raw.githubusercontent.com/Gravemind/tt-rss-feedlish-theme/master/screenshots/feedlish.png?1547295073)
+![feedlish](https://raw.githubusercontent.com/Gravemind/tt-rss-feedlish-theme/master/screenshots/feedlish.png?1551438289)
 
-![feedlish-night](https://raw.githubusercontent.com/Gravemind/tt-rss-feedlish-theme/master/screenshots/feedlish-night.png?1547295073)
+![feedlish-night](https://raw.githubusercontent.com/Gravemind/tt-rss-feedlish-theme/master/screenshots/feedlish-night.png?1551438289)
