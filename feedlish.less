@@ -286,6 +286,20 @@ body.ttrss_main {
 			.icon-score { display: block; }
 		}
 
+		// Fix vertical alignments, all at once
+		&.hl > *, & .header > *,	// non-cdm/cdm headline top elements
+		.hl-content,				// non-cdm title elements
+		span[class^="HLLCTR"] {		// labels container
+			line-height: @feedlish-headline-row-height;
+			> * {
+				line-height: normal;
+				vertical-align: middle;
+			}
+			// Dangerous! But only way I found to make containers respecting
+			// their elements' height.
+			font-size: 0;
+		}
+
 		// Tweak title:
 		div.title, span.titleWrap {
 
@@ -294,14 +308,10 @@ body.ttrss_main {
 				font-size: 11px;
 				padding: 1px 6px;
 				border-radius: 99px;
-				vertical-align: baseline;
 			}
 
 			// Keep the same font size when combined expanded or not
-			a {
-				font-size: 14px !important;
-				line-height: 2em;
-			}
+			a { font-size: 14px !important; }
 
 			// Hide author
 			.author when (@feedlish-hide-author-in-headlines = true) {
@@ -370,22 +380,13 @@ body.ttrss_main {
 			padding-right: @feedlish-panels-padding - 10px;
 		}
 		div.title .hl-content, .titleWrap {
-			> *:not(:empty) { margin-right: 5px; }
+			> *:not(:empty) { padding-right: 10px; }
+			.preview:empty { padding: 0; }
 		}
 
 		// Fix, cursor pointer was set on the wrong element (misleading)
 		&.cdm { cursor: initial; }
 		&.cdm .titleWrap { cursor: pointer; }
-
-		// Stretch the clickable title to row height
-		div.title, .titleWrap {
-			// Note: `display: flex;` might be more powerful if only I could get
-			// overflow ellipsis working
-			line-height: @feedlish-headline-row-height;
-			> * {
-				line-height: normal;
-			}
-		}
 
 		// Feed name look
 		.feed a {
