@@ -296,9 +296,11 @@ body.ttrss_main {
 				vertical-align: middle;
 			}
 			// Dangerous! But only way I found to make containers respecting
-			// their elements' height.
+			// their elements' height...
 			font-size: 0;
 		}
+		// ... e.g. need to restore font-size:
+		.header .updated { font-size: 11px; }
 
 		// Tweak title:
 		div.title, span.titleWrap {
