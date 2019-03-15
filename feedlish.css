@@ -86,7 +86,7 @@ body.ttrss_main #feeds-holder #feedTree .counterNode.aux {
 }
 body.ttrss_main #feeds-holder #feedTree .counterNode {
   min-width: unset;
-  margin-top: unset;
+  margin-top: 1px;
   line-height: unset;
 }
 body.ttrss_main #feeds-holder #feedTree .dijitTreeExpandoClosed {
@@ -219,17 +219,29 @@ body.ttrss_main #headlines-frame div[id^="RROW"].Selected .icon-score,
 body.ttrss_main #headlines-frame div[id^="RROW"]:not(.score-neutral) .icon-score {
   display: block;
 }
+body.ttrss_main #headlines-frame div[id^="RROW"].hl > *,
+body.ttrss_main #headlines-frame div[id^="RROW"] .header > *,
+body.ttrss_main #headlines-frame div[id^="RROW"] .hl-content,
+body.ttrss_main #headlines-frame div[id^="RROW"] span[class^="HLLCTR"] {
+  line-height: 34px;
+  font-size: 0;
+}
+body.ttrss_main #headlines-frame div[id^="RROW"].hl > * > *,
+body.ttrss_main #headlines-frame div[id^="RROW"] .header > * > *,
+body.ttrss_main #headlines-frame div[id^="RROW"] .hl-content > *,
+body.ttrss_main #headlines-frame div[id^="RROW"] span[class^="HLLCTR"] > * {
+  line-height: normal;
+  vertical-align: middle;
+}
 body.ttrss_main #headlines-frame div[id^="RROW"] div.title .label,
 body.ttrss_main #headlines-frame div[id^="RROW"] span.titleWrap .label {
   font-size: 11px;
   padding: 1px 6px;
   border-radius: 99px;
-  vertical-align: baseline;
 }
 body.ttrss_main #headlines-frame div[id^="RROW"] div.title a,
 body.ttrss_main #headlines-frame div[id^="RROW"] span.titleWrap a {
   font-size: 14px !important;
-  line-height: 2em;
 }
 body.ttrss_main #headlines-frame div[id^="RROW"] div.title a:hover,
 body.ttrss_main #headlines-frame div[id^="RROW"] span.titleWrap a:hover {
@@ -320,21 +332,17 @@ body.ttrss_main #headlines-frame div[id^="RROW"] .header > * {
 }
 body.ttrss_main #headlines-frame div[id^="RROW"] div.title .hl-content > *:not(:empty),
 body.ttrss_main #headlines-frame div[id^="RROW"] .titleWrap > *:not(:empty) {
-  margin-right: 5px;
+  padding-right: 10px;
+}
+body.ttrss_main #headlines-frame div[id^="RROW"] div.title .hl-content .preview:empty,
+body.ttrss_main #headlines-frame div[id^="RROW"] .titleWrap .preview:empty {
+  padding: 0;
 }
 body.ttrss_main #headlines-frame div[id^="RROW"].cdm {
   cursor: initial;
 }
 body.ttrss_main #headlines-frame div[id^="RROW"].cdm .titleWrap {
   cursor: pointer;
-}
-body.ttrss_main #headlines-frame div[id^="RROW"] div.title,
-body.ttrss_main #headlines-frame div[id^="RROW"] .titleWrap {
-  line-height: 34px;
-}
-body.ttrss_main #headlines-frame div[id^="RROW"] div.title > *,
-body.ttrss_main #headlines-frame div[id^="RROW"] .titleWrap > * {
-  line-height: normal;
 }
 body.ttrss_main #headlines-frame div[id^="RROW"] .feed a {
   font-size: 11px;
