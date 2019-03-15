@@ -233,6 +233,9 @@ body.ttrss_main #headlines-frame div[id^="RROW"] span[class^="HLLCTR"] > * {
   line-height: normal;
   vertical-align: middle;
 }
+body.ttrss_main #headlines-frame div[id^="RROW"] .header .updated {
+  font-size: 11px;
+}
 body.ttrss_main #headlines-frame div[id^="RROW"] div.title .label,
 body.ttrss_main #headlines-frame div[id^="RROW"] span.titleWrap .label {
   font-size: 11px;
