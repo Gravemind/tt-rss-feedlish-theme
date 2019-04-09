@@ -1,0 +1,24 @@
+/*
+  tt-rss-feedlish-theme/custom.css
+
+  Raw CSS file, imported at the beginning of `feedlish.css` (doesn't need
+  rebuild).
+
+  Note: README.md's "Install" paths must be respected.
+
+*/
+
+/* Hide author in headlines: */
+/*
+#headlines-frame .author {
+	display: none;
+}
+*/
+
+/* Make combined-mode expanded articles fixed height: */
+/*
+#headlines-frame div.cdm.expandable .content {
+	height: 250px;
+	overflow-y: auto;
+}
+*/

@@ -1,4 +1,5 @@
 @import "../css/default.css";
+@import "tt-rss-feedlish-theme/custom.css";
 body.ttrss_main,
 div.cdm.active div.content {
   color: #444;
@@ -446,3 +447,8 @@ body.ttrss_main div.cdm.expandable .content {
 body.ttrss_main div.cdm.expandable .content {
   padding-left: 171px;
 }
+/*
+  tt-rss-feedlish-theme/custom.less
+
+  Imported at the bottom of `feedlish.less`.
+*/

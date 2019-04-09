@@ -44,9 +44,6 @@
 // Headline row height
 @feedlish-headline-row-height: 34px;
 
-// Hide author in headlines
-@feedlish-hide-author-in-headlines: false;
-
 // Headline feed name fixed width (0 to hide)
 @feedlish-headline-feed-name-width: 120px;
 // .. in wide mode (0 to hide)
@@ -60,9 +57,6 @@
 
 // In combined-mode, align article text to title
 @feedlish-cdm-align-article-to-title: true;
-
-// In combined-mode, set article fixed height (-1 to disable)
-@feedlish-cdm-fixed-height: -1;
 
 //
 // Global
@@ -315,11 +309,6 @@ body.ttrss_main {
 			// Keep the same font size when combined expanded or not
 			a { font-size: 14px !important; }
 
-			// Hide author
-			.author when (@feedlish-hide-author-in-headlines = true) {
-				display: none;
-			}
-
 			// Remove hover underline
 			a:hover { text-decoration: none; }
 
@@ -509,15 +498,12 @@ body.ttrss_main {
 			padding-left: @feedlish-headline-feed-name-width + @feedlish-panels-padding + 35px;
 		}
 
-		// Article fixed height
-		.content when (@feedlish-cdm-fixed-height >= 0) {
-			height: @feedlish-cdm-fixed-height;
-			overflow-y: auto;
-		}
-
 	} // Combined-mode
 
 } // ttrss_main
 
-// Local customization in a separate file
-@import (optional) "./local.less";
+// Local less customization in a separate file (needs rebuild)
+@import (optional) "./custom.less";
+
+// Local css customization, will be imported at the top of `feedlish.css`.
+@import "tt-rss-feedlish-theme/custom.css";

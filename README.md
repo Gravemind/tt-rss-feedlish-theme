@@ -35,30 +35,27 @@ $ cd /path/to/tt-rss/themes.local/tt-rss-feedlish-theme
 $ git pull
 ```
 
-Most of the time tt-rss updates won't affect Feedlish. When it does, Feedlish
-should be fixed within a week or two.
+(The built `feedlish*.css` files are pushed.)
 
-As long as tt-rss updates (default theme changes) don't deviate from
-Feedlish's overwriting rules, **Feedlish does not need to be rebuild**.
+Feedlish is not, and doesn't need to be, updated/rebuilt each time tt-rss
+changes, and still benefits from tt-rss's default theme updates (because
+[default theme is
+`@import`](https://github.com/Gravemind/tt-rss-feedlish-theme/blob/master/feedlish.css#L1))
 
-## Customize
+But when a tt-rss update actually conflicts with feedlish's code, a fix+rebuild
+should be pushed within a week or two.
 
-**On [rebuild](#Rebuild)**, Feedlish imports `tt-rss-feedlish-theme/local.less`,
-so you can put your own customization there, for example:
+## Customize .css (no rebuild needed)
 
-```less
-// tt-rss-feedlish-theme/local.less
+See [`custom.css`](https://github.com/Gravemind/tt-rss-feedlish-theme/blob/master/custom.css) for simple css customization.
 
-@feedlish-hide-author-in-headlines: true; // hide author
-@feedlish-cdm-fixed-height: 250px;        // combined-mode article fixed height
+## Customize .less (requires rebuild)
 
-// etc...
-```
-
-NOTES: **Changing variables only affects Feedlish, not default.css/less**, you
-must add new rules to overwrite them.
+See [`custom.less`](https://github.com/Gravemind/tt-rss-feedlish-theme/blob/master/custom.less) for more complex customization. It will require a [Rebuild](#Rebuild)
 
 ## Rebuild
+
+(The built `feedlish*.css` files are already pushed.)
 
 - install `lessc` (`$ pacman -S nodejs-less`, `$ dnf install nodejs-less nodejs-source-map`, ...)
 - run `$ make` here
