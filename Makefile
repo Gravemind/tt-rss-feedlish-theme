@@ -32,12 +32,15 @@ clean:
 	rm -f $(DEPS)
 
 commit: clean
-	@echo -e "\n---- Backup local.less ----"
-	[ ! -f local.less ] || mv -fu local.less local.less.bak
+	@echo -e "\n---- Backup custom.less ----"
+	[ ! -f custom.less.patch ] || patch < custom.less.patch
+	git diff -p @ -- custom.less | tee custom.less.patch
+	git co @ -- custom.less
+	git status -sb
 	@echo -e "\n---- Rebuild ----"
 	$(MAKE) all
-	@echo -e "\n---- Restore local.less ----"
-	[ ! -f local.less.bak ] || mv -fu local.less.bak local.less
+	@echo -e "\n---- Restore custom.less ----"
+	patch < custom.less.patch && rm custom.less.patch
 	@echo -e "\n---- Commit ----"
 	git add $(DSTS)
 	git commit -m "(build css, ttrss at $$(cd $(THEMES_DIR); git describe --always --long --abbrev=12))"
