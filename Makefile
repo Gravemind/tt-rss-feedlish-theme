@@ -7,7 +7,7 @@ LESSC_INCLUDE=--include-path=$(THEMES_DIR)
 DSTS =$(SRCS:.less=.css)
 DEPS =$(SRCS:.less=.dep)
 
-SHELL:=/bin/bash
+SHELL:=/usr/bin/bash
 
 all: $(DSTS) stats
 
