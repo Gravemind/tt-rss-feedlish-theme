@@ -19,7 +19,7 @@ stats:
 	@	echo ; \
 		echo File sizes compared to default theme: ; \
 		{ \
-			def=`stat -c %s $(THEMES_DIR)/../css/default.css`; \
+			def=`stat -c %s $(THEMES_DIR)/../themes/light.css`; \
 			for f in $(DSTS) ; do \
 				my=`stat -c %s $$f` ; \
 				echo $$f $$my/$$def $$(( 100 * $$my / $$def ))% ; \
