@@ -15,6 +15,17 @@
 }
 */
 
+/* Change the width of the feed name in headlines (in widescreen mode).
+   Remove the ".wide" below for non-widescreen mode.
+   Note: in tt-rss, the shortcut "a W" toggles widescreen mode.
+*/
+/*
+body.ttrss_main div#headlines-frame.wide .hl .feed {
+  min-width: 100px !important;
+  max-width: 100px !important;
+}
+*/
+
 /* Make combined-mode expanded articles fixed height: */
 /*
 #headlines-frame div.cdm.expandable .content {
