@@ -176,8 +176,12 @@ body.ttrss_main {
 		// Re-align counters
 		.counterNode {
 			min-width: unset;
-			margin-top: 1px;
 			line-height: unset;
+		}
+		// Revert "fresh" counter highlights
+		.dijitTreeRow[data-feed-id="-3"][data-is-cat="false"] .counterNode.unread {
+			background: none;
+			border: none;
 		}
 
 		// Change arrow icons
@@ -301,9 +305,12 @@ body.ttrss_main {
 
 			// Tweak label look
 			.label {
-				font-size: 11px;
-				padding: 1px 6px;
+				font-size: 11px !important;
+				padding: 2px 6px;
 				border-radius: 99px;
+				font-weight: normal;
+				height: 14px;
+				line-height: 16px;
 			}
 
 			// Keep the same font size when combined expanded or not
@@ -384,6 +391,8 @@ body.ttrss_main {
 			font-size: 11px;
 			padding: 1px 6px;
 			border-radius: 99px;
+			height: 14px;
+			line-height: 16px;
 			font-style: normal;
 		}
 
