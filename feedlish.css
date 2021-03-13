@@ -87,8 +87,11 @@ body.ttrss_main #feeds-holder #feedTree .counterNode.aux {
 }
 body.ttrss_main #feeds-holder #feedTree .counterNode {
   min-width: unset;
-  margin-top: 1px;
   line-height: unset;
+}
+body.ttrss_main #feeds-holder #feedTree .dijitTreeRow[data-feed-id="-3"][data-is-cat="false"] .counterNode.unread {
+  background: none;
+  border: none;
 }
 body.ttrss_main #feeds-holder #feedTree .dijitTreeExpandoClosed {
   width: 16px;
@@ -239,9 +242,12 @@ body.ttrss_main #headlines-frame div[id^="RROW"] .header .updated {
 }
 body.ttrss_main #headlines-frame div[id^="RROW"] div.title .label,
 body.ttrss_main #headlines-frame div[id^="RROW"] span.titleWrap .label {
-  font-size: 11px;
-  padding: 1px 6px;
+  font-size: 11px !important;
+  padding: 2px 6px;
   border-radius: 99px;
+  font-weight: normal;
+  height: 14px;
+  line-height: 16px;
 }
 body.ttrss_main #headlines-frame div[id^="RROW"] div.title a,
 body.ttrss_main #headlines-frame div[id^="RROW"] span.titleWrap a {
@@ -352,6 +358,8 @@ body.ttrss_main #headlines-frame div[id^="RROW"] .feed a {
   font-size: 11px;
   padding: 1px 6px;
   border-radius: 99px;
+  height: 14px;
+  line-height: 16px;
   font-style: normal;
 }
 body.ttrss_main #headlines-frame div[id^="RROW"] div.title,
