@@ -47,6 +47,13 @@ body.ttrss_main #feeds-holder #feedTree {
 body.ttrss_main #feeds-holder #feedTree > * {
   direction: ltr;
 }
+body.ttrss_main #feeds-holder #feedTree .dijitTreeRow.Is_Cat::before {
+  content: " ";
+  margin-left: 23px;
+}
+body.ttrss_main #feeds-holder #feedTree .dijitTreeRow {
+  padding-right: 16px;
+}
 body.ttrss_main #feeds-holder #feedTree::before {
   content: " ";
   display: block;
@@ -59,46 +66,35 @@ body.ttrss_main #feeds-holder #feedTree::after {
   height: 16px;
   clear: both;
 }
-body.ttrss_main #feeds-holder #feedTree .dijitTreeRow::before {
-  content: " ";
-  margin-left: 16px;
+body.ttrss_main #feeds-holder #feedTree > .dijitTreeContainer > .dijitTreeNode > .dijitTreeNodeContainer > .dijitTreeNode:first-child {
+  margin-bottom: 16px;
 }
-body.ttrss_main #feeds-holder #feedTree .dijitTreeRow {
-  padding-right: 16px;
+body.ttrss_main #feeds-holder #feedTree > .dijitTreeContainer > .dijitTreeNode > .dijitTreeNodeContainer > .dijitTreeNode:first-child > .dijitTreeNodeContainer .dijitTreeRow {
+  padding-left: 0px !important;
 }
-body.ttrss_main #feeds-holder #feedTree .dijitTreeExpando {
-  margin-left: 0px;
-}
-body.ttrss_main #feeds-holder #feedTree .counterNode {
-  margin-right: 2px;
-}
-body.ttrss_main #feeds-holder #feedTree .dijitTreeRow {
+body.ttrss_main #feeds-holder #feedTree .dijitTreeNode .dijitTreeRow {
   border: none !important;
 }
-body.ttrss_main #feeds-holder #feedTree .counterNode {
+body.ttrss_main #feeds-holder #feedTree .dijitTreeNode .dijitTreeRow .counterNode,
+body.ttrss_main #feeds-holder #feedTree .dijitTreeNode .dijitTreeRow[data-feed-id="-3"][data-is-cat="false"] .counterNode.unread {
   border: none;
   background: none;
   color: #444;
 }
-body.ttrss_main #feeds-holder #feedTree .counterNode.aux {
+body.ttrss_main #feeds-holder #feedTree .dijitTreeNode .dijitTreeRow .counterNode.aux {
   border: none;
   background: none;
   color: #b9b9b9;
 }
-body.ttrss_main #feeds-holder #feedTree .counterNode {
-  min-width: unset;
-  line-height: unset;
+body.ttrss_main #feeds-holder #feedTree .dijitTreeNode .dijitTreeRow .counterNode {
+  text-align: right;
 }
-body.ttrss_main #feeds-holder #feedTree .dijitTreeRow[data-feed-id="-3"][data-is-cat="false"] .counterNode.unread {
-  background: none;
-  border: none;
-}
-body.ttrss_main #feeds-holder #feedTree .dijitTreeExpandoClosed {
+body.ttrss_main #feeds-holder #feedTree .dijitTreeNode .dijitTreeRow .dijitTreeExpandoClosed {
   width: 16px;
   height: 16px;
   margin: 0;
 }
-body.ttrss_main #feeds-holder #feedTree .dijitTreeExpandoClosed::before {
+body.ttrss_main #feeds-holder #feedTree .dijitTreeNode .dijitTreeRow .dijitTreeExpandoClosed::before {
   font-family: 'Material Icons';
   font-size: 18px;
   line-height: 1;
@@ -106,12 +102,12 @@ body.ttrss_main #feeds-holder #feedTree .dijitTreeExpandoClosed::before {
   font-weight: normal;
   content: "\e315";
 }
-body.ttrss_main #feeds-holder #feedTree .dijitTreeExpandoOpened {
+body.ttrss_main #feeds-holder #feedTree .dijitTreeNode .dijitTreeRow .dijitTreeExpandoOpened {
   width: 16px;
   height: 16px;
   margin: 0;
 }
-body.ttrss_main #feeds-holder #feedTree .dijitTreeExpandoOpened::before {
+body.ttrss_main #feeds-holder #feedTree .dijitTreeNode .dijitTreeRow .dijitTreeExpandoOpened::before {
   font-family: 'Material Icons';
   font-size: 18px;
   line-height: 1;
@@ -119,33 +115,12 @@ body.ttrss_main #feeds-holder #feedTree .dijitTreeExpandoOpened::before {
   font-weight: normal;
   content: "\e313";
 }
-body.ttrss_main #feeds-holder #feedTree .icon.material-icons:not(.icon-label),
-body.ttrss_main #feeds-holder #feedTree .dijitTreeExpando {
+body.ttrss_main #feeds-holder #feedTree .dijitTreeNode .dijitTreeRow .icon.material-icons:not(.icon-label),
+body.ttrss_main #feeds-holder #feedTree .dijitTreeNode .dijitTreeRow .dijitTreeExpando {
   color: #b9b9b9 !important;
 }
-body.ttrss_main #feeds-holder #feedTree .dijitTreeExpando {
-  top: -1px;
-}
-body.ttrss_main #feeds-holder #feedTree .dijitTreeIcon.feed-icon {
-  margin-right: 4px;
-}
-body.ttrss_main #feeds-holder #feedTree .dijitTreeExpandoLeaf {
-  float: right;
-  top: 2px;
-  width: 0px;
-  left: -16px;
-}
-body.ttrss_main #feeds-holder #feedTree .dijitTreeRow[style="padding-left: 19px;"] {
-  padding-left: 24px !important;
-}
-body.ttrss_main #feeds-holder #feedTree > .dijitTreeContainer > .dijitTreeNode > .dijitTreeNodeContainer > .dijitTreeNode:first-child {
-  margin-bottom: 16px;
-}
-body.ttrss_main #feeds-holder #feedTree > .dijitTreeContainer > .dijitTreeNode > .dijitTreeNodeContainer > .dijitTreeNode:first-child > .dijitTreeNodeContainer .dijitTreeRow {
-  padding-left: 0px !important;
-}
-body.ttrss_main #feeds-holder #feedTree .loadingExpando,
-body.ttrss_main #feeds-holder #feedTree .loadingNode {
+body.ttrss_main #feeds-holder #feedTree .dijitTreeNode .dijitTreeRow .loadingExpando,
+body.ttrss_main #feeds-holder #feedTree .dijitTreeNode .dijitTreeRow .loadingNode {
   opacity: 0.4;
 }
 body.ttrss_main #toolbar-frame #toolbar {
