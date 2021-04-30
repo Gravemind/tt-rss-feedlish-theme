@@ -43,7 +43,9 @@ commit: clean
 	patch < custom.less.patch && rm custom.less.patch
 	@echo -e "\n---- Commit ----"
 	git add $(DSTS)
-	git commit -m "(build css, ttrss at $$(cd $(THEMES_DIR); git describe --always --long --abbrev=12))"
+	head="$$(git -C $(THEMES_DIR) merge-base HEAD origin)"; \
+	  version="$$(git -C $(THEMES_DIR) describe --always --long --abbrev=12 $$head)"; \
+	  git commit -m "(build css, ttrss at $$version)"
 
 uncommit:
 	git reset --soft @~
