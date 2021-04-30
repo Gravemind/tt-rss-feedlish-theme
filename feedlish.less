@@ -147,85 +147,63 @@ body.ttrss_main {
 		direction: rtl;
 		> * { direction: ltr; }
 
-		// Paddings (workaround "padding" don't do what we want...)
-		&::before { content: " "; display: block; height: @feedlish-panels-padding; clear: both; }
-		&::after { content: " "; display: block; height: @feedlish-panels-padding; clear: both; }
-		.dijitTreeRow::before { content: " "; margin-left: @feedlish-panels-padding; }
+		// Left and Right margin
+		.dijitTreeRow.Is_Cat::before { content: " "; margin-left: @feedlish-panels-padding + 7px; }
 		.dijitTreeRow { padding-right: @feedlish-panels-padding; }
 
-		// Remove margin, so @feedlish-panels-padding is consistent
-		.dijitTreeExpando { margin-left: 0px; }
-		.counterNode { margin-right: 2px; }
-
-		// Remove border around rows
-		.dijitTreeRow { border: none !important; }
-
-		// Simpler counter (unread)
-		.counterNode {
-			border: none;
-			background: none;
-			color: @default-fg;
-		}
-		// Simpler counter (read)
-		.counterNode.aux {
-			border: none;
-			background: none;
-			color: mix(@default-fg, @color-panel-bg, 30%);
-		}
-
-		// Re-align counters
-		.counterNode {
-			min-width: unset;
-			line-height: unset;
-		}
-		// Revert "fresh" counter highlights
-		.dijitTreeRow[data-feed-id="-3"][data-is-cat="false"] .counterNode.unread {
-			background: none;
-			border: none;
-		}
-
-		// Change arrow icons
-		.dijitTreeExpandoClosed { .feedlish-material-icon("\e315"); }
-		.dijitTreeExpandoOpened { .feedlish-material-icon("\e313"); }
-
-		// Change icons colors
-		.icon.material-icons:not(.icon-label), .dijitTreeExpando {
-			color: @feedlish-feedtree-icons-color !important;
-		}
-
-		// Fix tree icon vertical alignment
-		.dijitTreeExpando { top: -1px; }
-
-		// Normalize space between icon and title for folders and feeds
-		// .dijitTreeContent { display: inline-block; } // ignores the space after tree icon, but breaks ellipsis !!!
-		.dijitTreeIcon.feed-icon { margin-right: 4px; }
-
-		// Move loading icon to the right,
-		.dijitTreeExpandoLeaf {
-			float: right;
-			top: 2px;
-			width: 0px; // don't take space for nothing
-			left: -16px;
-		}
-		// then re-align row.
-		.dijitTreeRow[style="padding-left: 19px;"] {
-			padding-left: 24px !important;
-		}
+		// Top and Bottom margin
+		&::before { content: " "; display: block; height: @feedlish-panels-padding; clear: both; }
+		&::after { content: " "; display: block; height: @feedlish-panels-padding; clear: both; }
 
 		// "Specials" group
 		> .dijitTreeContainer > .dijitTreeNode > .dijitTreeNodeContainer > .dijitTreeNode:first-child {
-
-			// Add space after Specials group
-			& { margin-bottom: @feedlish-panels-padding; }
-
 			// Remove Specials indentation
 			> .dijitTreeNodeContainer .dijitTreeRow {
 				padding-left: 0px !important;
 			}
+
+			// Margin after Specials group
+			& { margin-bottom: @feedlish-panels-padding; }
 		}
 
-		// Lighten loading GIFs
-		.loadingExpando, .loadingNode { opacity: 0.4; }
+		.dijitTreeNode .dijitTreeRow {
+			// Remove border around rows
+			& {
+				border: none !important;
+			}
+
+			// Simpler counter (unread)
+			.counterNode,
+			&[data-feed-id="-3"][data-is-cat="false"] .counterNode.unread // fresh
+			{
+				border: none;
+				background: none;
+				color: @default-fg;
+			}
+			// Simpler counter (read)
+			.counterNode.aux {
+				border: none;
+				background: none;
+				color: mix(@default-fg, @color-panel-bg, 30%);
+			}
+
+			// Right-align counter
+			.counterNode {
+				text-align: right
+			}
+
+			// Change arrow icons
+			.dijitTreeExpandoClosed { .feedlish-material-icon("\e315"); }
+			.dijitTreeExpandoOpened { .feedlish-material-icon("\e313"); }
+
+			// Change icons colors
+			.icon.material-icons:not(.icon-label), .dijitTreeExpando {
+				color: @feedlish-feedtree-icons-color !important;
+			}
+
+			// Lighten loading GIFs
+			.loadingExpando, .loadingNode { opacity: 0.4; }
+		}
 	}
 
 	//
