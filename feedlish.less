@@ -414,19 +414,22 @@ body.ttrss_main {
 
 	// Feed name fixed width
 	.feed {
-		min-width: @feedlish-headline-feed-name-width;
-		max-width: @feedlish-headline-feed-name-width;
+		min-width: @feedlish-headline-feed-name-width !important;
+		max-width: @feedlish-headline-feed-name-width !important;
 		display: if(@feedlish-headline-feed-name-width = 0, none, inline-flex);
 	}
-	.feed a, &.cdm .feed {
+	.feed a, .cdm .feed {
 		white-space: nowrap;
 		overflow: hidden;
 		text-overflow: ellipsis;
 	}
+	.cdm .feed {
+		margin: 0 10px 0 0;
+	}
 	// .. in wide mode
 	div#headlines-frame.wide .hl .feed {
-		min-width: @feedlish-headline-feed-name-width-wide;
-		max-width: @feedlish-headline-feed-name-width-wide;
+		min-width: @feedlish-headline-feed-name-width-wide !important;
+		max-width: @feedlish-headline-feed-name-width-wide !important;
 		display: if(@feedlish-headline-feed-name-width-wide = 0, none, inline-flex);
 	}
 
