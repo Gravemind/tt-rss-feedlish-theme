@@ -365,7 +365,7 @@ body.ttrss_main {
 		&.cdm .titleWrap { cursor: pointer; }
 
 		// Feed name look
-		.feed a {
+		.feed a, &.cdm .feed {
 			font-size: 11px;
 			padding: 1px 6px;
 			border-radius: 99px;
@@ -418,7 +418,7 @@ body.ttrss_main {
 		max-width: @feedlish-headline-feed-name-width;
 		display: if(@feedlish-headline-feed-name-width = 0, none, inline-flex);
 	}
-	.feed a {
+	.feed a, &.cdm .feed {
 		white-space: nowrap;
 		overflow: hidden;
 		text-overflow: ellipsis;
