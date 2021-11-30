@@ -9,7 +9,12 @@ DEPS =$(SRCS:.less=.dep)
 
 SHELL:=/usr/bin/bash
 
-all: $(DSTS) stats
+TTRSS_VERSION=$(shell git -C $(THEMES_DIR) --no-pager log --date="format:%y.%m" --pretty="v%cd-%h" --abbrev=7 -n1 $(shell git -C $(THEMES_DIR) merge-base HEAD origin))
+
+all: ttrss-version $(DSTS) stats
+
+ttrss-version:
+	@echo "tt-rss version $(TTRSS_VERSION)"
 
 stats:
 #
@@ -43,14 +48,12 @@ commit: clean
 	patch < custom.less.patch && rm custom.less.patch
 	@echo -e "\n---- Commit ----"
 	git add $(DSTS)
-	head="$$(git -C $(THEMES_DIR) merge-base HEAD origin)"; \
-	  version="$$(git -C $(THEMES_DIR) describe --always --long --abbrev=12 $$head)"; \
-	  git commit -m "(build css, ttrss at $$version)"
+	git commit -m "(build css, ttrss at $(TTRSS_VERSION))"
 
 uncommit:
 	git reset --soft @~
 
-.PHONY: all clean commit uncommit
+.PHONY: all clean commit uncommit ttrss-version
 
 %.dep: %.less Makefile
 	lessc $*.less $*.css $(LESSC_INCLUDE) -M > $*.dep.tmp
