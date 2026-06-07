@@ -2,7 +2,14 @@
 SRCS=feedlish.less feedlish-night.less
 
 THEMES_DIR=$(abspath ..)
-LESSC_INCLUDE=--include-path=$(THEMES_DIR)
+
+LIGHT_CSS_HASH = $(shell sha1sum $(THEMES_DIR)/light.css | awk '{ print $$1 }')
+CUSTOM_CSS_HASH = $(shell sha1sum custom.css | awk '{ print $$1 }')
+
+LESSC_FLAGS = \
+	--global-var=LIGHT_CSS_HASH='"$(LIGHT_CSS_HASH)"' \
+	--global-var=CUSTOM_CSS_HASH='"$(CUSTOM_CSS_HASH)"' \
+	--include-path=$(THEMES_DIR)
 
 DSTS =$(SRCS:.less=.css)
 DEPS =$(SRCS:.less=.dep)
@@ -56,12 +63,12 @@ uncommit:
 .PHONY: all clean commit uncommit ttrss-version
 
 %.dep: %.less Makefile
-	lessc $*.less $*.css $(LESSC_INCLUDE) -M > $*.dep.tmp
+	lessc $(LESSC_FLAGS) -M $*.less $*.css > $*.dep.tmp
 	@sed 's,\($*\.css\)[ :]*,\1 $*.dep : ,g' < $*.dep.tmp > $*.dep
 	@rm $*.dep.tmp
 
 %.css: %.less %.dep Makefile
-	lessc $*.less $*.css $(LESSC_INCLUDE)
+	lessc $(LESSC_FLAGS) $*.less $*.css
 
 # FIXME: make clean triggers %.dep because of include !?
 -include $(DEPS)
