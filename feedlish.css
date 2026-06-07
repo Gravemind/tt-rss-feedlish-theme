@@ -1,5 +1,5 @@
-@import "../themes/light.css";
-@import "tt-rss-feedlish-theme/custom.css";
+@import "../themes/light.css?hash=0bdf3e2a5e4089e33adb228dc57a1a79572de98f";
+@import "tt-rss-feedlish-theme/custom.css?hash=f2f8ec3dfed56a156e387c7b22b5e91d5c56e6bd";
 body.ttrss_main,
 div.cdm.active div.content {
   color: #444;
