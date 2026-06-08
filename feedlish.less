@@ -3,10 +3,7 @@
 // - CON: changing variables here wont affect default.css/less (must be overwritten by adding rules)
 // - PRO: if default.css changes, we don't need to rebuild (as long as the changes are compatible)
 @import (reference) "../themes/light.less";
-@import "../themes/light.css?hash=@{LIGHT_CSS_HASH}";
-
-// Note: If feedlish.css hasn't changed, the browser wont check for changes in light.css.
-//       LIGHT_CSS_HASH is not a proper fix, bc it requires rebuilding feedlish.css.
+@import "../themes/light.css";
 
 //
 // Less CSS Variables
@@ -498,4 +495,4 @@ body.ttrss_main {
 @import (optional) "./custom.less";
 
 // Local css customization, will be imported at the top of `feedlish.css`.
-@import "tt-rss-feedlish-theme/custom.css?hash=@{CUSTOM_CSS_HASH}";
+@import "tt-rss-feedlish-theme/custom.css";
