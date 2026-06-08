@@ -1,4 +1,4 @@
-@import "feedlish.css";
+@import "feedlish.css?fixcache";
 body {
   filter: hue-rotate(180deg) invert(100%) brightness(80%) contrast(75%);
   -webkit-font-smoothing: antialiased;

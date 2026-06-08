@@ -1,5 +1,5 @@
-@import "../themes/light.css?hash=0bdf3e2a5e4089e33adb228dc57a1a79572de98f";
-@import "tt-rss-feedlish-theme/custom.css?hash=f2f8ec3dfed56a156e387c7b22b5e91d5c56e6bd";
+@import "../themes/light.css?fixcache";
+@import "tt-rss-feedlish-theme/custom.css?fixcache";
 body.ttrss_main,
 div.cdm.active div.content {
   color: #444;
@@ -14,8 +14,9 @@ body.ttrss_main #toolbar-frame #toolbar {
 i.material-icons.icon-no-feed {
   width: 16px !important;
   height: 16px !important;
+  vertical-align: baseline;
   padding: 0 !important;
-  margin: 0px 4px  !important;
+  margin: 0 4px !important;
 }
 * {
   transition: none !important;
@@ -49,7 +50,7 @@ body.ttrss_main #feeds-holder #feedTree > * {
 }
 body.ttrss_main #feeds-holder #feedTree .dijitTreeRow.Is_Cat::before {
   content: " ";
-  margin-left: 23px;
+  margin-left: 18px;
 }
 body.ttrss_main #feeds-holder #feedTree .dijitTreeRow {
   padding-right: 16px;
@@ -114,6 +115,12 @@ body.ttrss_main #feeds-holder #feedTree .dijitTreeNode .dijitTreeRow .dijitTreeE
   font-style: normal;
   font-weight: normal;
   content: "\e313";
+}
+body.ttrss_main #feeds-holder #feedTree .dijitTreeNode .dijitTreeRow .dijitTreeExpandoClosed {
+  cursor: pointer;
+}
+body.ttrss_main #feeds-holder #feedTree .dijitTreeNode .dijitTreeRow .dijitTreeExpando {
+  margin-right: 2px;
 }
 body.ttrss_main #feeds-holder #feedTree .dijitTreeNode .dijitTreeRow .icon.material-icons:not(.icon-label),
 body.ttrss_main #feeds-holder #feedTree .dijitTreeNode .dijitTreeRow .dijitTreeExpando {
@@ -418,6 +425,9 @@ body.ttrss_main #content-insert .post > div {
 body.ttrss_main .content {
   max-width: 60em;
 }
+body.ttrss_main .content-inner {
+  margin: 10px 16px;
+}
 body.ttrss_main div.cdm.expandable .content-inner {
   font-size: 15px;
 }
@@ -425,7 +435,7 @@ body.ttrss_main div.cdm.expandable .content {
   padding: 0 20px 0 20px;
 }
 body.ttrss_main div.cdm.expandable .content {
-  padding-left: 171px;
+  padding-left: 176px;
 }
 /*
   tt-rss-feedlish-theme/custom.less
