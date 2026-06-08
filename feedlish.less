@@ -3,7 +3,10 @@
 // - CON: changing variables here wont affect default.css/less (must be overwritten by adding rules)
 // - PRO: if default.css changes, we don't need to rebuild (as long as the changes are compatible)
 @import (reference) "../themes/light.less";
-@import "../themes/light.css";
+@import "../themes/light.css?fixcache";
+
+// Note: ?fixcache (or any query parameter) seems to make the browser properly check and reload
+//       cached @import'ed css.
 
 //
 // Less CSS Variables
@@ -495,4 +498,4 @@ body.ttrss_main {
 @import (optional) "./custom.less";
 
 // Local css customization, will be imported at the top of `feedlish.css`.
-@import "tt-rss-feedlish-theme/custom.css";
+@import "tt-rss-feedlish-theme/custom.css?fixcache";
