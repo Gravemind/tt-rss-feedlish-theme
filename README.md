@@ -42,9 +42,6 @@ changes, and still benefits from tt-rss's default theme updates (because
 [default theme is
 `@import`](https://github.com/Gravemind/tt-rss-feedlish-theme/blob/master/feedlish.css#L1))
 
-> [!WARNING]
-> You might still need to **refresh your browser cache** when ttrss builtin theme changes (**Ctrl-F5**)
-
 But when a tt-rss update actually conflicts with feedlish's code, a fix+rebuild
 should be pushed within a week or two.
 
