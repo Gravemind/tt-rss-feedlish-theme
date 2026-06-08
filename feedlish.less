@@ -82,8 +82,9 @@ body.ttrss_main #toolbar-frame #toolbar {
 i.material-icons.icon-no-feed {
 	width: 16px !important;
 	height: 16px !important;
+	vertical-align: baseline;
 	padding: 0 !important;
-	margin: 0px 4px  !important;
+	margin: 0 4px !important;
 }
 
 // Disable most of animations/transitions
@@ -151,7 +152,7 @@ body.ttrss_main {
 		> * { direction: ltr; }
 
 		// Left and Right margin
-		.dijitTreeRow.Is_Cat::before { content: " "; margin-left: @feedlish-panels-padding + 7px; }
+		.dijitTreeRow.Is_Cat::before { content: " "; margin-left: @feedlish-panels-padding + 2px; }
 		.dijitTreeRow { padding-right: @feedlish-panels-padding; }
 
 		// Top and Bottom margin
@@ -198,6 +199,8 @@ body.ttrss_main {
 			// Change arrow icons
 			.dijitTreeExpandoClosed { .feedlish-material-icon("\e315"); }
 			.dijitTreeExpandoOpened { .feedlish-material-icon("\e313"); }
+			// Match margin to special icons
+			.dijitTreeExpando { margin-right: 2px; }
 
 			// Change icons colors
 			.icon.material-icons:not(.icon-label), .dijitTreeExpando {
@@ -477,6 +480,9 @@ body.ttrss_main {
 	// Article width (max column)
 	.content { max-width: @feedlish-article-width; }
 
+	// Article content margin, to align to icon
+	.content-inner { margin: 10px @feedlish-panels-padding; }
+
 	// In combined-mode
 	div.cdm.expandable {
 		// Reduce article content font size a bit
@@ -487,7 +493,7 @@ body.ttrss_main {
 
 		// Left padding to align article to title
 		.content when (@feedlish-cdm-align-article-to-title = true) {
-			padding-left: @feedlish-headline-feed-name-width + @feedlish-panels-padding + 35px;
+			padding-left: @feedlish-headline-feed-name-width + @feedlish-panels-padding + 40px;
 		}
 
 	} // Combined-mode
